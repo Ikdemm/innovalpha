@@ -1,38 +1,136 @@
-.App {
+* {
+  font-family: 'Source Sans Pro', "Roboto", sans-serif;
+}
+
+.page-container {
+  background-image: url('./brand.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 15em;
+  padding-bottom: 15em;
+}
+
+.form-container {
+  padding: 1em 3em;
+  background-color: rgb(245, 245, 245);
+}
+
+.page-header {
+  text-transform: uppercase;
   text-align: center;
+  font-size: 3em;
+  font-weight: 900;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.formheader-container {
+  margin-top: 1em;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  background-color: #000;
+  padding-top: 0.5em;
+  padding-bottom: 0.3em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+.section-header {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 900;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.collapse-button {
+  cursor: pointer;
 }
+
+.collapse-button:hover {
+  color: #FFD000;
+}
+
+.subform-container {
+  padding: 1em;
+}
+
+.form-row {
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+  gap: 3.3%;
+}
+
+.form-group {
+  margin-bottom: 1em;
+}
+
+.text-input {
+  width: 31%;
+}
+
+label {
+  font-weight: bold;
+  color: #000;
+}
+
+input {
+  border: solid 2px #000 !important;
+  border-radius: 0 !important;
+  margin-bottom: 1em !important;
+}
+
+.checkbox-input {
+  border: solid 1px #000;
+  width: 1em;
+  height: 1em;
+  margin-right: 1em;
+  margin-left: 1em;
+  margin-top: 0.5em;
+}
+
+.input-hint {
+  color: rgb(98, 98, 98);
+}
+
+.form-paragraph {
+  color: rgb(98, 98, 98);
+  font-size: 1.3em;
+}
+
+.form-paragraph-important {
+  color: #000;
+  font-weight: 700;
+}
+
+.file-input {
+  border: 0;
+  background: transparent;
+}
+
+.sum-input {
+  margin-left: 2em;
+  margin-right: 1em;
+}
+
+textarea {
+  border: solid 2px #000;
+}
+
+.submit-button {
+  padding: 0.2em 3em;
+  font-weight: 800;
+  font-size: 1.7em;
+  color: #FFF;
+  text-transform: uppercase;
+  background-color: #000;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  font-weight: 800;
+  font-size: 1.7em;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
