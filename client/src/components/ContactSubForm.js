@@ -4,14 +4,16 @@ export default class ContactSubForm extends React.Component {
     render() {
         return(
             <div>
-                <div className="section-formheader-container">
-                    <h3 className="section-header">Personne à contacter</h3>
-                </div>
-                <div className="collapse-button-container">
-                    <a>
-                        <h3 className="section-header collapse-button">+</h3>
-                    </a>
-                </div>            
+                <div className="formheader-container">
+                    <div className="section-formheader-container">
+                        <h3 className="section-header">Personne à contacter</h3>
+                    </div>
+                    <div className="collapse-button-container">
+                        <a>
+                            <h3 className="section-header collapse-button">+</h3>
+                        </a>
+                    </div>    
+                </div>        
                     
 
             <div className="subform-container">

@@ -113,7 +113,7 @@ input {
 }
 
 textarea {
-  border: solid 2px #000;
+  border: solid 2px #000 !important;
 }
 
 .submit-button {
