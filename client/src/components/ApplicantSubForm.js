@@ -1,6 +1,9 @@
 import React from 'react';
 
 class ApplicantSubForm extends React.Component {
+
+
+
     render() {
         return (
             <div>
@@ -16,33 +19,33 @@ class ApplicantSubForm extends React.Component {
                 <div className="form-row">
 
                     <div className="text-input">
-                        <label for="applicantFirstName">Prénom</label>
-                        <input type="text" className="form-control" id="applicantFirstName" name="applicantFirstName" required/>
+                        <label>Prénom</label>
+                        <input type="text" className="form-control" id="applicantFirstName" name="applicantFirstName" onChange={this.props.handleChange} required/>
                     </div>
 
                     <div className="text-input">
-                        <label for="applicantLastName">Nom</label>
-                        <input type="text" className="form-control" id="applicantLastName" name="applicantLastName" required/>
+                        <label>Nom</label>
+                        <input type="text" className="form-control" id="applicantLastName" name="applicantLastName" onChange={this.props.handleChange} required/>
                     </div>
 
                     <div className="text-input">
-                        <label for="applicantSocialReason">Raison sociale</label>
-                        <input type="text" className="form-control" id="applicantSocialReason" name="applicantSocialReason" required/>
+                        <label>Raison sociale</label>
+                        <input type="text" className="form-control" id="applicantSocialReason" name="applicantSocialReason" onChange={this.props.handleChange} required/>
                     </div>
 
                     <div className="text-input">
-                        <label for="applicantAddress">Adresse</label>
-                        <input type="text" className="form-control" id="applicantAddress" name="applicantAddress" required/>
+                        <label>Adresse</label>
+                        <input type="text" className="form-control" id="applicantAddress" name="applicantAddress" onChange={this.props.handleChange} required/>
                     </div>
 
                     <div className="text-input">
-                        <label for="applicantPostCode">Code Postal</label>
-                        <input type="text" className="form-control" id="applicantPostCode" name="applicantPostCode" required/>
+                        <label>Code Postal</label>
+                        <input type="text" className="form-control" id="applicantPostCode" name="applicantPostCode" onChange={this.props.handleChange} required/>
                     </div>
 
                     <div className="text-input">
-                        <label for="applicantLocation">Localité</label>
-                        <input type="text" className="form-control" id="applicantLocation" name="applicantLocation" required/>
+                        <label>Localité</label>
+                        <input type="text" className="form-control" id="applicantLocation" name="applicantLocation" onChange={this.props.handleChange} required/>
                     </div>
 
                 </div>

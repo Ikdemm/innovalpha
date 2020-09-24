@@ -21,32 +21,32 @@ export default class ContactSubForm extends React.Component {
 
                     {/* <!-- First Name --> */}
                     <div className="text-input">
-                        <label for="contactFirstName">Prénom</label>
-                        <input type = "text" className="form-control" id="contactFirstName" name="contactFirstName" required/>
+                        <label>Prénom</label>
+                        <input type = "text" className="form-control" id="contactFirstName" name="contactFirstName" onChange={this.props.handleChange} required/>
                     </div>
     
                     {/* <!-- Last Name --> */}
                     <div className="text-input">
-                        <label for="contactLastName">Nom</label>
-                        <input type = "text" className="form-control" id="contactLastName" name="contactLastName" required/>
+                        <label>Nom</label>
+                        <input type = "text" className="form-control" id="contactLastName" name="contactLastName" onChange={this.props.handleChange} required/>
                     </div>
     
                     {/* <!-- Social Reason --> */}
                     <div className="text-input">
-                        <label for="contactPhone">Téléphone</label>
-                        <input type = "text" className="form-control" id="contactPhone" name="contactPhone" required/>
+                        <label>Téléphone</label>
+                        <input type = "text" className="form-control" id="contactPhone" name="contactPhone" onChange={this.props.handleChange} required/>
                     </div>
 
                     {/* <!-- Application number --> */}
                     <div className="">
-                        <label for="appNumber">Numéro de référence, dossier</label>
-                        <input type = "text" className="form-control" id="appNumber" name="appNumber" required/>
+                        <label>Numéro de référence, dossier</label>
+                        <input type = "text" className="form-control" id="appNumber" name="appNumber" onChange={this.props.handleChange} required/>
                     </div>
 
                     {/* <!-- Digital Communication --> */}
                     <div className="">
                         <input type="checkbox" className="checkbox-input" id="providedEmail" name="providedEmail"/>
-                        <label for="providedEmail">Dans la présente procédure, je souhaite recevoir les écrits de l’IPI par voie électronique à l’adresse suivante*:</label>
+                        <label>Dans la présente procédure, je souhaite recevoir les écrits de l’IPI par voie électronique à l’adresse suivante*:</label>
                     </div>
                     <div className="">
                         <input type="text" className="form-control" name="email" id="email"/>

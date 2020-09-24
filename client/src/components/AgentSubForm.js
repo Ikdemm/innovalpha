@@ -1,6 +1,11 @@
 import React from 'react';
 
 export default class AgentSubForm extends React.Component {
+
+    constructor(props) {
+        super(props)
+    }
+
     render() {
         return(
             <div>
@@ -16,33 +21,33 @@ export default class AgentSubForm extends React.Component {
                     <div className="form-row">
 
                         <div className="text-input">
-                            <label for="agentFirstName">Prénom</label>
-                            <input type = "text" className="form-control" id="agentFirstName" name="agentFirstName" required/>
+                            <label>Prénom</label>
+                            <input type = "text" className="form-control" id="agentFirstName" name="agentFirstName" required onChange={this.props.handleChange}/>
                         </div>
             
                         <div className="text-input">
-                            <label for="agentLastName">Nom</label>
-                            <input type = "text" className="form-control" id="agentLastName" name="agentLastName" required/>
+                            <label>Nom</label>
+                            <input type = "text" className="form-control" id="agentLastName" name="agentLastName" required onChange={this.props.handleChange}/>
                         </div>
             
                         <div className="text-input">
-                            <label for="agentSocialReason">Raison sociale</label>
-                            <input type = "text" className="form-control" id="agentSocialReason" name="agentSocialReason" required/>
+                            <label>Raison sociale</label>
+                            <input type = "text" className="form-control" id="agentSocialReason" name="agentSocialReason" required onChange={this.props.handleChange}/>
                         </div>
             
                         <div className="text-input">
-                            <label for="agentAddress">Adresse</label>
-                            <input type = "text" className="form-control" id="agentAddress" name="agentAddress" required/>
+                            <label>Adresse</label>
+                            <input type = "text" className="form-control" id="agentAddress" name="agentAddress" required onChange={this.props.handleChange}/>
                         </div>
             
                         <div className="text-input">
-                            <label for="agentPostCode">Code Postal</label>
-                            <input type = "text" className="form-control" id="agentPostCode" name="agentPostCode" required/>
+                            <label>Code Postal</label>
+                            <input type = "text" className="form-control" id="agentPostCode" name="agentPostCode" required onChange={this.props.handleChange}/>
                         </div>
             
                         <div className="text-input">
-                            <label for="agentLocation">Localité</label>
-                            <input type = "text" className="form-control" id="agentLocation" name="agentLocation" required/>
+                            <label>Localité</label>
+                            <input type = "text" className="form-control" id="agentLocation" name="agentLocation" required onChange={this.props.handleChange}/>
                         </div>
             
                     </div>

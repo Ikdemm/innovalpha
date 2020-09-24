@@ -14,36 +14,68 @@ import Date from './components/Date';
 
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
+export default class App extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state =  {
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    let property = event.target.name;
+    this.setState({[property]: event.target.value}) 
+    console.log(this.state[property])
+  }
+
+  handleCheck(event) {
+    console.log(event.target.name)
+    let property = event.target.name;
+    if (this.state[property]) {
+      this.setState({[property]: false})
+    } else {
+      this.setState({[property]: true})
+    }
+    
+    console.log(this.state[property])
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(this.state)
+  }
+
+  render() {
+    return <div className="App">
       <div className="page-container">
         <h1 className="page-header">Enregistrement d’une marque suisse</h1>    
       </div>
 
       <div className="form-container">
-        <form>
+        <form onSubmit={this.handleSubmit}>
         
-        <ApplicantSubForm/>
-        <AgentSubForm/>
-        <ContactSubForm/>
-        <BrandSubForm/>
-        <TaxesSubForm/>
-        <ServicesSubForm/>
-        <BrandCategroy/>
-        <Colors/>
-        <Notes/>
-        <Appendings/>
-        <Date/>
+        <ApplicantSubForm handleChange={this.handleChange}/>
+        <AgentSubForm handleChange={this.handleChange}/>
+        <ContactSubForm handleChange={this.handleChange}/>
+        <BrandSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
+        {/* <TaxesSubForm handleChange={this.handleChange}/>
+        <ServicesSubForm handleChange={this.handleChange}/>
+        <BrandCategroy handleChange={this.handleChange}/>
+        <Colors handleChange={this.handleChange}/>
+        <Notes handleChange={this.handleChange}/>
+        <Appendings handleChange={this.handleChange}/>
+        <Date handleChange={this.handleChange}/> */}
 
         <hr/>
         
-        <input type="submit" class="submit-button" value="Générer PDF"/>
+        <input type="submit" className="submit-button" value="Générer PDF"/>
         
         </form>
       </div>
     </div>
-  );
+  }
+  
 }
-
-export default App;
