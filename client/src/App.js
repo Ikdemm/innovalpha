@@ -29,11 +29,13 @@ export default class App extends React.Component {
 
   createAndDownloadPDF() {
     axios.post('http://www.localhost:5000/create-proposal', this.state)
-    .then(() => axios.get('http://www.localhost:5000/fetch-proposal', { responseType: 'blob' }))
-    .then((res) => {
-      const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
-      saveAs(pdfBlob, 'proposal.pdf')
-    })
+    .then(() => axios.get('http://www.localhost:5000/fetch-proposal'))
+    .then(console.log("success"))
+    // .then((res) => {
+    //   console.log(res)
+    //   const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
+    //   saveAs(pdfBlob, 'proposal.pdf')
+    // })  
   }
 
   handleChange(event) {

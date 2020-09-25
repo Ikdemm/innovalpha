@@ -4,10 +4,11 @@ module.exports = (data) => {
     <html>
         <head>
             <meta charset="utf-8">
-            <title>Proposal for ${data.applicantFirstName}</title>
+            <title>Proposal</title>
         </head>
         <body>
             <h2>Hello ${data.applicantFirstName}</h2>
+            <p>Some text here</p>
         </body>
     </html>
     `

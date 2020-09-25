@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const pdfTemplate = require('./documents');
+const pdfTemplate = require('./documents/index');
 const wkhtmltopdf = require('wkhtmltopdf');
 wkhtmltopdf.command = "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe";
 
@@ -19,24 +19,21 @@ app.use(bodyParser.json());
 
 // POST - PDF Generation and fetching Data
 app.post('/create-proposal', (req, res) => {
-    console.log(req.body)
-    wkhtmltopdf('./documents/index.html', {
-        output: 'out.pdf',
-        pageSize: 'A4'
-    })
-});
 
-app.get('/test', (req, res) => {
-    console.log("Got the request")
-    wkhtmltopdf('<h1>Test</h1><p>Hello world</p>', {
-        output: 'demo.pdf',
-        pageSize: 'letter'
+    console.log("Creating File ..")
+    let data = req.body;
+    wkhtmltopdf(pdfTemplate(data), {
+        output: `${__dirname}/proposal.pdf`,
+        pageSize: 'A4'
     });
-})
+    res.end();
+    // res.download('./out.pdf');
+});
 
 // GET - Send generated PDF to the client
 app.get('/fetch-proposal', (req, res) => {
-    res.sendFile(`${__dirname}/proposal.pdf`)
+    console.log("Sending back file ...")
+    res.download(`${__dirname}/proposal.pdf`)
 })
 
 app.listen(port, () => console.log(`Listening on port ${port} ...`))
