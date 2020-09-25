@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+import {saveAs} from 'file-saver';
 
 import ApplicantSubForm from './components/ApplicantSubForm';
 import AgentSubForm from './components/AgentSubForm';
@@ -22,11 +24,21 @@ export default class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.createAndDownloadPDF = this.createAndDownloadPDF.bind(this);
+  }
+
+  createAndDownloadPDF() {
+    axios.post('http://www.localhost:5000/create-proposal', this.state)
+    .then(() => axios.get('http://www.localhost:5000/fetch-proposal', { responseType: 'blob' }))
+    .then((res) => {
+      const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
+      saveAs(pdfBlob, 'proposal.pdf')
+    })
   }
 
   handleChange(event) {
     let property = event.target.name;
-    this.setState({[property]: event.target.value}, () => {console.log(this.state[property])}) 
+    this.setState({[property]: event.target.value}, () => { console.log(this.state[property]) }) 
   }
 
   handleCheck(event) {
@@ -40,6 +52,7 @@ export default class App extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.state)
+    this.createAndDownloadPDF();
   }
 
   render() {
@@ -53,7 +66,7 @@ export default class App extends React.Component {
         
         <ApplicantSubForm handleChange={this.handleChange}/>
         <AgentSubForm handleChange={this.handleChange}/>
-        <ContactSubForm handleChange={this.handleChange}/>
+        {/* <ContactSubForm handleChange={this.handleChange}/>
         <BrandSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
         <TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
         <ServicesSubForm handleChange={this.handleChange}/>
@@ -61,7 +74,7 @@ export default class App extends React.Component {
         <Colors handleChange={this.handleChange}/>
         <Notes handleChange={this.handleChange}/>
         <Appendings handleCheck={this.handleCheck} handleChange={this.handleChange}/>
-        <Date handleChange={this.handleChange}/>
+        <Date handleChange={this.handleChange}/> */}
 
         <hr/>
         
