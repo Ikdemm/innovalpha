@@ -17,11 +17,11 @@ export default class Date extends React.Component {
 
                 <div class="subform-container">
                     <div class="">
-                        <label for="signature">Date</label>
-                        <input type="date" class="sum-input" name="signingDate" id="signingDate"/>
+                        <label>Date</label>
+                        <input type="date" class="sum-input" name="signingDate" id="signingDate" onChange={this.props.handleChange}/>
 
-                        <label for="signature">Digital Signature</label>
-                        <input type="file" class="sum-input" name="signature" id="signature"/>
+                        <label>Digital Signature</label>
+                        <input type="file" class="sum-input" name="signature" id="signature" onChange={this.props.handleChange}/>
                     </div>
                 </div>
             </div>

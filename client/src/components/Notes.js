@@ -16,7 +16,7 @@ export default class Notes extends React.Component {
                 </div>
 
                 <div className="subform-container">
-                    <textarea id="notes" name="notes" className="form-control" rows="7" cols="33"></textarea>
+                    <textarea id="notes" name="notes" className="form-control" rows="7" cols="33" onChange={this.props.handleChange}></textarea>
                 </div>
             </div>
         )

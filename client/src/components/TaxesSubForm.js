@@ -20,32 +20,40 @@ export default class TaxesSubForm extends React.Component {
                         Taxes de dépôt
                     </p>
                     <div className="">
-                        <input type="checkbox" className="checkbox-input" id="depositTaxCheck" name="depositTaxCheck"/>
-                        <label for="depositTax">CHF</label>
-                        <input type="number" className="sum-input" name="depositTax" id="depositTax"/> à nous facturer.
+                        <input type="checkbox" className="checkbox-input" id="depositTaxCheck" name="depositTaxCheck"
+                         onChange={this.props.handleCheck}
+                        />
+                        <label>CHF</label>
+                        <input type="number" className="sum-input" name="depositTax" id="depositTax" onChange={this.props.handleChange}/> à nous facturer.
                     </div>
                     <div className="">
-                        <input type="checkbox" className="checkbox-input" id="depositSumCheck" name="depositSumCheck"/>
-                        <label for="depositSumCheck">CHF</label>
-                        <input type="number" className="sum-input" name="depositSum" id="depositSum"/>
+                        <input type="checkbox" className="checkbox-input" id="depositSumCheck" name="depositSumCheck"
+                         onChange={this.props.handleCheck}
+                        />
+                        <label>CHF</label>
+                        <input type="number" className="sum-input" name="depositSum" id="depositSum" onChange={this.props.handleChange}/>
                         à débiter de notre compte courant nº
-                        <input type="number" className="sum-input" name="depositAccount" id="depositAccount"/>
+                        <input type="number" className="sum-input" name="depositAccount" id="depositAccount" onChange={this.props.handleChange}/>
                         auprès de l’IPI.
                     </div>
                     <p className="form-paragraph-important">
                         Surtaxe pour classNamee supplémentaire
                     </p>
                     <div className="">
-                        <input type="checkbox" className="checkbox-input" id="additionalTaxCheck" name="additionalTaxCheck"/>
-                        <label for="additionalTaxCheck">CHF</label>
-                        <input type="number" className="sum-input" name="additionalSum" id="additionalSum"/> à nous facturer.
+                        <input type="checkbox" className="checkbox-input" id="additionalTaxCheck" name="additionalTaxCheck"
+                         onChange={this.props.handleCheck}
+                        />
+                        <label>CHF</label>
+                        <input type="number" className="sum-input" name="additionalSum" id="additionalSum" onChange={this.props.handleChange}/> à nous facturer.
                     </div>
                     <div className="">
-                        <input type="checkbox" className="checkbox-input" id="additionalTaxCheck" name="additionalTaxCheck"/>
-                        <label for="additionalTaxCheck">CHF</label>
-                        <input type="number" className="sum-input" name="depositTax" id="depositTax"/>
+                        <input type="checkbox" className="checkbox-input" id="additionalTaxCheck" name="additionalTaxCheck"
+                         onChange={this.props.handleCheck}
+                        />
+                        <label>CHF</label>
+                        <input type="number" className="sum-input" name="depositTax" id="depositTax" onChange={this.props.handleChange}/>
                         à débiter de notre compte courant nº
-                        <input type="number" className="sum-input" name="depositAccount" id="depositAccount"/>
+                        <input type="number" className="sum-input" name="depositAccount" id="depositAccount" onChange={this.props.handleChange}/>
                         auprès de l’IPI.
                     </div>
                 </div>

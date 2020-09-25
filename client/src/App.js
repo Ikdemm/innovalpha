@@ -18,8 +18,7 @@ export default class App extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state =  {
-    }
+    this.state =  {}
     this.handleChange = this.handleChange.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,20 +26,15 @@ export default class App extends React.Component {
 
   handleChange(event) {
     let property = event.target.name;
-    this.setState({[property]: event.target.value}) 
-    console.log(this.state[property])
+    this.setState({[property]: event.target.value}, () => {console.log(this.state[property])}) 
   }
 
   handleCheck(event) {
     console.log(event.target.name)
     let property = event.target.name;
-    if (this.state[property]) {
-      this.setState({[property]: false})
-    } else {
-      this.setState({[property]: true})
-    }
-    
-    console.log(this.state[property])
+    this.setState({[property]: !this.state[property]}
+      , () => {console.log(this.state)}
+      )
   }
 
   handleSubmit(event) {
@@ -61,13 +55,13 @@ export default class App extends React.Component {
         <AgentSubForm handleChange={this.handleChange}/>
         <ContactSubForm handleChange={this.handleChange}/>
         <BrandSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
-        {/* <TaxesSubForm handleChange={this.handleChange}/>
+        <TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
         <ServicesSubForm handleChange={this.handleChange}/>
-        <BrandCategroy handleChange={this.handleChange}/>
+        <BrandCategroy handleCheck={this.handleCheck} handleChange={this.handleChange}/>
         <Colors handleChange={this.handleChange}/>
         <Notes handleChange={this.handleChange}/>
-        <Appendings handleChange={this.handleChange}/>
-        <Date handleChange={this.handleChange}/> */}
+        <Appendings handleCheck={this.handleCheck} handleChange={this.handleChange}/>
+        <Date handleChange={this.handleChange}/>
 
         <hr/>
         

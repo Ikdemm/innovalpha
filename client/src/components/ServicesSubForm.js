@@ -27,9 +27,10 @@ export default class ServicesSubForm extends React.Component {
                         générale. Pour cette classe, l’IPI devra exiger des précisions.
                     </p>
                     <div className="">
-                        <textarea id="products" name="products" className="form-control" rows="7" cols="33"></textarea>
+                        <textarea id="products" name="products" className="form-control" rows="7" cols="33"
+                         onChange={this.props.handleChange}></textarea>
                     </div>
-                    <label for="productsfile">Voir feuille séparée </label>
+                    <label>Voir feuille séparée </label>
                     <input type="file" name="productsfile" id="productsfile" className="form-control file-input"/>
                 </div>
             </div>

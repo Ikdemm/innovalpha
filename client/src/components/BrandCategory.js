@@ -21,12 +21,12 @@ export default class BrandCategory extends React.Component {
                         une marque individuelle.
                     </p>
                     <div className="">
-                        <input type="checkbox" className="checkbox-input" id="individualBrand" name="individualBrand"/>
-                        <label for="individualBrand">Marque individuelle</label>
-                        <input type="checkbox" className="checkbox-input" id="waranthyBrand" name="waranthyBrand"/>
-                        <label for="waranthyBrand">Marque de garantie</label>
-                        <input type="checkbox" className="checkbox-input" id="collectiveBrand" name="collectiveBrand"/>
-                        <label for="collectiveBrand">Marque collective</label>
+                        <input type="checkbox" className="checkbox-input" id="individualBrand" name="individualBrand" onChange={this.props.handleCheck}/>
+                        <label>Marque individuelle</label>
+                        <input type="checkbox" className="checkbox-input" id="waranthyBrand" name="waranthyBrand" onChange={this.props.handleCheck}/>
+                        <label>Marque de garantie</label>
+                        <input type="checkbox" className="checkbox-input" id="collectiveBrand" name="collectiveBrand" onChange={this.props.handleCheck}/>
+                        <label>Marque collective</label>
                     </div>
                 </div>
             </div>

@@ -16,7 +16,7 @@ export default class Colors extends React.Component {
                 </div>
 
                 <div className="subform-container">
-                    <textarea id="colors" name="colors" className="form-control" rows="7" cols="33"></textarea>
+                    <textarea id="colors" name="colors" className="form-control" rows="7" cols="33" onChange={this.props.handleChange}></textarea>
                 </div>
             </div>
         )
