@@ -24,10 +24,9 @@ app.post('/create-proposal', (req, res) => {
     let data = req.body;
     wkhtmltopdf(pdfTemplate(data), {
         output: `${__dirname}/proposal.pdf`,
-        pageSize: 'A4'
+        pageSize: 'letter'
     });
     res.end();
-    // res.download('./out.pdf');
 });
 
 // GET - Send generated PDF to the client

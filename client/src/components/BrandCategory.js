@@ -9,9 +9,9 @@ export default class BrandCategory extends React.Component {
                         <h3 className="section-header">Catégorie de marque</h3>
                     </div>
                     <div className="collapse-button-container">
-                        <a>
+                        {/* <a>
                             <h3 className="section-header collapse-button">+</h3>
-                        </a>
+                        </a> */}
                     </div>            
                 </div>
 

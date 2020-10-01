@@ -11,9 +11,9 @@ export default class AgentSubForm extends React.Component {
             <div>
                 <div className="formheader-container">
                     <h3 className="section-header">Mandataire</h3>
-                    <a>
+                    {/* <a>
                         <h3 className="section-header collapse-button">+</h3>
-                    </a>
+                    </a> */}
                 </div>        
 
                 <div className="subform-container">

@@ -3,15 +3,14 @@ import React from 'react';
 class ApplicantSubForm extends React.Component {
 
 
-
     render() {
         return (
             <div>
                 <div className="formheader-container">
                     <h3 className="section-header">Déposant</h3>
-                    <a onClick={this.showSubForm}>
+                    {/* <a onClick={this.props.showSubForm}>
                         <h3 className="section-header collapse-button">+</h3>
-                    </a>
+                    </a> */}
                 </div>
 
                 <div className="subform-container">

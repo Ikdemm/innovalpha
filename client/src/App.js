@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {saveAs} from 'file-saver';
+import fileSaver from 'file-saver';
 
 import ApplicantSubForm from './components/ApplicantSubForm';
 import AgentSubForm from './components/AgentSubForm';
@@ -28,14 +28,21 @@ export default class App extends React.Component {
   }
 
   createAndDownloadPDF() {
+    console.log("Getting the file")
     axios.post('http://www.localhost:5000/create-proposal', this.state)
-    .then(() => axios.get('http://www.localhost:5000/fetch-proposal'))
-    .then(console.log("success"))
-    // .then((res) => {
-    //   console.log(res)
-    //   const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
-    //   saveAs(pdfBlob, 'proposal.pdf')
-    // })  
+    .then(() => axios({
+      url: 'http://www.localhost:5000/fetch-proposal',
+      method: 'GET',
+      responseType: 'blob'
+    }))
+    .then((response) => {
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'file.pdf');
+      document.body.appendChild(link);
+      link.click();
+    });
   }
 
   handleChange(event) {
@@ -53,7 +60,6 @@ export default class App extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state)
     this.createAndDownloadPDF();
   }
 

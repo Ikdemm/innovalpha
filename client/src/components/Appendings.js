@@ -9,9 +9,9 @@ export default class Appendings extends React.Component {
                         <h3 class="section-header">Annexes</h3>
                     </div>
                     <div class="collapse-button-container">
-                        <a>
+                        {/* <a>
                             <h3 class="section-header collapse-button">+</h3>
-                        </a>
+                        </a> */}
                     </div>            
                 </div>
 
