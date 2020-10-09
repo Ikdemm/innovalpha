@@ -1,0 +1,52 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    width: 100% !important;
+}
+
+.title {
+    font-weight: 900;
+}
+
+.page-container {
+    padding: 1em;
+}
+
+.header-banner {
+    text-align: center;
+}
+
+.paragraph-text {
+    font-size: 0.9em;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+.data-text {
+    font-size: 1em;
+    font-weight: 300;
+    margin-bottom: 0;
+    border: 0.1px solid rgb(100, 100, 100, 0.5);
+    padding: 0.2em;
+}
+
+.section-title {
+    font-weight: 900;
+    margin-bottom: 0;
+}
+
+b {
+    font-weight: 500;
+}
+
+.logo-container {
+    border: 0.1px solid rgb(100, 100, 100, 0.5);
+    height: 250px;
+    width: 2000px;
+}
+
+.flex-container {
+    display: flex;
+}
