@@ -1,8 +1,12 @@
 import React from "react";
+// import { connect } from "react-redux";
 
 export default class ContactSubForm extends React.Component {
   constructor(props) {
     super(props);
+    // this.state = {
+    //   isEmailProvided: this.props.isEmailProvided
+    // }
   }
 
   render() {
@@ -78,8 +82,8 @@ export default class ContactSubForm extends React.Component {
               <input
                 type="checkbox"
                 className="checkbox-input"
-                id="providedEmail"
-                name="providedEmail"
+                id="isEmailProvided"
+                name="isEmailProvided"
                 onChange={this.props.handleCheck}
               />
               <label>
@@ -93,6 +97,7 @@ export default class ContactSubForm extends React.Component {
                 className="form-control"
                 name="contactEmail"
                 id="email"
+                disabled={this.props.isEmailProvided}
                 onChange={this.props.handleChange}
               />
             </div>

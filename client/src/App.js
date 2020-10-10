@@ -1,25 +1,24 @@
 import React from "react";
 import axios from "axios";
-import fileSaver from "file-saver";
 
 import ApplicantSubForm from "./components/ApplicantSubForm";
 import AgentSubForm from "./components/AgentSubForm";
 import ContactSubForm from "./components/ContactSubForm";
-import BrandSubForm from "./components/BrandSubForm";
-import TaxesSubForm from "./components/TaxesSubForm";
-import ServicesSubForm from "./components/ServicesSubForm";
-import BrandCategroy from "./components/BrandCategory";
-import Colors from "./components/Colors";
-import Notes from "./components/Notes";
-import Appendings from "./components/Appendings";
-import Date from "./components/Date";
+// import BrandSubForm from "./components/BrandSubForm";
+// import TaxesSubForm from "./components/TaxesSubForm";
+// import ServicesSubForm from "./components/ServicesSubForm";
+// import BrandCategroy from "./components/BrandCategory";
+// import Colors from "./components/Colors";
+// import Notes from "./components/Notes";
+// import Appendings from "./components/Appendings";
+// import Date from "./components/Date";
 
 import "./App.css";
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { isEmailProvided: false };
     this.handleChange = this.handleChange.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -54,7 +53,6 @@ export default class App extends React.Component {
   }
 
   handleCheck(event) {
-    console.log("yo");
     console.log(event.target.name);
     let property = event.target.name;
     this.setState({ [property]: !this.state[property] }, () => {
@@ -69,6 +67,7 @@ export default class App extends React.Component {
 
   render() {
     return (
+      // <Provider store={store}>
       <div className="App">
         <div className="page-container">
           <h1 className="page-header">Enregistrement d’une marque suisse</h1>
@@ -81,15 +80,16 @@ export default class App extends React.Component {
             <ContactSubForm
               handleChange={this.handleChange}
               handleCheck={this.handleCheck}
+              isEmailProvided = {this.state.isEmailProvided}
             />
             {/* <BrandSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
-    <TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
-    <ServicesSubForm handleChange={this.handleChange}/>
-    <BrandCategroy handleCheck={this.handleCheck} handleChange={this.handleChange}/>
-    <Colors handleChange={this.handleChange}/>
-    <Notes handleChange={this.handleChange}/>
-    <Appendings handleCheck={this.handleCheck} handleChange={this.handleChange}/>
-    <Date handleChange={this.handleChange}/> */}
+            <TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
+            <ServicesSubForm handleChange={this.handleChange}/>
+            <BrandCategroy handleCheck={this.handleCheck} handleChange={this.handleChange}/>
+            <Colors handleChange={this.handleChange}/>
+            <Notes handleChange={this.handleChange}/>
+            <Appendings handleCheck={this.handleCheck} handleChange={this.handleChange}/>
+            <Date handleChange={this.handleChange}/> */}
 
             <hr />
 
@@ -101,6 +101,7 @@ export default class App extends React.Component {
           </form>
         </div>
       </div>
+      // </Provider>
     );
   }
 }
