@@ -1,14 +1,6 @@
 import React from "react";
-// import { connect } from "react-redux";
 
 export default class ContactSubForm extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.state = {
-    //   isEmailProvided: this.props.isEmailProvided
-    // }
-  }
-
   render() {
     return (
       <div>
@@ -65,42 +57,47 @@ export default class ContactSubForm extends React.Component {
             </div>
 
             {/* <!-- Application number --> */}
-            <div className="">
+            <div className="text-input app-number-input">
               <label>Numéro de référence, dossier</label>
               <input
                 type="text"
                 className="form-control"
                 id="appNumber"
                 name="appNumber"
+                placeholder="XXXX XXXX XXXX"
                 onChange={this.props.handleChange}
                 required
               />
-            </div>
+            </div><br/>
 
             {/* <!-- Digital Communication --> */}
-            <div className="">
-              <input
-                type="checkbox"
-                className="checkbox-input"
-                id="isEmailProvided"
-                name="isEmailProvided"
-                onChange={this.props.handleCheck}
-              />
-              <label>
-                Dans la présente procédure, je souhaite recevoir les écrits de
-                l’IPI par voie électronique à l’adresse suivante*:
-              </label>
-            </div>
-            <div className="">
-              <input
-                type="text"
-                className="form-control"
-                name="contactEmail"
-                id="email"
-                disabled={this.props.isEmailProvided}
-                onChange={this.props.handleChange}
-              />
-            </div>
+            <div className="contact-email-section">
+              <div>
+                <label className="contact-email-label">
+                <input
+                  type="checkbox"
+                  className="checkbox-input"
+                  id="isEmailProvided"
+                  name="isEmailProvided"
+                  onChange={this.props.handleCheck}
+                />
+                  Dans la présente procédure, je souhaite recevoir les écrits de
+                  l’IPI par voie électronique à l’adresse suivante*:
+                  
+                </label>
+              </div>
+              <div className="">
+                <input
+                  type="email"
+                  className="form-control contact-email-input"
+                  name="contactEmail"
+                  id="email"
+                  placeholder="example@gmail.com"
+                  disabled={!this.props.isEmailProvided}
+                  onChange={this.props.handleChange}
+                />
+              </div>
+              </div>
             <p className="input-hint">
               * L’adresse indiquée doit être enregistrée sur une plateforme de
               messagerie reconnue pour transmettre par voie électronique des

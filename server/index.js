@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const pdfTemplate = require('./documents/index');
+const fileUpload = require('express-fileupload')
 const wkhtmltopdf = require('wkhtmltopdf');
 wkhtmltopdf.command = "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe";
 
@@ -16,17 +17,41 @@ app.use(cors())
 // Using body-parser middelware for parsing req.body
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(fileUpload())
 
 // POST - PDF Generation and fetching Data
 app.post('/create-proposal', (req, res) => {
 
     console.log("Creating File ..")
     let data = req.body;
-    wkhtmltopdf(pdfTemplate(data), {
-        output: `${__dirname}/proposal.pdf`,
-        pageSize: 'letter'
-    });
-    res.end();
+    console.log(data.brandFile)
+
+    // Handling the image uploaded
+    const fileName = data.brandFile.name;
+    const extension = fileName.substr(fileName.length - 4)
+    const path = __dirname + '/images/brand' + extension;
+    
+    image.mv(path, (err) => {
+        if (error) {
+            console.error(error)
+            res.writeHead(500, {
+              'Content-Type': 'application/json'
+            })
+            res.end(JSON.stringify({ status: 'error', message: error }))
+            return
+          }
+      
+          res.writeHead(200, {
+            'Content-Type': 'application/json'
+          })
+          res.end(JSON.stringify({ status: 'success', path: '/img/brands/' + fileName }))
+        })
+    
+    
+    // wkhtmltopdf(pdfTemplate(data), {
+    //     output: `${__dirname}/proposal.pdf`,
+    //     pageSize: 'letter'
+    // });
 });
 
 // GET - Send generated PDF to the client
