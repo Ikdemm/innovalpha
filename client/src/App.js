@@ -26,6 +26,10 @@ export default class App extends React.Component {
     this.handleUpload = this.handleUpload.bind(this);
   }
 
+  handleUpload(event) {
+    console.log(event.target.files[0])
+  }
+
   createAndDownloadPDF() {
     // this.setState({formData: this.state.formData.append(this.state)})
     this.setState({formData: this.state.formData.append("data", this.state)});
@@ -35,7 +39,7 @@ export default class App extends React.Component {
       method: 'post',
       url: 'http://www.localhost:5000/create-proposal',
       data: this.state,
-      dataType: "JSON",
+      dataType: "multipart/form-data",
       processData: false,
       contentType: false
     })
@@ -55,13 +59,6 @@ export default class App extends React.Component {
     //   document.body.appendChild(link);
     //   link.click();
     // });
-  }
-
-  handleUpload(event) {
-    let property = event.target.name;
-    let files = event.target.files;
-    // this.formData.append(event.target.files[0])
-    this.setState({ [property]: files[0] });
   }
 
   handleChange(event) {
@@ -103,6 +100,7 @@ export default class App extends React.Component {
              handleChange={this.handleChange}
              handleUpload={this.handleUpload}
              otherBrand={this.state.otherBrand}/>
+             <button className="submit-button" value="upload" onClick={this.sendFile}/>
             {/*<TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
             <ServicesSubForm handleChange={this.handleChange}/>
             <BrandCategroy handleCheck={this.handleCheck} handleChange={this.handleChange}/>
