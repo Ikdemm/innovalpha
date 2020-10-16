@@ -35,6 +35,7 @@ export default class App extends React.Component {
       method: 'post',
       url: 'http://www.localhost:5000/create-proposal',
       data: formData,
+      body: formData,
       dataType: "multipart/form-data",
       processData: false,
       contentType: false

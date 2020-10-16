@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 const cors = require('cors');
 const pdfTemplate = require('./documents');
 const wkhtmltopdf = require('wkhtmltopdf');
@@ -24,23 +25,29 @@ app.use(bodyParser.json());
 app.post('/create-proposal', (req, res) => {
 
     console.log("Creating File ..")
-    console.log(req.files.brand)
 
     if (!req.files) {
       return res.status(500).send({ msg: "file is not found" })
     }
 
     // accessing the file
-    const myFile = req.files.brand;
+    const data = req.body;
+    const brand = req.files.brand;
 
     //  mv() method places the file inside public directory
-    myFile.mv(`${__dirname}/uploads/${myFile.name}`, function (err) {
+    brand.mv(`${path.join(__dirname, '..', 'public/brand.jpg')}`, function (err) {
       if (err) {
           console.log(err)
           return res.status(500).send({ msg: "Error occured" });
       }
+      console.log("creating the file ...")
+      wkhtmltopdf(`<img src="http://127.0.0.1:5000/brand.jpg" width="500px" height="500px">`, {
+        output: `${__dirname}/out/proposal.pdf`,
+        pageSize: 'letter'
+      });
       // returing the response with file path and name
-      return res.send({name: myFile.name, path: `/${myFile.name}`});
+      res.send("done")
+      // return res.send({name: brand.name, path: `/${brand.name}`});
   });
 
     
@@ -49,6 +56,8 @@ app.post('/create-proposal', (req, res) => {
     //     pageSize: 'letter'
     // });
 });
+
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // GET - Send generated PDF to the client
 app.get('/fetch-proposal', (req, res) => {
