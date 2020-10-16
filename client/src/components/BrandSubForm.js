@@ -24,7 +24,7 @@ export default class BrandSubForm extends React.Component {
                     <p className="form-paragraph-important">
                         Dimensions maximales de la reproduction: 80 × 80 mm. 
                     </p>
-                    {/* <div className="">
+                    <div className="">
                         <input type="checkbox" className="checkbox-input" id="traditionalBrand" name="traditionalBrand"
                          onChange={this.props.handleCheck}/>
                         <label>Marque tridimensionnelle</label>
@@ -42,7 +42,7 @@ export default class BrandSubForm extends React.Component {
                         <label>Autres</label>
                         <input type="text" className="form-control" name="other" id="other" placeholder="Autres" 
                         onChange={this.props.handleChange} disabled={!this.props.otherBrand}/>
-                    </div> */}
+                    </div>
                     <input type="file" name="brandFile" id="brandFile" className="form-control file-input"
                     onChange={this.props.handleUpload}/>
                     <label htmlFor="brandFile">Télécharger votre Brand</label>        

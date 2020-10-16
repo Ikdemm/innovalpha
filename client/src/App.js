@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
 
-// import ApplicantSubForm from "./components/ApplicantSubForm";
-// import AgentSubForm from "./components/AgentSubForm";
-// import ContactSubForm from "./components/ContactSubForm";
+import ApplicantSubForm from "./components/ApplicantSubForm";
+import AgentSubForm from "./components/AgentSubForm";
+import ContactSubForm from "./components/ContactSubForm";
 import BrandSubForm from "./components/BrandSubForm";
 // import TaxesSubForm from "./components/TaxesSubForm";
 // import ServicesSubForm from "./components/ServicesSubForm";
@@ -18,7 +18,7 @@ import "./App.css";
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { formData: new FormData() };
+    this.state = {otherBrand: null, brand: null}
     this.handleChange = this.handleChange.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,19 +26,15 @@ export default class App extends React.Component {
     this.handleUpload = this.handleUpload.bind(this);
   }
 
-  handleUpload(event) {
-    console.log(event.target.files[0])
-  }
-
   createAndDownloadPDF() {
-    // this.setState({formData: this.state.formData.append(this.state)})
-    this.setState({formData: this.state.formData.append("data", this.state)});
-    console.log(this.formData);
-    console.log("Getting the file");
+    let formData = new FormData();
+    formData.append("brand", this.state.brand);
+    console.log(this.state)
+    console.log(formData);
     axios({
       method: 'post',
       url: 'http://www.localhost:5000/create-proposal',
-      data: this.state,
+      data: formData,
       dataType: "multipart/form-data",
       processData: false,
       contentType: false
@@ -59,6 +55,11 @@ export default class App extends React.Component {
     //   document.body.appendChild(link);
     //   link.click();
     // });
+  }
+
+  handleUpload(event) {
+    this.setState({ brand: event.target.files[0] })
+    console.log("file uploaded: ", this.state.brand)
   }
 
   handleChange(event) {
@@ -93,14 +94,13 @@ export default class App extends React.Component {
             <ContactSubForm
               handleChange={this.handleChange}
               handleCheck={this.handleCheck}
-              isEmailProvided = {this.state.isEmailProvided}
-            /> */}
+              isEmailProvided = {this.state.isEmailProvided} 
+            />*/}
             <BrandSubForm
              handleCheck={this.handleCheck}
              handleChange={this.handleChange}
              handleUpload={this.handleUpload}
              otherBrand={this.state.otherBrand}/>
-             <button className="submit-button" value="upload" onClick={this.sendFile}/>
             {/*<TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
             <ServicesSubForm handleChange={this.handleChange}/>
             <BrandCategroy handleCheck={this.handleCheck} handleChange={this.handleChange}/>
