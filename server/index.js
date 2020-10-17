@@ -2,7 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
+const formidable = require('formidable')
 const pdfTemplate = require('./documents');
+
 const wkhtmltopdf = require('wkhtmltopdf');
 wkhtmltopdf.command = "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe";
 
@@ -30,12 +32,10 @@ app.post('/create-proposal', (req, res) => {
       return res.status(500).send({ msg: "file is not found" })
     }
 
-    // accessing the file
-    const data = req.body.data;
-    console.log(data.applicantFirstName)
+  
     const brand = req.files.brand;
 
-    //  mv() method places the file inside public directory
+    // mv() method places the file inside public directory
     brand.mv(`${path.join(__dirname, '..', 'public/brand.jpg')}`, function (err) {
       if (err) {
           console.log(err)
@@ -54,7 +54,7 @@ app.post('/create-proposal', (req, res) => {
     //     output: `${__dirname}/proposal.pdf`,
     //     pageSize: 'letter'
     // });
-});
+// });
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
