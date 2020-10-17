@@ -26,47 +26,56 @@ export default class App extends React.Component {
     this.handleUpload = this.handleUpload.bind(this);
   }
 
+  /* ------------ Create PDF (then Downlad) ------------------ */
+
   createAndDownloadPDF() {
     let formData = new FormData();
     formData.append("brand", this.state.brand);
-    console.log(this.state)
+    formData.append("data", this.state)
     console.log(formData);
     axios({
       method: 'post',
       url: 'http://www.localhost:5000/create-proposal',
       data: formData,
-      body: formData,
+      body: JSON.stringify(formData),
       dataType: "multipart/form-data",
       processData: false,
       contentType: false
     })
-    .then(console.log("Done", this.state))
-    // .then(() =>
-    //   axios({
-    //     url: "http://www.localhost:5000/fetch-proposal",
-    //     method: "GET",
-    //     responseType: "blob",
-    //   })
-    // )
-    // .then((response) => {
-    //   const url = window.URL.createObjectURL(new Blob([response.data]));
-    //   const link = document.createElement("a");
-    //   link.href = url;
-    //   link.setAttribute("download", "file.pdf");
-    //   document.body.appendChild(link);
-    //   link.click();
-    // });
+    /* ------------ Send the request to get the created PDF ------------------ */
+    .then(() =>
+      axios({
+        url: "http://www.localhost:5000/fetch-proposal",
+        method: "GET",
+        responseType: "blob",
+      })
+    )
+    /* ------------ Downloading the PDF file we get back ------------------ */
+    .then((response) => {
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "file.pdf");
+      document.body.appendChild(link);
+      link.click();
+    });
   }
+
+  /* ------------ HandleUpload for files ------------------ */
 
   handleUpload(event) {
     this.setState({ brand: event.target.files[0] })
     console.log("file uploaded: ", this.state.brand)
   }
 
+  /* ------------ HandleChange for text inputs ------------------ */
+
   handleChange(event) {
     let property = event.target.name;
     this.setState({ [property]: event.target.value });
   }
+
+  /* ------------ HandleCheck for checkboxes ------------------ */
 
   handleCheck(event) {
     console.log(event.target.name);
@@ -75,6 +84,8 @@ export default class App extends React.Component {
       console.log(this.state);
     });
   }
+
+  /* ------------ Handling the submit of the form ------------------ */
 
   handleSubmit(event) {
     event.preventDefault();
@@ -90,13 +101,13 @@ export default class App extends React.Component {
 
         <div className="form-container">
           <form onSubmit={this.handleSubmit}>
-            {/* <ApplicantSubForm handleChange={this.handleChange} />
-            <AgentSubForm handleChange={this.handleChange} />
+            <ApplicantSubForm handleChange={this.handleChange} />
+            {/* <AgentSubForm handleChange={this.handleChange} />
             <ContactSubForm
               handleChange={this.handleChange}
               handleCheck={this.handleCheck}
               isEmailProvided = {this.state.isEmailProvided} 
-            />*/}
+            /> */}
             <BrandSubForm
              handleCheck={this.handleCheck}
              handleChange={this.handleChange}

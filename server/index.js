@@ -8,7 +8,7 @@ wkhtmltopdf.command = "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe";
 
 const fileUpload = require('express-fileupload');
 
-const app = express();
+const app = express();  
 
 const port = process.env.PORT || 5000;
 
@@ -31,7 +31,8 @@ app.post('/create-proposal', (req, res) => {
     }
 
     // accessing the file
-    const data = req.body;
+    const data = req.body.data;
+    console.log(data.applicantFirstName)
     const brand = req.files.brand;
 
     //  mv() method places the file inside public directory
@@ -41,13 +42,11 @@ app.post('/create-proposal', (req, res) => {
           return res.status(500).send({ msg: "Error occured" });
       }
       console.log("creating the file ...")
-      wkhtmltopdf(`<img src="http://127.0.0.1:5000/brand.jpg" width="500px" height="500px">`, {
+      wkhtmltopdf(pdfTemplate(data), {
         output: `${__dirname}/out/proposal.pdf`,
         pageSize: 'letter'
       });
-      // returing the response with file path and name
-      res.send("done")
-      // return res.send({name: brand.name, path: `/${brand.name}`});
+
   });
 
     
@@ -62,11 +61,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 // GET - Send generated PDF to the client
 app.get('/fetch-proposal', (req, res) => {
     console.log("Sending back file ...")
-    res.download(`${__dirname}/proposal.pdf`)
+    res.download(`${__dirname}/out/proposal.pdf`)
 })
-
-// app.get('/', (req, res) => {
-//   res.sendFile('C:/Users/RBK/Desktop/Work/upwork/trademarks/client/public/index.html')
-// })
 
 app.listen(port, () => console.log(`Listening on port ${port} ...`))
