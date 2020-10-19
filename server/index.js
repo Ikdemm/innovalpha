@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const pdfTemplate = require('./documents');
+const mv = require('mv');
 
 const wkhtmltopdf = require('wkhtmltopdf');
 wkhtmltopdf.command = "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe";
@@ -20,7 +21,7 @@ const storage = multer.diskStorage({
 
 const fileFilter = (req, file, cb) => {
   //accept a file
-  if (file.mimetype ===  'image/jpeg' || file.mimetype === 'image/png') {
+  if (file.mimetype ===  'image/jpeg' || file.mimetype ===  'image/jpg' || file.mimetype === 'image/png') {
     cb(null, true)
   }
   //reject a file
@@ -34,7 +35,7 @@ const upload = multer({storage: storage,
   limits: {
     fileSize: 1024 * 1024 * 5
   },
-  fileFilter: fileFilter
+  // fileFilter: fileFilter
 })
 
 const app = express();  
@@ -52,25 +53,24 @@ app.use(cors())
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+// -------------------- Serving Static Files --------------------------- // 
+
 app.use('/uploads', express.static("uploads"))
 
+
 // POST - PDF Generation and fetching Data
-app.post('/proposal', upload.single('brand'), (req, res) => {
+app.post('/proposal', upload.any('files', 6), (req, res) => {
 
     console.log("Creating File ..")
 
-    // if (!req.files) {
-    //   return res.status(500).send({ msg: "file is not found" })
-    // }
-
-    console.log(req.file);
+    console.log(req.files);
 
     console.log(req.body);
   
-    const brand = req.files.brand;
+    const brand = req.files[0];
 
     // mv() method places the file inside public directory
-    brand.mv(`${path.join(__dirname, '..', 'public/brand.jpg')}`, function (err) {
+    mv(path.join(__dirname, `/uploads/${brand.originalname}`), path.join(__dirname, '..', 'public/brand.jpg'), function (err) {
       if (err) {
           console.log(err)
           return res.status(500).send({ msg: "Error occured" });
