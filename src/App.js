@@ -31,13 +31,12 @@ export default class App extends React.Component {
   createAndDownloadPDF() {
     let formData = new FormData();
     formData.append("brand", this.state.brand);
-    formData.append("data", this.state)
+    formData.append("data", JSON.stringify(this.state))
     console.log(formData);
     axios({
       method: 'post',
-      url: 'http://www.localhost:5000/create-proposal',
+      url: 'http://www.localhost:5000/proposal',
       data: formData,
-      body: formData,
       dataType: "multipart/form-data",
       processData: false,
       contentType: false
@@ -45,7 +44,7 @@ export default class App extends React.Component {
     /* ------------ Send the request to get the created PDF ------------------ */
     // .then(() =>
     //   axios({
-    //     url: "http://www.localhost:5000/fetch-proposal",
+    //     url: "http://www.localhost:5000/proposal",
     //     method: "GET",
     //     responseType: "blob",
     //   })
@@ -61,7 +60,7 @@ export default class App extends React.Component {
     // });
   }
 
-  /* ------------ HandleUpload for files ------------------ */
+  /* ---------------- HandleUpload for files --------------------- */
 
   handleUpload(event) {
     this.setState({ brand: event.target.files[0] })
@@ -91,6 +90,8 @@ export default class App extends React.Component {
     event.preventDefault();
     this.createAndDownloadPDF();
   }
+
+  /* ------------------------ Render Method ------------------------ */
 
   render() {
     return (

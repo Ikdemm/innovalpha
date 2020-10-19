@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
-const formidable = require('formidable')
 const pdfTemplate = require('./documents');
 
 const wkhtmltopdf = require('wkhtmltopdf');
@@ -29,6 +28,8 @@ const fileFilter = (req, file, cb) => {
   cb(null, false)
 }
 
+// ------------------ Filtering the uploaded files --------------------- //
+
 const upload = multer({storage: storage,
   limits: {
     fileSize: 1024 * 1024 * 5
@@ -40,8 +41,11 @@ const app = express();
 
 const port = process.env.PORT || 5000;
 
-// Setting up our Middlewares
-// Using Cors middleware to enable CORS with various options
+// -------------------- Setting up our Middlewares ---------------------- // 
+
+// ---- Using Cors middleware to enable CORS with various options ------ // 
+
+
 app.use(cors())
 
 // Using body-parser middelware for parsing req.body
@@ -51,7 +55,7 @@ app.use(bodyParser.json());
 app.use('/uploads', express.static("uploads"))
 
 // POST - PDF Generation and fetching Data
-app.post('/create-proposal', upload.single('brand'), (req, res) => {
+app.post('/proposal', upload.single('brand'), (req, res) => {
 
     console.log("Creating File ..")
 
@@ -63,7 +67,7 @@ app.post('/create-proposal', upload.single('brand'), (req, res) => {
 
     console.log(req.body);
   
-    // const brand = req.files.brand;
+    const brand = req.files.brand;
 
     // mv() method places the file inside public directory
     brand.mv(`${path.join(__dirname, '..', 'public/brand.jpg')}`, function (err) {
@@ -81,10 +85,10 @@ app.post('/create-proposal', upload.single('brand'), (req, res) => {
 
 });
 
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join(__dirname, '..', 'build')));
 
 // GET - Send generated PDF to the client
-app.get('/fetch-proposal', (req, res) => {
+app.get('/proposal', (req, res) => {
     console.log("Sending back file ...")
     res.download(`${__dirname}/out/proposal.pdf`)
 })
