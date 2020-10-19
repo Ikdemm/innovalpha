@@ -65,17 +65,18 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
 
     console.log(req.files);
 
-    console.log(req.body);
+    const data = JSON.parse(req.body.data);
   
     const brand = req.files[0];
 
     // mv() method places the file inside public directory
-    mv(path.join(__dirname, `/uploads/${brand.originalname}`), path.join(__dirname, '..', 'public/brand.jpg'), function (err) {
+    mv(path.join(__dirname, `/uploads/${brand.originalname}`), path.join(__dirname, '..', 'public/brand.jpg'), (err) => {
       if (err) {
           console.log(err)
           return res.status(500).send({ msg: "Error occured" });
       }
       console.log("creating the file ...")
+      console.log(data.applicantFirstName)
       wkhtmltopdf(pdfTemplate(data), {
         output: `${__dirname}/out/proposal.pdf`,
         pageSize: 'letter'
