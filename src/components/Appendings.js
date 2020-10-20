@@ -17,21 +17,25 @@ export default class Appendings extends React.Component {
 
                 <div className="subform-container">
 
-                    <input type="checkbox" className="checkbox-input" id="annexe1Check" name="annexe1Check" onChange={this.props.handleCheck}/>
+                    <input type="checkbox" className="checkbox-input" id="appending1Check" name="appending1Check" onChange={this.props.handleCheck}/>
                     <label>Annexe 1</label>
-                    <input type="file" className="sum-input" name="annexe1" id="annexe1" onChange={this.props.handleChange}/>
+                    <input type="file" className="form-control file-input sum-input" name="appendingFile1" id="appendingFile1" onChange={this.props.handleUpload}/>
+                    <label htmlFor="appendingFile1">Ajouter fichier</label>
 
-                    <input type="checkbox" className="checkbox-input" id="annexe2Check" name="annexe2Check" onChange={this.props.handleCheck}/>
+                    <input type="checkbox" className="checkbox-input" id="appending2Check" name="appending2Check" onChange={this.props.handleCheck}/>
                     <label>Annexe 2</label>
-                    <input type="file" className="sum-input" name="annexe2" id="annexe2" onChange={this.props.handleChange}/>
+                    <input type="file" className="sum-input form-control file-input" name="appendingFile2" id="appendingFile2" onChange={this.props.handleUpload}/>
+                    <label htmlFor="appendingFile2">Ajouter fichier</label>
 
-                    <input type="checkbox" className="checkbox-input" id="annexe3Check" name="annexe3Check" onChange={this.props.handleCheck}/>
+                    <input type="checkbox" className="checkbox-input" id="appending3Check" name="appending3Check" onChange={this.props.handleCheck}/>
                     <label>Annexe 3</label>
-                    <input type="file" className="sum-input" name="annexe3" id="annexe3" onChange={this.props.handleChange}/>
+                    <input type="file" className="sum-input form-control file-input" name="appendingFile3" id="appendingFile3" onChange={this.props.handleUpload}/>
+                    <label htmlFor="appendingFile3">Ajouter fichier</label>
 
-                    <input type="checkbox" className="checkbox-input" id="annexe4Check" name="annexe4Check" onChange={this.props.handleCheck}/>
+                    <input type="checkbox" className="checkbox-input" id="appending4Check" name="appending4Check" onChange={this.props.handleCheck}/>
                     <label>Annexe 4</label>
-                    <input type="file" className="sum-input" name="annexe4" id="annexe4" onChange={this.props.handleChange}/>
+                    <input type="file" className="sum-input form-control file-input" name="appendingFile4" id="appendingFile4" onChange={this.props.handleUpload}/>
+                    <label htmlFor="appendingFile4">Ajouter fichier</label>
 
                 </div>
             </div>

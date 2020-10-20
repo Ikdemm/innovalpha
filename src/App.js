@@ -132,8 +132,8 @@ export default class App extends React.Component {
             <BrandCategroy handleCheck={this.handleCheck}/>
             <Colors handleChange={this.handleChange}/>
             <Notes handleChange={this.handleChange}/>
-            {/* <Appendings handleCheck={this.handleCheck} handleChange={this.handleChange}/>
-            <Date handleChange={this.handleChange}/> */}
+            <Appendings handleCheck={this.handleCheck} handleChange={this.handleChange} handleUpload={this.handleUpload}/>
+            {/* <Date handleChange={this.handleChange}/> */}
 
             <hr />
 
