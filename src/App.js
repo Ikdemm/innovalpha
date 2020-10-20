@@ -44,7 +44,7 @@ export default class App extends React.Component {
     formData.append("data", JSON.stringify(this.state))
     
     // Sending the request
-    
+
     axios({
       method: 'post',
       url: 'http://www.localhost:5000/proposal',
@@ -129,10 +129,10 @@ export default class App extends React.Component {
              otherBrand={this.state.otherBrand}/>
             <TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
             <ServicesSubForm handleChange={this.handleChange} handleUpload={this.handleUpload}/>
-            {/* <BrandCategroy handleCheck={this.handleCheck} handleChange={this.handleChange}/>
+            <BrandCategroy handleCheck={this.handleCheck}/>
             <Colors handleChange={this.handleChange}/>
             <Notes handleChange={this.handleChange}/>
-            <Appendings handleCheck={this.handleCheck} handleChange={this.handleChange}/>
+            {/* <Appendings handleCheck={this.handleCheck} handleChange={this.handleChange}/>
             <Date handleChange={this.handleChange}/> */}
 
             <hr />
