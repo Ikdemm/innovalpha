@@ -43,9 +43,9 @@ export default class BrandSubForm extends React.Component {
                         <input type="text" className="form-control" name="other" id="other" placeholder="Autres" 
                         onChange={this.props.handleChange} disabled={!this.props.otherBrand}/>
                     </div>
-                    <input type="file" name="brandFile" id="brandFile" className="form-control file-input"
+                    <input type="file" name="brand" id="brand" className="form-control file-input"
                     onChange={this.props.handleUpload}/>
-                    <label htmlFor="brandFile">Télécharger votre Brand</label>        
+                    <label htmlFor="brand">Télécharger votre Brand</label>        
                 </div>
             </div>
         )

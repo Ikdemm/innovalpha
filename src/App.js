@@ -5,13 +5,13 @@ import ApplicantSubForm from "./components/ApplicantSubForm";
 import AgentSubForm from "./components/AgentSubForm";
 import ContactSubForm from "./components/ContactSubForm";
 import BrandSubForm from "./components/BrandSubForm";
-// import TaxesSubForm from "./components/TaxesSubForm";
-// import ServicesSubForm from "./components/ServicesSubForm";
-// import BrandCategroy from "./components/BrandCategory";
-// import Colors from "./components/Colors";
-// import Notes from "./components/Notes";
-// import Appendings from "./components/Appendings";
-// import Date from "./components/Date";
+import TaxesSubForm from "./components/TaxesSubForm";
+import ServicesSubForm from "./components/ServicesSubForm";
+import BrandCategroy from "./components/BrandCategory";
+import Colors from "./components/Colors";
+import Notes from "./components/Notes";
+import Appendings from "./components/Appendings";
+import Date from "./components/Date";
 
 import "./App.css";
 
@@ -29,6 +29,7 @@ export default class App extends React.Component {
   /* ------------ Create PDF (then Downlad) ------------------ */
 
   createAndDownloadPDF() {
+    console.log(this.state)
     let formData = new FormData();
     formData.append("brand", this.state.brand);
     formData.append("data", JSON.stringify(this.state))
@@ -63,8 +64,7 @@ export default class App extends React.Component {
   /* ---------------- HandleUpload for files --------------------- */
 
   handleUpload(event) {
-    this.setState({ brand: event.target.files[0] })
-    console.log("file uploaded: ", this.state.brand)
+    this.setState({ [event.target.name]: event.target.files[0] })
   }
 
   /* ------------ HandleChange for text inputs ------------------ */
@@ -74,7 +74,7 @@ export default class App extends React.Component {
     this.setState({ [property]: event.target.value });
   }
 
-  /* ------------ HandleCheck for checkboxes ------------------ */
+  /* -------------- HandleCheck for checkboxes ------------------- */
 
   handleCheck(event) {
     console.log(event.target.name);
@@ -103,18 +103,18 @@ export default class App extends React.Component {
         <div className="form-container">
           <form onSubmit={this.handleSubmit}>
             <ApplicantSubForm handleChange={this.handleChange} />
-            {/* <AgentSubForm handleChange={this.handleChange} />
+            <AgentSubForm handleChange={this.handleChange} />
             <ContactSubForm
               handleChange={this.handleChange}
               handleCheck={this.handleCheck}
               isEmailProvided = {this.state.isEmailProvided} 
-            /> */}
+            />
             <BrandSubForm
              handleCheck={this.handleCheck}
              handleChange={this.handleChange}
              handleUpload={this.handleUpload}
              otherBrand={this.state.otherBrand}/>
-            {/*<TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
+            {/* <TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
             <ServicesSubForm handleChange={this.handleChange}/>
             <BrandCategroy handleCheck={this.handleCheck} handleChange={this.handleChange}/>
             <Colors handleChange={this.handleChange}/>

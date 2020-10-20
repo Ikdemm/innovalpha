@@ -12,28 +12,28 @@ const multer = require('multer');
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, './uploads/');
+    cb(null, './server/uploads/');
   },
   filename: function(req, file, cb) {
     cb(null, file.originalname)
   }
 })
 
-const fileFilter = (req, file, cb) => {
-  //accept a file
-  if (file.mimetype ===  'image/jpeg' || file.mimetype ===  'image/jpg' || file.mimetype === 'image/png') {
-    cb(null, true)
-  }
-  //reject a file
-  console.log("invalid file")
-  cb(null, false)
-}
+// const fileFilter = (req, file, cb) => {
+//   //accept a file
+//   if (file.mimetype ===  'image/jpeg' || file.mimetype ===  'image/jpg' || file.mimetype === 'image/png') {
+//     cb(null, true)
+//   }
+//   //reject a file
+//   console.log("invalid file")
+//   cb(null, false)
+// }
 
 // ------------------ Filtering the uploaded files --------------------- //
 
 const upload = multer({storage: storage,
   limits: {
-    fileSize: 1024 * 1024 * 5
+    fileSize: 1024 * 1024 * 10
   },
   // fileFilter: fileFilter
 })
@@ -44,7 +44,7 @@ const port = process.env.PORT || 5000;
 
 // -------------------- Setting up our Middlewares ---------------------- // 
 
-// ---- Using Cors middleware to enable CORS with various options ------ // 
+// ----- Using Cors middleware to enable CORS with various options ------ // 
 
 
 app.use(cors())
@@ -63,26 +63,28 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
 
     console.log("Creating File ..")
 
-    console.log(req.files);
+    console.log(req.body);
+
+    console.log(req.files)
 
     const data = JSON.parse(req.body.data);
   
     const brand = req.files[0];
 
     // mv() method places the file inside public directory
-    mv(path.join(__dirname, `/uploads/${brand.originalname}`), path.join(__dirname, '..', 'public/brand.jpg'), (err) => {
-      if (err) {
-          console.log(err)
-          return res.status(500).send({ msg: "Error occured" });
-      }
-      console.log("creating the file ...")
-      console.log(data.applicantFirstName)
-      wkhtmltopdf(pdfTemplate(data), {
-        output: `${__dirname}/out/proposal.pdf`,
-        pageSize: 'letter'
-      });
+    // mv(path.join(__dirname, `/uploads/${brand.originalname}`), path.join(__dirname, '..', 'public/brand.jpg'), (err) => {
+    //   if (err) {
+    //       console.log(err)
+    //       return res.status(500).send({ msg: "Error occured" });
+    //   }
+    //   console.log("creating the file ...")
+    //   console.log(data.applicantFirstName)
+      // wkhtmltopdf(pdfTemplate(data), {
+      //   output: `${__dirname}/out/proposal.pdf`,
+      //   pageSize: 'letter'
+      // });
 
-  });
+  // });
 
 });
 
