@@ -33,7 +33,7 @@ export default class TaxesSubForm extends React.Component {
                         <label>CHF</label>
                         <input type="number" className="sum-input" name="depositSum" id="depositSum" onChange={this.props.handleChange}/>
                         à débiter de notre compte courant nº
-                        <input type="number" className="sum-input" name="depositAccount" id="depositAccount" onChange={this.props.handleChange}/>
+                        <input type="number" className="sum-input" name="taxDepositAccount" id="taxDepositAccount" onChange={this.props.handleChange}/>
                         auprès de l’IPI.
                     </div>
                     <p className="form-paragraph-important">
@@ -53,7 +53,7 @@ export default class TaxesSubForm extends React.Component {
                         <label>CHF</label>
                         <input type="number" className="sum-input" name="depositTax" id="depositTax" onChange={this.props.handleChange}/>
                         à débiter de notre compte courant nº
-                        <input type="number" className="sum-input" name="depositAccount" id="depositAccount" onChange={this.props.handleChange}/>
+                        <input type="number" className="sum-input" name="additionalTaxDepositAccount" id="additionalTaxDepositAccount" onChange={this.props.handleChange}/>
                         auprès de l’IPI.
                     </div>
                 </div>

@@ -65,7 +65,7 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
 
     console.log(req.body);
 
-    console.log(req.files)
+    console.log(req.files[0])
 
     const data = JSON.parse(req.body.data);
   

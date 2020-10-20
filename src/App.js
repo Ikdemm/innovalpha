@@ -114,8 +114,8 @@ export default class App extends React.Component {
              handleChange={this.handleChange}
              handleUpload={this.handleUpload}
              otherBrand={this.state.otherBrand}/>
-            {/* <TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
-            <ServicesSubForm handleChange={this.handleChange}/>
+            <TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
+            {/* <ServicesSubForm handleChange={this.handleChange}/>
             <BrandCategroy handleCheck={this.handleCheck} handleChange={this.handleChange}/>
             <Colors handleChange={this.handleChange}/>
             <Notes handleChange={this.handleChange}/>
