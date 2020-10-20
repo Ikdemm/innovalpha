@@ -29,11 +29,22 @@ export default class App extends React.Component {
   /* ------------ Create PDF (then Downlad) ------------------ */
 
   createAndDownloadPDF() {
-    console.log(this.state)
+    
     let formData = new FormData();
-    formData.append("brand", this.state.brand);
+    
+    // Appending files to formData
+
+    for (let element of this.state.files){
+      let name = Object.keys(element)[0] 
+      formData.append(name, element[name]);
+    }
+
+    // Appending the rest of the data to formData
+    
     formData.append("data", JSON.stringify(this.state))
-    console.log(formData);
+    
+    // Sending the request
+    
     axios({
       method: 'post',
       url: 'http://www.localhost:5000/proposal',
@@ -64,7 +75,9 @@ export default class App extends React.Component {
   /* ---------------- HandleUpload for files --------------------- */
 
   handleUpload(event) {
-    this.setState({ [event.target.name]: event.target.files[0] })
+    let files = (this.state.files !== undefined) ? this.state.files : [];
+    files.push({ [event.target.name]: event.target.files[0] })
+    this.setState({ files })
   }
 
   /* ------------ HandleChange for text inputs ------------------ */
@@ -102,21 +115,21 @@ export default class App extends React.Component {
 
         <div className="form-container">
           <form onSubmit={this.handleSubmit}>
-            <ApplicantSubForm handleChange={this.handleChange} />
+            {/* <ApplicantSubForm handleChange={this.handleChange} />
             <AgentSubForm handleChange={this.handleChange} />
             <ContactSubForm
               handleChange={this.handleChange}
               handleCheck={this.handleCheck}
               isEmailProvided = {this.state.isEmailProvided} 
-            />
+            /> */}
             <BrandSubForm
              handleCheck={this.handleCheck}
              handleChange={this.handleChange}
              handleUpload={this.handleUpload}
              otherBrand={this.state.otherBrand}/>
             <TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
-            {/* <ServicesSubForm handleChange={this.handleChange}/>
-            <BrandCategroy handleCheck={this.handleCheck} handleChange={this.handleChange}/>
+            <ServicesSubForm handleChange={this.handleChange} handleUpload={this.handleUpload}/>
+            {/* <BrandCategroy handleCheck={this.handleCheck} handleChange={this.handleChange}/>
             <Colors handleChange={this.handleChange}/>
             <Notes handleChange={this.handleChange}/>
             <Appendings handleCheck={this.handleCheck} handleChange={this.handleChange}/>

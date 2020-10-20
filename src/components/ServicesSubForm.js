@@ -30,8 +30,10 @@ export default class ServicesSubForm extends React.Component {
                         <textarea id="products" name="products" className="form-control" rows="7" cols="33"
                          onChange={this.props.handleChange}></textarea>
                     </div>
-                    <label>Voir feuille séparée </label>
-                    <input type="file" name="productsfile" id="productsfile" className="form-control file-input"/>
+                    <p>Voir feuille séparée </p>
+                    <input type="file" name="productsFile" id="productsFile" className="form-control file-input"
+                    onChange={this.props.handleUpload}/>
+                    <label htmlFor="productsFile">Attacher la feuille des produits</label>
                 </div>
             </div>
         )
