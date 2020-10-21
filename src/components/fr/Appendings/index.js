@@ -2,11 +2,11 @@ import React from 'react';
 
 const Appendings = ({ handleCheck, handleUpload }) => (
     <div>
-        <div class="formheader-container">
-            <div class="section-formheader-container">
-                <h3 class="section-header">Annexes</h3>
+        <div className="formheader-container">
+            <div className="section-formheader-container">
+                <h3 className="section-header">Annexes</h3>
             </div>
-            <div class="collapse-button-container">
+            <div className="collapse-button-container">
                 {/* <a>
                     <h3 class="section-header collapse-button">+</h3>
                 </a> */}
