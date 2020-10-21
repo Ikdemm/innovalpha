@@ -4,7 +4,7 @@ const BrandSubForm = ({ handleCheck, handleChange, handleUpload, otherBrand }) =
     <div>
         <div className="formheader-container">
             <div className="section-formheader-container">
-                <h3 className="section-header">Marke</h3>
+                <h3 className="section-header">Marque</h3>
             </div>
             <div className="collapse-button-container">
                 <a>
@@ -14,36 +14,36 @@ const BrandSubForm = ({ handleCheck, handleChange, handleUpload, otherBrand }) =
         </div>
 
         <div className="subform-container">
-            <p className="form-paragraph">  
-            Bei einer Marke mit besonderer Schriftgestaltung oder besonderer grafischer Gestaltung ist eine
-            schwarz-weisse Abbildung einzureichen (im Feld rechts einfügen oder aufkleben). Verschiedene
-            Grautöne müssen klar ersichtlich sein. Für Marken in Farbe (Farbanspruch Ziff. 9) ist eine farbige Abbildung einzureichen.
+            <p className="form-paragraph">
+                S’il s’agit d’une marque présentant une police de caractère particulière ou faisant intervenir un graphisme
+                particulier, veuillez déposer une reproduction en noir et blanc (à insérer ou coller ci-contre). Les zones grises doivent apparaître distinctement.
+                Pour les marques en couleur(s) (voir ch. 9 couleurs revendiquées), veuillez déposer une reproduction en couleur(s).
             </p>
             <p className="form-paragraph-important">
-                Maximale Grösse der Abbildungen: 80 × 80 mm.
+                Dimensions maximales de la reproduction: 80 × 80 mm. 
             </p>
             <div className="">
                 <input type="checkbox" className="checkbox-input" id="traditionalBrand" name="traditionalBrand"
                     onChange={handleCheck}/>
-                <label>Dreidimensionale Marke</label>
+                <label>Marque tridimensionnelle</label>
                 <input type="checkbox" className="checkbox-input" id="acousticBrand" name="acousticBrand"
                     onChange={handleCheck}/>
-                <label>Akustische Marke</label>
+                <label>Marque acoustique</label>
                 <input type="checkbox" className="checkbox-input" id="colorBrand" name="colorBrand"
                     onChange={handleCheck}/>
-                <label>Marke mit Farbanspruch</label>
+                <label>Marque avec revendication de couleur</label>
                 <input type="checkbox" className="checkbox-input" id="abstractBrand" name="abstractBrand"
                     onChange={handleCheck}/>
-                <label>(Abstrakte) Farbmarke</label>
+                <label>Marque de couleur (abstraite)</label>
                 <input type="checkbox" className="checkbox-input" id="otherBrand" name="otherBrand"
                     onChange={handleCheck}/>
-                <label>Andere</label>
+                <label>Autres</label>
                 <input type="text" className="form-control" name="other" id="other" placeholder="Autres" 
                 onChange={handleChange} disabled={!otherBrand}/>
             </div>
             <input type="file" name="brandFile" id="brandFile" className="form-control file-input"
             onChange={handleUpload}/>
-            <label htmlFor="brandFile">Laden Sie Ihre Marke hoch</label>        
+            <label htmlFor="brandFile">Télécharger votre Brand</label>        
         </div>
     </div>
 )

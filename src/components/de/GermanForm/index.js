@@ -13,7 +13,7 @@ import Notes from "../Notes";
 import Appendings from "../Appendings";
 import Date from "../Date";
 
-export default class FrenchForm extends React.Component {
+export default class GermanForm extends React.Component {
 
   constructor(props) {
     super(props);
@@ -60,7 +60,7 @@ export default class FrenchForm extends React.Component {
     //     responseType: "blob",
     //   })
     // )
-    /* -------------- Downloading the PDF file we get back ------------------- */
+    /* ------------ Downloading the PDF file we get back ------------------ */
     // .then((response) => {
     //   const url = window.URL.createObjectURL(new Blob([response.data]));
     //   const link = document.createElement("a");
@@ -111,7 +111,7 @@ export default class FrenchForm extends React.Component {
     return (
       <div className="App">
         <div className="page-container">
-          <h1 className="page-header">Enregistrement d’une marque suisse</h1>
+          <h1 className="page-header">Eintragung einer schweizerischen Marke</h1>
         </div>
 
         <div className="form-container">
