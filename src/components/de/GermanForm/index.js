@@ -12,6 +12,7 @@ import Colors from "../Colors";
 import Notes from "../Notes";
 import Appendings from "../Appendings";
 import Date from "../Date";
+import ClaimSubForm from '../Claim';
 
 export default class GermanForm extends React.Component {
 
@@ -131,6 +132,7 @@ export default class GermanForm extends React.Component {
             <TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
             <ServicesSubForm handleChange={this.handleChange} handleUpload={this.handleUpload}/>
             <BrandCategroy handleCheck={this.handleCheck}/>
+            <ClaimSubForm handleChange={this.handleChange} />
             <Colors handleChange={this.handleChange}/>
             <Notes handleChange={this.handleChange}/>
             <Appendings handleCheck={this.handleCheck} handleUpload={this.handleUpload}/>
