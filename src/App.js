@@ -18,7 +18,7 @@ import "./App.css";
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {otherBrand: null, brand: null}
+    this.state = { files: [] }
     this.handleChange = this.handleChange.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -75,7 +75,9 @@ export default class App extends React.Component {
   /* ---------------- HandleUpload for files --------------------- */
 
   handleUpload(event) {
-    let files = (this.state.files !== undefined) ? this.state.files : [];
+    // let files = (this.state.files !== undefined) ? this.state.files : [];
+    // files.push({ [event.target.name]: event.target.files[0] })
+    let files = this.state.files;
     files.push({ [event.target.name]: event.target.files[0] })
     this.setState({ files })
   }
@@ -133,7 +135,7 @@ export default class App extends React.Component {
             <Colors handleChange={this.handleChange}/>
             <Notes handleChange={this.handleChange}/>
             <Appendings handleCheck={this.handleCheck} handleChange={this.handleChange} handleUpload={this.handleUpload}/>
-            {/* <Date handleChange={this.handleChange}/> */}
+            <Date handleUpload={this.handleUpload} handleChange={this.handleChange}/>
 
             <hr />
 
