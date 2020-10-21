@@ -14,7 +14,7 @@ import Appendings from "../Appendings";
 import Date from "../Date";
 import ClaimSubForm from '../Claim';
 
-export default class GermanForm extends React.Component {
+export default class ItalienForm extends React.Component {
 
   constructor(props) {
     super(props);
@@ -28,7 +28,7 @@ export default class GermanForm extends React.Component {
 
   /* ------------ Create PDF (then Downlad) ------------------ */
 
-  createAndDownloadPDF() {
+  createAndDownloadPDF() {  
     
     let formData = new FormData();
     
@@ -61,7 +61,7 @@ export default class GermanForm extends React.Component {
     //     responseType: "blob",
     //   })
     // )
-    /* ------------ Downloading the PDF file we get back ------------------ */
+    /* -------------- Downloading the PDF file we get back ------------------- */
     // .then((response) => {
     //   const url = window.URL.createObjectURL(new Blob([response.data]));
     //   const link = document.createElement("a");
@@ -112,7 +112,7 @@ export default class GermanForm extends React.Component {
     return (
       <div className="App">
         <div className="page-container">
-          <h1 className="page-header">Eintragung einer schweizerischen Marke</h1>
+          <h1 className="page-header">Registrazione di un marchio svizzero</h1>
         </div>
 
         <div className="form-container">
@@ -131,7 +131,7 @@ export default class GermanForm extends React.Component {
              otherBrand={this.state.otherBrand}/>
             <TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
             <ServicesSubForm handleChange={this.handleChange} handleUpload={this.handleUpload}/>
-            <BrandCategroy handleCheck={this.handleCheck}/>
+            <BrandCategroy handleCheck={this.handleCheck} />
             <ClaimSubForm handleChange={this.handleChange} />
             <Colors handleChange={this.handleChange}/>
             <Notes handleChange={this.handleChange}/>
@@ -143,7 +143,7 @@ export default class GermanForm extends React.Component {
             <input
               type="submit"
               className="submit-button"
-              value="PDF generieren"
+              value="Generare PDF              "
             />
           </form>
         </div>
