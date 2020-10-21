@@ -2,16 +2,16 @@ import React from "react";
 import axios from "axios";
 
 import ApplicantSubForm from "./components/Applicant";
-// import AgentSubForm from "./components/Agent";
-// import ContactSubForm from "./components/Contact";
-// import BrandSubForm from "./components/Brand";
-// import TaxesSubForm from "./Components/Taxes";
-// import ServicesSubForm from "./components/Services";
-// import BrandCategroy from "./components/BrandCategory";
-// import Colors from "./components/Colors";
-// import Notes from "./components/Notes";
-// import Appendings from "./components/Appendings";
-// import Date from "./components/Date";
+import AgentSubForm from "./components/Agent";
+import ContactSubForm from "./components/Contact";
+import BrandSubForm from "./components/Brand";
+import TaxesSubForm from "./components/Taxes";
+import ServicesSubForm from "./components/Services";
+import BrandCategroy from "./components/BrandCategory";
+import Colors from "./components/Colors";
+import Notes from "./components/Notes";
+import Appendings from "./components/Appendings";
+import Date from "./components/Date";
 
 import "./App.css";
 
@@ -118,8 +118,8 @@ export default class App extends React.Component {
         <div className="form-container">
           <form onSubmit={this.handleSubmit}>
             <ApplicantSubForm handleChange={this.handleChange} />
-            {/* <AgentSubForm handleChange={this.handleChange} /> */}
-            {/* <ContactSubForm
+            <AgentSubForm handleChange={this.handleChange} />
+            <ContactSubForm
               handleChange={this.handleChange}
               handleCheck={this.handleCheck}
               isEmailProvided = {this.state.isEmailProvided} 
@@ -134,8 +134,8 @@ export default class App extends React.Component {
             <BrandCategroy handleCheck={this.handleCheck}/>
             <Colors handleChange={this.handleChange}/>
             <Notes handleChange={this.handleChange}/>
-            <Appendings handleCheck={this.handleCheck} handleChange={this.handleChange} handleUpload={this.handleUpload}/>
-            <Date handleUpload={this.handleUpload} handleChange={this.handleChange}/> */}
+            <Appendings handleCheck={this.handleCheck} handleUpload={this.handleUpload}/>
+            <Date handleChange={this.handleChange} handleUpload={this.handleUpload}/>
 
             <hr />
 
