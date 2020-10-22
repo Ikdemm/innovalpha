@@ -171,3 +171,33 @@ textarea {
 .contact-email-input {
   width: 900px !important;
 }
+
+.lang-top-bar {
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-link {
+  font-weight: 600;
+  font-size: 1em;
+  color: gray;
+  cursor: pointer;
+}
+
+.lang-link:hover {
+  color: black;
+}
+
+.lang-link:active {
+  color: black;
+}
+
+.lang-link:visited {
+  color: black;
+}
+
+.lang-link:after {
+  color: black;
+}

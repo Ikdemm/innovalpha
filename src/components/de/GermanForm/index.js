@@ -111,6 +111,7 @@ export default class GermanForm extends React.Component {
   render() {
     return (
       <div className="App">
+        
         <div className="page-container">
           <h1 className="page-header">Eintragung einer schweizerischen Marke</h1>
         </div>

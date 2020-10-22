@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-
-import FrenchForm from './components/fr/FrenchForm';
-import GermanForm from './components/de/GermanForm';
-import ItalienForm from './components/it/ItalienForm';
-
 import "./App.css";
+import Navigation from "./components/Navigation";
 
 export default class App extends Component {
   
@@ -14,14 +10,16 @@ export default class App extends Component {
   }
 
   render() {
-    switch (this.state.lang) {
-      case 'fr': 
-        return <FrenchForm></FrenchForm>
-      case 'de':
-        return <GermanForm></GermanForm>
-      case 'it':
-        return <ItalienForm></ItalienForm>
-    }
+    return (
+      <div>
+        <div className="lang-top-bar">
+          <a onClick={() => {this.setState({lang: 'fr'})}} className="lang-link">FR</a> -
+          <a onClick={() => {this.setState({lang: 'de'})}} className="lang-link">DE</a> -
+          <a onClick={() => {this.setState({lang: 'it'})}} className="lang-link">IT</a> 
+        </div>
+        <Navigation lang={this.state.lang} />
+      </div>
+    )
   }
 
 }
