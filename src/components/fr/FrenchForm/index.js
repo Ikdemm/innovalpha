@@ -34,7 +34,7 @@ export default class FrenchForm extends React.Component {
     
     // Appending files to formData
 
-    for (let element of this.state.files){
+    for (let element of this.state.files) {
       let name = Object.keys(element)[0] 
       formData.append(name, element[name]);
     }
@@ -46,37 +46,34 @@ export default class FrenchForm extends React.Component {
     // Sending the request
 
     axios({
-      method: 'post',
+      method: 'POST',
       url: 'http://www.localhost:5000/proposal',
       data: formData,
       dataType: "multipart/form-data",
       processData: false,
       contentType: false
-    }).then(res => console.log(res))
+    })
     /* ------------ Send the request to get the created PDF ------------------ */
-    // .then(() =>
-    //   axios({
-    //     url: "http://www.localhost:5000/proposal",
-    //     method: "GET",
-    //     responseType: "blob",
-    //   })
-    // )
+    .then(() => axios({
+        url: "http://www.localhost:5000/proposal",
+        method: "GET",
+        responseType: "blob",
+      })
+    )
     /* -------------- Downloading the PDF file we get back ------------------- */
-    // .then((response) => {
-    //   const url = window.URL.createObjectURL(new Blob([response.data]));
-    //   const link = document.createElement("a");
-    //   link.href = url;
-    //   link.setAttribute("download", "file.pdf");
-    //   document.body.appendChild(link);
-    //   link.click();
-    // });
+    .then((response) => {
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "file.pdf");
+      document.body.appendChild(link);
+      link.click();
+    });
   }
 
   /* ---------------- HandleUpload for files --------------------- */
 
   handleUpload(event) {
-    // let files = (this.state.files !== undefined) ? this.state.files : [];
-    // files.push({ [event.target.name]: event.target.files[0] })
     let files = this.state.files;
     files.push({ [event.target.name]: event.target.files[0] })
     this.setState({ files })

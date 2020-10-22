@@ -24,7 +24,6 @@ const ContactSubForm = ({ handleChange, handleCheck, isEmailProvided }) => (
             id="contactFirstName"
             name="contactFirstName"
             onChange={handleChange}
-            required
           />
         </div>
 
@@ -37,7 +36,6 @@ const ContactSubForm = ({ handleChange, handleCheck, isEmailProvided }) => (
             id="contactLastName"
             name="contactLastName"
             onChange={handleChange}
-            required
           />
         </div>
 
@@ -50,7 +48,6 @@ const ContactSubForm = ({ handleChange, handleCheck, isEmailProvided }) => (
             id="contactPhone"
             name="contactPhone"
             onChange={handleChange}
-            required
           />
         </div>
 
@@ -64,7 +61,6 @@ const ContactSubForm = ({ handleChange, handleCheck, isEmailProvided }) => (
             name="appNumber"
             placeholder="XXXX XXXX XXXX"
             onChange={handleChange}
-            required
           />
         </div><br/>
 

@@ -4,6 +4,7 @@ const path = require('path');
 const cors = require('cors');
 const pdfTemplate = require('./documents');
 const mv = require('mv');
+const fs = require('fs');
 
 const wkhtmltopdf = require('wkhtmltopdf');
 wkhtmltopdf.command = "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe";
@@ -46,10 +47,10 @@ const port = process.env.PORT || 5000;
 
 // ----- Using Cors middleware to enable CORS with various options ------ // 
 
-
 app.use(cors())
 
-// Using body-parser middelware for parsing req.body
+// --------- Using body-parser middelware for parsing req.body ---------- // 
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -58,42 +59,54 @@ app.use(bodyParser.json());
 app.use('/uploads', express.static("uploads"))
 
 
+// ---------------------- Handling Requests ---------------------------- // 
+
 // POST - PDF Generation and fetching Data
+
 app.post('/proposal', upload.any('files', 6), (req, res) => {
 
-    console.log("Creating File ..")
+    console.log("Deleting existing proposal ..")
+    
+    fs.unlink(`${__dirname}/out/proposal.pdf`, () => {
+      
+      console.log("Creating File ..")
 
-    console.log(req.body);
+      const data = JSON.parse(req.body.data);
+    
+      const brand = req.files[0];
 
-    console.log(req.files)
-
-    const data = JSON.parse(req.body.data);
-  
-    const brand = req.files[0];
-
-    // mv() method places the file inside public directory
-    // mv(path.join(__dirname, `/uploads/${brand.originalname}`), path.join(__dirname, '..', 'public/brand.jpg'), (err) => {
-    //   if (err) {
-    //       console.log(err)
-    //       return res.status(500).send({ msg: "Error occured" });
-    //   }
-    //   console.log("creating the file ...")
-    //   console.log(data.applicantFirstName)
+      // mv() method places the file inside public directory
+      // mv(path.join(__dirname, `/uploads/${brand.originalname}`), path.join(__dirname, '..', 'public/brand.jpg'), (err) => {
+      //   if (err) {
+      //       console.log(err)
+      //       return res.status(500).send({ msg: "Error occured" });
+      //   }
+      console.log("creating the file ...")
       // wkhtmltopdf(pdfTemplate(data), {
       //   output: `${__dirname}/out/proposal.pdf`,
       //   pageSize: 'letter'
       // });
+    
+      wkhtmltopdf(pdfTemplate(data), {
+        output: `${__dirname}/out/proposal.pdf`,
+        pageSize: 'letter'
+      })
 
-  // });
+      res.status(200).send({ msg: "File Created" })
+      
+    })
 
-});
+    
+  });
 
-app.use(express.static(path.join(__dirname, '..', 'build')));
+// });
+
+// app.use(express.static(path.join(__dirname, '..', 'build')));
 
 // GET - Send generated PDF to the client
 app.get('/proposal', (req, res) => {
     console.log("Sending back file ...")
-    res.download(`${__dirname}/out/proposal.pdf`)
+    setTimeout( () => res.download(`${__dirname}/out/proposal.pdf`), 2000)
 })
 
 app.listen(port, () => console.log(`Listening on port ${port} ...`));
