@@ -54,22 +54,22 @@ export default class GermanForm extends React.Component {
       contentType: false
     }).then(res => console.log(res))
     /* ------------ Send the request to get the created PDF ------------------ */
-    // .then(() =>
-    //   axios({
-    //     url: "http://www.localhost:5000/proposal",
-    //     method: "GET",
-    //     responseType: "blob",
-    //   })
-    // )
+    .then(() =>
+      axios({
+        url: "http://www.localhost:5000/proposal",
+        method: "GET",
+        responseType: "blob",
+      })
+    )
     /* ------------ Downloading the PDF file we get back ------------------ */
-    // .then((response) => {
-    //   const url = window.URL.createObjectURL(new Blob([response.data]));
-    //   const link = document.createElement("a");
-    //   link.href = url;
-    //   link.setAttribute("download", "file.pdf");
-    //   document.body.appendChild(link);
-    //   link.click();
-    // });
+    .then((response) => {
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "file.pdf");
+      document.body.appendChild(link);
+      link.click();
+    });
   }
 
   /* ---------------- HandleUpload for files --------------------- */
