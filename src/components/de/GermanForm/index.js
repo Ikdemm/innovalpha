@@ -18,7 +18,7 @@ export default class GermanForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { files: [] }
+    this.state = { files: [], lang: 'de' }
     this.handleChange = this.handleChange.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

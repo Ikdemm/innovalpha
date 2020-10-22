@@ -2,9 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
-const pdfTemplate = require('./documents');
 const mv = require('mv');
 const fs = require('fs');
+
+// PDF Generators
+const pdfTemplate = require('./documents');
 
 const wkhtmltopdf = require('wkhtmltopdf');
 wkhtmltopdf.command = "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe";
@@ -73,7 +75,7 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
 
       const data = JSON.parse(req.body.data);
     
-      const brand = req.files[0];
+      // const brand = req.files[0];
 
       // mv() method places the file inside public directory
       // mv(path.join(__dirname, `/uploads/${brand.originalname}`), path.join(__dirname, '..', 'public/brand.jpg'), (err) => {
@@ -81,11 +83,8 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
       //       console.log(err)
       //       return res.status(500).send({ msg: "Error occured" });
       //   }
+
       console.log("creating the file ...")
-      // wkhtmltopdf(pdfTemplate(data), {
-      //   output: `${__dirname}/out/proposal.pdf`,
-      //   pageSize: 'letter'
-      // });
     
       wkhtmltopdf(pdfTemplate(data), {
         output: `${__dirname}/out/proposal.pdf`,
@@ -95,8 +94,6 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
       res.status(200).send({ msg: "File Created" })
       
     })
-
-    
   });
 
 // });
