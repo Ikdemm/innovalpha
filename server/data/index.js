@@ -4,17 +4,17 @@ const checkEmail = (data) => {
 
     /*---------- French ----------*/
     if (data.lang == 'fr') {
-        return ((data.email) ? data.email : "Aucun email fourni")
+        return ((data.contactEmail) ? data.contactEmail : "Aucun email fourni")
     }
     
     /*---------- Italien ----------*/
     if (data.lang == 'it') {
-        return ((data.email) ? data.email : "nessuna email fornita")
+        return ((data.contactEmail) ? data.contactEmail : "nessuna email fornita")
     }
     
     /*---------- German ----------*/
     if (data.lang == 'de') {
-        return ((data.email) ? data.email : "Keine E-Mail bereitgestellt")
+        return ((data.contactEmail) ? data.contactEmail : "Keine E-Mail bereitgestellt")
     }
 }
 
@@ -77,4 +77,4 @@ const getBrandType = (data) => {
     }
 }
 
-module.exports = {getBrandCategory, getBrandType};
+module.exports = {getBrandCategory, getBrandType, checkEmail};

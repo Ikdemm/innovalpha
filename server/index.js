@@ -5,6 +5,9 @@ const cors = require('cors');
 const mv = require('mv');
 const fs = require('fs');
 
+// Data Manipulation
+const dataManipulators = require('./data')
+
 // PDF Generators
 const pdfTemplate = require('./documents/french-template');
 
@@ -76,6 +79,8 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
       const data = JSON.parse(req.body.data);
 
       console.log(data)
+
+      data.contactEmail = dataManipulators.checkEmail(data)
     
       // const brand = req.files[0];
 
