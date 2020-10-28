@@ -6,7 +6,7 @@ const mv = require('mv');
 const fs = require('fs');
 
 // PDF Generators
-const pdfTemplate = require('./documents');
+const pdfTemplate = require('./documents/french-template');
 
 const wkhtmltopdf = require('wkhtmltopdf');
 wkhtmltopdf.command = "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe";
