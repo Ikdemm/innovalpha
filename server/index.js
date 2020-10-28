@@ -74,6 +74,8 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
       console.log("Creating File ..")
 
       const data = JSON.parse(req.body.data);
+
+      console.log(data)
     
       // const brand = req.files[0];
 

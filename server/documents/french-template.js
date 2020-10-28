@@ -5,8 +5,7 @@ module.exports = (data) => {
     <html>
         <head>
             <meta charset="utf-8">
-            <title>Proposal for ${data.applicantFirstName}</title>
-            
+            <title>Proposal for ${data.applicantFirstName}</title>        
         </head>
 
         <body>
@@ -92,6 +91,53 @@ module.exports = (data) => {
                             <b>&bull; Dépôt électronique d’une marque par Internet: https://e-trademark.ige.ch</b>
                         </p>
                         
+                        <div class="form-container">
+                            <h3 class="section-title">1  Déposant/e</h3>
+                            <p class="paragraph-text">Prénom, nom ou raison sociale, adresse, code postal, localité</p>
+                            <p class="data-text">
+                            ${data.applicantFirstName},
+                            ${data.applicantLastName}, 
+                            ${data.applicantSocialReason}, 
+                            ${data.applicantAddress}, 
+                            ${data.applicantPostCode},
+                            ${data.applicantLocation}
+                            </p>
+                    
+                    
+                            <h3 class="section-title">2  Mandataire</h3>
+                            <p class="paragraph-text">Prénom, nom ou raison sociale, adresse, code postal, localité</p>
+                            <p class="data-text">
+                            ${data.agentFirstName},
+                            ${data.agentLastName}, 
+                            ${data.agentSocialReason}, 
+                            ${data.agentAddress}, 
+                            ${data.agentPostCode},
+                            ${data.agentLocation}
+                            </p>
+                    
+                            <h3 class="section-title">3a  Personne à contacter</h3>
+                            <p class="paragraph-text">Prénom, nom, téléphone</p>
+                            <p class="data-text">
+                            ${data.contactFirstName},
+                            ${data.contactLastName}, 
+                            ${data.contactPhone}
+                            </p>
+        
+                            <h3 class="section-title">3b  Numéro de référence, dossier</h3>
+                            <p class="data-text">${data.appNumber}</p>
+        
+                            <h3 class="section-title">3c  Communication électronique</h3>
+                            <br>
+                            <label for="communication" class="paragraph-text">
+                                Dans la présente procédure, je souhaite recevoir les écrits de l’IPI par voie électronique
+                                à l’adresse suivante*:
+                            </label>
+                            <p class="data-text">${data.contactEmail}</p>
+                            <p class="paragraph-text">* L’adresse indiquée doit être enregistrée sur une plateforme de messagerie reconnue pour transmettre par voie électronique des documents dans le cadre d’une procédure administrative
+                                fédérale. Pour plus d’informations: www.ipi.ch/communication-electronique.
+                            </p>
+                            
+                        </div>
                     </div>
                 </div>
 
