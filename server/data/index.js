@@ -53,7 +53,7 @@ const getBrandType = (data) => {
 
     /*---------- French ----------*/
     if (data.lang == 'fr') {
-        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("  Marque tridimensionnelle")}
+        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("Marque tridimensionnelle")}
         if (data.acousticBrand) { resultBrand = resultBrand.concat("  Marque acoustique")}
         if (data.colorBrand) { resultBrand = resultBrand.concat("  Marque avec revendication de couleur")}
         if (data.abstractBrand) { resultBrand = resultBrand.concat(" Marque de couleur (abstraite)")}
@@ -62,7 +62,7 @@ const getBrandType = (data) => {
     
     /*---------- Italien ----------*/
     if (data.lang == 'it') {
-        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("  Marchio tridimensionale")}
+        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("Marchio tridimensionale")}
         if (data.acousticBrand) { resultBrand = resultBrand.concat("  Marchio acustico")}
         if (data.colorBrand) { resultBrand = resultBrand.concat("  Marchio con rivendicazione di colore")}
         if (data.abstractBrand) { resultBrand = resultBrand.concat("  Marchio di colore (astratto)")}
@@ -71,7 +71,7 @@ const getBrandType = (data) => {
     
     /*---------- German ----------*/
     if (data.lang == 'de') {
-        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("  Dreidimensionale Marke")}
+        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("Dreidimensionale Marke")}
         if (data.acousticBrand) { resultBrand = resultBrand.concat("  Akustische Marke")}
         if (data.colorBrand) { resultBrand = resultBrand.concat("  Marke mit Farbanspruch")}
         if (data.abstractBrand) { resultBrand = resultBrand.concat("  (Abstrakte) Farbmarke")}
@@ -81,4 +81,34 @@ const getBrandType = (data) => {
     return resultBrand.trim();
 }
 
-module.exports = {getBrandCategory, getBrandType, checkEmail};
+/*--------- Getting the Brand Category -----------*/
+
+const getBrandCategory = (data) => {
+
+    let resultBrand = ''
+
+    /*---------- French ----------*/
+    if (data.lang == 'fr') {
+        if (data.individualBrand) { resultBrand = resultBrand.concat("Marque individuelle")}
+        if (data.waranthyBrand) { resultBrand = resultBrand.concat("  Marque de garantie")}
+        if (data.collectiveBrand) { resultBrand = resultBrand.concat("  Marque collective")}
+    }
+    
+    /*---------- Italien ----------*/
+    if (data.lang == 'it') {
+        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("  Marchio individuale")}
+        if (data.acousticBrand) { resultBrand = resultBrand.concat("  Marchio di garanzia")}
+        if (data.colorBrand) { resultBrand = resultBrand.concat("  Marchio collettivo")}
+    }
+    
+    /*---------- German ----------*/
+    if (data.lang == 'de') {
+        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("Individualmarke")}
+        if (data.acousticBrand) { resultBrand = resultBrand.concat("  Garantiemarke")}
+        if (data.colorBrand) { resultBrand = resultBrand.concat("  Kollektivmarke")}
+    }
+
+    return resultBrand.trim();
+}
+
+module.exports = {getBrandCategory, getBrandType, checkEmail, getBrandCategory};

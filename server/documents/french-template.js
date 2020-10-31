@@ -162,9 +162,13 @@ module.exports = (data) => {
                             <p class="data-text">${data.additionalSumTax} à débiter de notre compte courant n° ${data.additionalTaxDepositAccount}</p>
                         
                             <!------------ Prducts/services --------------->
-                            <h3 class="section-title">6  Taxes</h3>
+                            <h3 class="section-title">6  Produits</h3>
                             <p class="paragraph-text">${data.products}</p>
                         
+                            <!------------ Brand Category --------------->
+                            <h3 class="section-title">6  Catégorie de Marque</h3>
+                            <p class="paragraph-text">${data.products}</p>
+
                         </div>
                     </div>
                 </div>

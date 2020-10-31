@@ -4,7 +4,7 @@ const BrandSubForm = ({ handleCheck, handleChange, handleUpload, otherBrand }) =
     <div>
         <div className="formheader-container">
             <div className="section-formheader-container">
-                <h3 className="section-header">Marke</h3>
+                <h3 className="section-header">Marque</h3>
             </div>
             <div className="collapse-button-container">
                 <a>
