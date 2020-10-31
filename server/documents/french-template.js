@@ -150,7 +150,6 @@ module.exports = (data) => {
                             </p>
                             <p class="data-text">${data.brandType}</p>
 
-
                             <!------------ Taxes --------------->
                             <h3 class="section-title">5  Taxes</h3>
 
@@ -161,6 +160,11 @@ module.exports = (data) => {
                             <p class="paragraph-text">Surtaxes pour classe suplémentaire</p>
                             <p class="data-text">${data.additionalSum} à nous facturer</p>
                             <p class="data-text">${data.additionalSumTax} à débiter de notre compte courant n° ${data.additionalTaxDepositAccount}</p>
+                        
+                            <!------------ Prducts/services --------------->
+                            <h3 class="section-title">6  Taxes</h3>
+                            <p class="paragraph-text">${data.products}</p>
+                        
                         </div>
                     </div>
                 </div>
