@@ -166,8 +166,8 @@ module.exports = (data) => {
                             <p class="paragraph-text">${data.products}</p>
                         
                             <!------------ Brand Category --------------->
-                            <h3 class="section-title">6  Catégorie de Marque</h3>
-                            <p class="paragraph-text">${data.products}</p>
+                            <h3 class="section-title">7  Catégorie de Marque</h3>
+                            <p class="paragraph-text">${data.brandCategory}</p>
 
                         </div>
                     </div>
