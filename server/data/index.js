@@ -49,32 +49,36 @@ const getBrandCategory = (data) => {
 
 const getBrandType = (data) => {
 
+    let resultBrand = ''
+
     /*---------- French ----------*/
     if (data.lang == 'fr') {
-        if (data.tridimensionalBrand) { return "Marque tridimensionnelle"}
-        if (data.acousticBrand) { return "Marque acoustique"}
-        if (data.colorBrand) { return "Marque avec revendication de couleur"}
-        if (data.abstractBrand) { return "Marque de couleur (abstraite)"}
-        if (data.otherBrand) { return data.otherBrandName}
+        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("  Marque tridimensionnelle")}
+        if (data.acousticBrand) { resultBrand = resultBrand.concat("  Marque acoustique")}
+        if (data.colorBrand) { resultBrand = resultBrand.concat("  Marque avec revendication de couleur")}
+        if (data.abstractBrand) { resultBrand = resultBrand.concat(" Marque de couleur (abstraite)")}
+        if (data.otherBrand) { resultBrand = resultBrand.concat("  " + data.otherBrandName)}
     }
     
     /*---------- Italien ----------*/
     if (data.lang == 'it') {
-        if (data.tridimensionalBrand) { return "Marchio tridimensionale"}
-        if (data.acousticBrand) { return "Marchio acustico"}
-        if (data.colorBrand) { return "Marchio con rivendicazione di colore"}
-        if (data.abstractBrand) { return "Marchio di colore (astratto"}
-        if (data.otherBrand) { return data.otherBrandName}
+        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("  Marchio tridimensionale")}
+        if (data.acousticBrand) { resultBrand = resultBrand.concat("  Marchio acustico")}
+        if (data.colorBrand) { resultBrand = resultBrand.concat("  Marchio con rivendicazione di colore")}
+        if (data.abstractBrand) { resultBrand = resultBrand.concat("  Marchio di colore (astratto)")}
+        if (data.otherBrand) { resultBrand = resultBrand.concat("  " + data.otherBrandName)}
     }
     
     /*---------- German ----------*/
     if (data.lang == 'de') {
-        if (data.tridimensionalBrand) { return "Dreidimensionale Marke"}
-        if (data.acousticBrand) { return "Akustische Marke"}
-        if (data.colorBrand) { return "Marke mit Farbanspruch"}
-        if (data.abstractBrand) { return "(Abstrakte) Farbmarke"}
-        if (data.otherBrand) { return data.otherBrandName}
+        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("  Dreidimensionale Marke")}
+        if (data.acousticBrand) { resultBrand = resultBrand.concat("  Akustische Marke")}
+        if (data.colorBrand) { resultBrand = resultBrand.concat("  Marke mit Farbanspruch")}
+        if (data.abstractBrand) { resultBrand = resultBrand.concat("  (Abstrakte) Farbmarke")}
+        if (data.otherBrand) { resultBrand = resultBrand.concat("  " + data.otherBrandName)}
     }
+
+    return resultBrand.trim();
 }
 
 module.exports = {getBrandCategory, getBrandType, checkEmail};

@@ -17,7 +17,6 @@ module.exports = (data) => {
                 }
 
                 body {
-                    width: 595px;
                     align-items: center;
                     resize: both;
                     overflow: auto;
@@ -25,15 +24,6 @@ module.exports = (data) => {
 
                 .title {
                     font-weight: 900;
-                }
-                
-                .page-container {
-                    width: 21cm;
-                }
-                
-                .header-banner {
-                    text-align: center;
-                    width: 21cm;
                 }
                 
                 .paragraph-text {
@@ -104,6 +94,7 @@ module.exports = (data) => {
                             </p>
                     
                     
+                            <!------------ Mandataire --------------->
                             <h3 class="section-title">2  Mandataire</h3>
                             <p class="paragraph-text">Prénom, nom ou raison sociale, adresse, code postal, localité</p>
                             <p class="data-text">
@@ -115,6 +106,7 @@ module.exports = (data) => {
                             ${data.agentLocation}
                             </p>
                     
+                            <!------------ Contact --------------->
                             <h3 class="section-title">3a  Personne à contacter</h3>
                             <p class="paragraph-text">Prénom, nom, téléphone</p>
                             <p class="data-text">
@@ -136,7 +128,39 @@ module.exports = (data) => {
                             <p class="paragraph-text">* L’adresse indiquée doit être enregistrée sur une plateforme de messagerie reconnue pour transmettre par voie électronique des documents dans le cadre d’une procédure administrative
                                 fédérale. Pour plus d’informations: www.ipi.ch/communication-electronique.
                             </p>
+
+
+                            <!------------ Marque --------------->
+                            <h3 class="section-title">4  Marque</h3>
+                            <p class="paragraph-text">
+                                S’il s’agit d’une marque présentant
+                                une police de caractère particulière
+                                ou faisant intervenir un graphisme
+                                particulier, veuillez déposer une reproduction en noir et blanc (à insérer ou coller ci-contre). Les zones
+                                grises doivent apparaître distinctement. Pour les marques en couleur(s)
+                                (voir ch. 9 couleurs revendiquées),
+                                veuillez déposer une reproduction en
+                                couleur(s). 
+                            </p>
+                            <p class="paragraph-text">
+                                <b>
+                                    Dimensions maximales de la
+                                    reproduction: 80 × 80 mm.   
+                                </b>
+                            </p>
+                            <p class="data-text">${data.brandType}</p>
+
+
+                            <!------------ Taxes --------------->
+                            <h3 class="section-title">5  Taxes</h3>
+
+                            <p class="paragraph-text">Taxes de dépôt</p>
+                            <p class="data-text">${data.depositTax} à nous facturer</p>
+                            <p class="data-text">${data.depositSum} à débiter de notre compte courant n° ${data.taxDepositAccount}</p>
                             
+                            <p class="paragraph-text">Surtaxes pour classe suplémentaire</p>
+                            <p class="data-text">${data.additionalSum} à nous facturer</p>
+                            <p class="data-text">${data.additionalSumTax} à débiter de notre compte courant n° ${data.additionalTaxDepositAccount}</p>
                         </div>
                     </div>
                 </div>

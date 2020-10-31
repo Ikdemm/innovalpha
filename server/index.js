@@ -81,6 +81,8 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
       console.log(data)
 
       data.contactEmail = dataManipulators.checkEmail(data)
+      data.brandType = dataManipulators.getBrandType(data)
+      console.log(data)
     
       // const brand = req.files[0];
 

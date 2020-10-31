@@ -45,11 +45,11 @@ const TaxesSubForm = ({ handleCheck, handleChange }) => (
                 <input type="number" className="sum-input" name="additionalSum" id="additionalSum" onChange={handleChange}/> à nous facturer.
             </div>
             <div className="">
-                <input type="checkbox" className="checkbox-input" id="additionalTaxCheck" name="additionalTaxCheck"
+                <input type="checkbox" className="checkbox-input" id="additionalTaxSumCheck" name="additionalTaxSumCheck"
                     onChange={handleCheck}
                 />
                 <label>CHF</label>
-                <input type="number" className="sum-input" name="depositTax" id="depositTax" onChange={handleChange}/>
+                <input type="number" className="sum-input" name="additionalSumTax" id="additionalSumTax" onChange={handleChange}/>
                 à débiter de notre compte courant nº
                 <input type="number" className="sum-input" name="additionalTaxDepositAccount" id="additionalTaxDepositAccount" onChange={handleChange}/>
                 auprès de l’IPI.
