@@ -84,4 +84,35 @@ const getBrandCategory = (data) => {
     return resultBrand.trim();
 }
 
+/*--------- Getting the Brand Category -----------*/
+
+const getAppendings = (data) => {
+
+    let resultBrand = ''
+
+    /*---------- French ----------*/
+    if (data.lang == 'fr') {
+        if (data.appending1Check) { }
+        if (data.appending2Check) { resultBrand = resultBrand.concat("   Marque de garantie")}
+        if (data.appending3Check) { resultBrand = resultBrand.concat("   Marque collective")}
+        if (data.appending4Check) { resultBrand = resultBrand.concat("   Marque collective")}
+    }
+    
+    /*---------- Italien ----------*/
+    if (data.lang == 'it') {
+        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("   Marchio individuale")}
+        if (data.acousticBrand) { resultBrand = resultBrand.concat("   Marchio di garanzia")}
+        if (data.colorBrand) { resultBrand = resultBrand.concat("   Marchio collettivo")}
+    }
+    
+    /*---------- German ----------*/
+    if (data.lang == 'de') {
+        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("Individualmarke")}
+        if (data.acousticBrand) { resultBrand = resultBrand.concat("   Garantiemarke")}
+        if (data.colorBrand) { resultBrand = resultBrand.concat("   Kollektivmarke")}
+    }
+
+    return resultBrand.trim();
+}
+
 module.exports = {getBrandCategory, getBrandType, checkEmail, getBrandCategory};

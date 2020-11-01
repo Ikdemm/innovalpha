@@ -170,10 +170,25 @@ module.exports = (data) => {
                             <p class="paragraph-text">${data.brandCategory}</p>
 
                             <!------------ Claim --------------->
-                            <h3 class="section-title">8  Catégorie de Marque</h3>
+                            <h3 class="section-title">8  Revendication de priorité</h3>
                             <p class="paragraph-text">Selon la convention de l’Union de Paris</p>
                             <p class="paragraph-text">Pays: <span class="data-text">${data.country}</span></p>
                             <p class="paragraph-text">Date de premier dépôt: <span class="data-text">${data.depositDate}</span></p>
+
+                            <!------------ Colors --------------->
+                            <h3 class="section-title">9  Couleur(s) revendiquée(s)</h3>
+                            <p class="paragraph-text">${data.colors}</p>
+
+                            <!------------ Notes --------------->
+                            <h3 class="section-title">10  Remarques</h3>
+                            <p class="paragraph-text">${data.notes}</p>
+
+                            <!------------ Appendings --------------->
+                            <h3 class="section-title">11  Annexes</h3>
+                            <p class="paragraph-text">${data.firstAppending}</p>
+                            <p class="paragraph-text">${data.secondAppending}</p>
+                            <p class="paragraph-text">${data.thirdAppending}</p>
+                            <p class="paragraph-text">${data.fourthAppending}</p>
 
                         </div>
                     </div>
