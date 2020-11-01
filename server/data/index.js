@@ -86,33 +86,20 @@ const getBrandCategory = (data) => {
 
 /*--------- Getting the Brand Category -----------*/
 
-const getAppendings = (data) => {
+const getFiles = (lang, data) => {
 
-    let resultBrand = ''
+    let anticipatedFiles = ["appendingFile1", "appendingFile2", "appendingFile3", "appendingFile4", "productsFile", "brandFile", "signatureFile"];
 
-    /*---------- French ----------*/
-    if (data.lang == 'fr') {
-        if (data.appending1Check) { }
-        if (data.appending2Check) { resultBrand = resultBrand.concat("   Marque de garantie")}
-        if (data.appending3Check) { resultBrand = resultBrand.concat("   Marque collective")}
-        if (data.appending4Check) { resultBrand = resultBrand.concat("   Marque collective")}
-    }
+    /*---------- All Languages ----------*/
     
-    /*---------- Italien ----------*/
-    if (data.lang == 'it') {
-        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("   Marchio individuale")}
-        if (data.acousticBrand) { resultBrand = resultBrand.concat("   Marchio di garanzia")}
-        if (data.colorBrand) { resultBrand = resultBrand.concat("   Marchio collettivo")}
-    }
-    
-    /*---------- German ----------*/
-    if (data.lang == 'de') {
-        if (data.tridimensionalBrand) { resultBrand = resultBrand.concat("Individualmarke")}
-        if (data.acousticBrand) { resultBrand = resultBrand.concat("   Garantiemarke")}
-        if (data.colorBrand) { resultBrand = resultBrand.concat("   Kollektivmarke")}
+    for (filename in anticipatedFiles) {
+        if (lang == 'fr') { data[filename] = data[filename] ? data[filename] : "Aucun fichier trouvé"; }
+        if (lang == 'de') { data[filename] = data[filename] ? data[filename] : "Nessun file trovato"; }
+        if (lang == 'it') { data[filename] = data[filename] ? data[filename] : "Keine Dateien gefunden"; }
     }
 
-    return resultBrand.trim();
+    return data;
+
 }
 
-module.exports = {getBrandCategory, getBrandType, checkEmail, getBrandCategory};
+module.exports = {getBrandCategory, getBrandType, checkEmail, getBrandCategory, getFiles};

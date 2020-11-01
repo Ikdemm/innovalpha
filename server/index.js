@@ -78,8 +78,14 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
 
       const data = JSON.parse(req.body.data);
 
-      console.log(data)
+      const files = req.files;
 
+      /*----------- Storing files in the data form --------------*/
+      files.map((file) => {
+        data[file.fieldName] = file ? file.path : "Auccun fichier trouvé";
+      })
+
+      data = dataManipulators.getFiles(data);
       data.contactEmail = dataManipulators.checkEmail(data)
       data.brandType = dataManipulators.getBrandType(data)
       data.brandCategory = dataManipulators.getBrandCategory(data)
