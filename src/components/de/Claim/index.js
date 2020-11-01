@@ -26,6 +26,7 @@ const ClaimSubForm = ({ handleChange }) => (
                     <input type="date" className="form-control" id="depositDate" name="depositDate" onChange={handleChange}/>
                 </div>
             </div>
+            <p className="form-paragraph">Wird eine Teilpriorität geltend gemacht, muss präzisiert werden, auf welche Waren und/oder Dienstleistungen sich die Priorität bezieht, oder es muss ein entsprechender Prioritätsbeleg vorgelegt werden.</p>
         </div>
     </div>
 )

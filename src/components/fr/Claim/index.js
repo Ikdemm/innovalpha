@@ -26,6 +26,8 @@ const ClaimSubForm = ({ handleChange }) => (
                     <input type="date" className="form-control" id="depositDate" name="depositDate" onChange={handleChange}/>
                 </div>
             </div>
+            <p className="form-paragraph">Si une priorité partielle est revendiquée, il faut préciser sur quels produits et/ou services elle porte
+            ou produire un document de priorité.</p>
         </div>
     </div>
 )

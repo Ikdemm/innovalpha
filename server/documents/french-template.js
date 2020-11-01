@@ -5,7 +5,7 @@ module.exports = (data) => {
     <html>
         <head>
             <meta charset="utf-8">
-            <title>Proposal for ${data.applicantFirstName}</title>        
+            <title>Proposal for ${data.applicantFirstName} ${data.applicantLastName}</title>        
         </head>
 
         <body>
@@ -168,6 +168,12 @@ module.exports = (data) => {
                             <!------------ Brand Category --------------->
                             <h3 class="section-title">7  Catégorie de Marque</h3>
                             <p class="paragraph-text">${data.brandCategory}</p>
+
+                            <!------------ Claim --------------->
+                            <h3 class="section-title">8  Catégorie de Marque</h3>
+                            <p class="paragraph-text">Selon la convention de l’Union de Paris</p>
+                            <p class="paragraph-text">Pays: <span class="data-text">${data.country}</span></p>
+                            <p class="paragraph-text">Date de premier dépôt: <span class="data-text">${data.depositDate}</span></p>
 
                         </div>
                     </div>

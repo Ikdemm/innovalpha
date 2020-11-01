@@ -26,6 +26,8 @@ const ClaimSubForm = ({ handleChange }) => (
                     <input type="date" className="form-control" id="depositDate" name="depositDate" onChange={handleChange}/>
                 </div>
             </div>
+            <p className="form-paragraph">Se è rivendicata una priorità parziale, occorre specificare a quali prodotti e/o servizi si riferisce
+            oppure presentare il relativo documento di priorità.</p>
         </div>
     </div>
 )
