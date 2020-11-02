@@ -185,10 +185,10 @@ module.exports = (data) => {
 
                             <!------------ Appendings --------------->
                             <h3 class="section-title">11  Annexes</h3>
-                            <p class="paragraph-text">Annexe 1: ${data.firstAppending}</p>
-                            <p class="paragraph-text">Annexe 2: ${data.secondAppending}</p>
-                            <p class="paragraph-text">Annexe 3: ${data.thirdAppending}</p>
-                            <p class="paragraph-text">Annexe 4: ${data.fourthAppending}</p>
+                            <p class="paragraph-text">Annexe 1: ${data.appendingFile1}</p>
+                            <p class="paragraph-text">Annexe 2: ${data.appendingFile2}</p>
+                            <p class="paragraph-text">Annexe 3: ${data.appendingFile3}</p>
+                            <p class="paragraph-text">Annexe 4: ${data.appendingFile4}</p>
 
                         </div>
                     </div>

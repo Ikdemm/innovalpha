@@ -6,7 +6,7 @@ const mv = require('mv');
 const fs = require('fs');
 
 // Data Manipulation
-const dataManipulators = require('./data')
+const dataManipulators = require('./controllers')
 
 // PDF Generators
 const pdfTemplate = require('./documents/french-template');
@@ -74,22 +74,26 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
     
     fs.unlink(`${__dirname}/out/proposal.pdf`, () => {
       
-      console.log("Creating File ..")
+      var data = JSON.parse(req.body.data);
 
-      const data = JSON.parse(req.body.data);
+      console.log("data we get from the frontend", data)
 
       const files = req.files;
 
       /*----------- Storing files in the data form --------------*/
-      files.map((file) => {
-        data[file.fieldName] = file ? file.path : "Auccun fichier trouvé";
-      })
 
-      data = dataManipulators.getFiles(data);
+      // files.map((file) => {
+      //   data[file.fieldName] = file.path;
+      // })
+
+      /*---------- Preparing Data for output ---------------*/
+
       data.contactEmail = dataManipulators.checkEmail(data)
       data.brandType = dataManipulators.getBrandType(data)
       data.brandCategory = dataManipulators.getBrandCategory(data)
-      console.log(data)
+      // data = dataManipulators.getFiles(data);
+      
+      console.log("the final version of the data", data)
     
       // const brand = req.files[0];
 
