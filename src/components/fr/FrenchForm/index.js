@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 
+import { useTranslation } from "react-i18next";
+
 import ApplicantSubForm from "../Applicant";
 import AgentSubForm from "../Agent";
 import ContactSubForm from "../Contact";
@@ -26,7 +28,7 @@ export default class FrenchForm extends React.Component {
     this.handleUpload = this.handleUpload.bind(this);
   }
 
-  /* ------------ Create PDF (then Downlad) ------------------ */
+  /* ------------ Create PDFs (then Downlad) ------------------ */
 
   createAndDownloadPDF() {
     
@@ -106,10 +108,11 @@ export default class FrenchForm extends React.Component {
   /* ------------------------ Render Method ------------------------ */
 
   render() {
+    const { t, i18n } = useTranslation();
     return (
       <div className="App">
         <div className="page-container">
-          <h1 className="page-header">Enregistrement d’une marque suisse</h1>
+          <h1 className="page-header">{t("page-header")}</h1>
         </div>
 
         <div className="form-container">
