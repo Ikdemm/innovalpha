@@ -1,9 +1,15 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-const ApplicantSubForm = ({handleChange}) => (
+function ApplicantSubForm ({handleChange}) {
+
+    const { t, i18n } = useTranslation();
+    
+    return(
+    
     <div>
         <div className="formheader-container">
-            <h3 className="section-header">Déposant</h3>
+            <h3 className="section-header">{t('section1-title')}</h3>
             {/* <a onClick={this.props.showSubForm}>
                 <h3 className="section-header collapse-button">+</h3>
             </a> */}
@@ -47,6 +53,9 @@ const ApplicantSubForm = ({handleChange}) => (
 
         </div>
     </div>
-)
+    )
+    
+    
+}
 
 export default ApplicantSubForm;
