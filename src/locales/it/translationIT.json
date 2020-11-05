@@ -1,4 +1,10 @@
 {
     "page-header": "REGISTRAZIONE DI UN MARCHIO SVIZZERO",
-    "section1-title": "DEPOSITANTE"
+    "section1-title": "DEPOSITANTE",
+    "firstName": "Nome",
+    "lastName": "Cognome",
+    "address": "Indirizzo",
+    "socialReason": "Rispettivamente ditta",
+    "postCode": "CAP",
+    "location": "Località"
 }

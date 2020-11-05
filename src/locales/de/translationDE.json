@@ -1,4 +1,11 @@
 {
     "page-header": "EINTRAGUNG EINER SCHWEIZERISCHEN MARKE",
-    "section1-title": "MARKENHINTERLEGER/IN"
+    "section1-title": "MARKENHINTERLEGER/IN",
+    
+    "firstName": "Vorname",
+    "lastName": "Name",
+    "address": "Adresse",
+    "socialReason": "Firma",
+    "postCode": "PLZ",
+    "location": "Ort"
 }

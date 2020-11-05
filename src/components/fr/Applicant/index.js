@@ -20,32 +20,32 @@ function ApplicantSubForm ({handleChange}) {
             <div className="form-row">
 
                 <div className="text-input">
-                    <label>Prénom</label>
+                    <label>{t('firstName')}</label>
                     <input type="text" className="form-control" id="applicantFirstName" name="applicantFirstName" onChange={handleChange}/>
                 </div>
 
                 <div className="text-input">
-                    <label>Nom</label>
+                    <label>{t('lastName')}</label>
                     <input type="text" className="form-control" id="applicantLastName" name="applicantLastName" onChange={handleChange}/>
                 </div>
 
                 <div className="text-input">
-                    <label>Raison sociale</label>
+                    <label>{t('socialReason')}</label>
                     <input type="text" className="form-control" id="applicantSocialReason" name="applicantSocialReason" onChange={handleChange}/>
                 </div>
 
                 <div className="text-input">
-                    <label>Adresse</label>
+                    <label>{t('address')}</label>
                     <input type="text" className="form-control" id="applicantAddress" name="applicantAddress" onChange={handleChange}/>
                 </div>
 
                 <div className="text-input">
-                    <label>Code Postal</label>
+                    <label>{t('postCode')}</label>
                     <input type="text" className="form-control" id="applicantPostCode" name="applicantPostCode" onChange={handleChange}/>
                 </div>
 
                 <div className="text-input">
-                    <label>Localité</label>
+                    <label>{t('location')}</label>
                     <input type="text" className="form-control" id="applicantLocation" name="applicantLocation" onChange={handleChange}/>
                 </div>
 
