@@ -1,6 +1,8 @@
 {
     "page-header": "Enregistrement d'une marque en Suisse",
     "section1-title": "DÉPOSANT",
+    "section2-title": "Mandataire",
+
     "firstName": "Prénom",
     "lastName": "Nom",
     "address": "Adresse",

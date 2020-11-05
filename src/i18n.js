@@ -22,7 +22,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'it',
+    lng: 'fr',
 
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
