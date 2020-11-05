@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-import { useTranslation } from "react-i18next";
+import { withTranslation } from "react-i18next";
 
 import ApplicantSubForm from "../Applicant";
 import AgentSubForm from "../Agent";
@@ -16,10 +16,11 @@ import Appendings from "../Appendings";
 import Date from "../Date";
 import ClaimSubForm from '../Claim';
 
-export default class FrenchForm extends React.Component {
+class FrenchForm extends React.Component {
 
   constructor(props) {
     super(props);
+    
     this.state = { files: [], lang: 'fr' }
     this.handleChange = this.handleChange.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
@@ -108,7 +109,9 @@ export default class FrenchForm extends React.Component {
   /* ------------------------ Render Method ------------------------ */
 
   render() {
-    const { t, i18n } = useTranslation();
+
+    const { t } = this.props;
+    
     return (
       <div className="App">
         <div className="page-container">
@@ -151,3 +154,7 @@ export default class FrenchForm extends React.Component {
     );
   }
 }
+
+const FormComponent =  withTranslation()(FrenchForm);
+
+export default FormComponent;
