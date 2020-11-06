@@ -34,13 +34,13 @@
     "Marque de couleur (abstraite)": "(Abstrakte) Farbmarke",
     "other": "Andere",
 
-    "Hinterlegungsgebühr": "Taxes de dépôt",
-    "Klassenzuschlag": "Taxes de dépôt",
+    "depositTax": "Hinterlegungsgebühr",
+    "additionalTax": "Klassenzuschlag",
     "toPay": " ist uns in Rechnung zu stellen.",
     "toDept": " ist unserem Kontokorrent Nr",
     "fromIpi": " beim IGE zu belasten.",
 
-    "products/services list": "Liste de produits et/ou services",
+    "products/services list": "Liste der Produkte/Dienstleistungen",
     "products paragraph": "Für die Angaben der Waren und/oder Dienstleistungen ist die Terminologie und Reihenfolge der internationalen Klassifikation zu beachten. Wir empfehlen Ihnen, die vom IGE zur Verfügung gestellte Liste «Internationale Waren- und Dienstleistungsklassifikation» sowie die Online-Datenbank unter https://wdl.ige.ch zu benutzen. Das Verzeichnis kann auch auf einem separaten Blatt eingereicht werden. Wenn lediglich die Klassennummer angegeben wird, geht das IGE davon aus, dass sämtliche Oberbegriffe dieser Klasse beansprucht werden (vgl. Verzeichnis der Oberbegriffe unter www.ige.ch/wdl). Dies gilt jedoch nicht für die Klasse 45, deren Oberbegriffe zu weit gefasst sind. Für diese Klasse wird das IGE eine Präzisierung verlangen. ",
     "products hint": "Fortsetzung auf separatem Blatt",
     "upload products sheet": "Das Blatt der Produkte befestigen",
