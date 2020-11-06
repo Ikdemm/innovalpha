@@ -1,35 +1,40 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-const ClaimSubForm = ({ handleChange }) => (
-    <div>
-        <div className="formheader-container">
-            <div className="section-formheader-container">
-                <h3 className="section-header">Revendication de priorité</h3>
-            </div>
-            <div className="collapse-button-container">
-                <a>
-                    <h3 className="section-header collapse-button">+</h3>
-                </a>
-            </div>            
-        </div>
+function ClaimSubForm ({ handleChange }) {
 
-        <div className="subform-container">
-            <p className="form-paragraph">Selon la convention de l’Union de Paris</p>
-            <div className="form-row">
-                <div className="text-input">
-                    <label>Pays</label>
-                    <input type="text" className="form-control" id="country" name="country" onChange={handleChange}/>
+    const { t, i18n } = useTranslation();
+
+    return (
+        <div>
+            <div className="formheader-container">
+                <div className="section-formheader-container">
+                    <h3 className="section-header">{t("section8-title")}</h3>
                 </div>
-
-                <div className="text-input">
-                    <label>Date du premier dépôt</label>
-                    <input type="date" className="form-control" id="depositDate" name="depositDate" onChange={handleChange}/>
-                </div>
+                <div className="collapse-button-container">
+                    <a>
+                        <h3 className="section-header collapse-button">+</h3>
+                    </a>
+                </div>            
             </div>
-            <p className="form-paragraph">Si une priorité partielle est revendiquée, il faut préciser sur quels produits et/ou services elle porte
-            ou produire un document de priorité.</p>
+    
+            <div className="subform-container">
+                <p className="form-paragraph">{t("according to the convention")}</p>
+                <div className="form-row">
+                    <div className="text-input">
+                        <label>{t("country")}</label>
+                        <input type="text" className="form-control" id="country" name="country" onChange={handleChange}/>
+                    </div>
+    
+                    <div className="text-input">
+                        <label>{t("depositDate")}</label>
+                        <input type="date" className="form-control" id="depositDate" name="depositDate" onChange={handleChange}/>
+                    </div>
+                </div>
+                <p className="form-paragraph">{t("prioirity hint")}</p>
+            </div>
         </div>
-    </div>
-)
+    )
+} 
 
 export default ClaimSubForm;
