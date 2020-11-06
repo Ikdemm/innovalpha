@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Navigation from "./components/Navigation";
 import i18n from "./i18n";
 import "./App.css";
+import FormComponent from "./components/FormComponent";
 
 export default class App extends Component {
   
@@ -24,7 +24,7 @@ export default class App extends Component {
           <a onClick={this.changeLanguage('de')} className="lang-link">DE</a> -
           <a onClick={this.changeLanguage('it')} className="lang-link">IT</a> 
         </div>
-        <Navigation />
+        <FormComponent />
       </div>
     )
   }

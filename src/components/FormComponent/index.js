@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 
+import { withTranslation } from "react-i18next";
+
 import ApplicantSubForm from "../Applicant";
 import AgentSubForm from "../Agent";
 import ContactSubForm from "../Contact";
@@ -14,11 +16,12 @@ import Appendings from "../Appendings";
 import Date from "../Date";
 import ClaimSubForm from '../Claim';
 
-export default class GermanForm extends React.Component {
+class ProposalForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { files: [], lang: 'de' }
+    
+    this.state = { files: []}
     this.handleChange = this.handleChange.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,7 +29,7 @@ export default class GermanForm extends React.Component {
     this.handleUpload = this.handleUpload.bind(this);
   }
 
-  /* ------------ Create PDF (then Downlad) ------------------ */
+  /* ------------ Create PDFs (then Downlad) ------------------ */
 
   createAndDownloadPDF() {
     
@@ -34,7 +37,7 @@ export default class GermanForm extends React.Component {
     
     // Appending files to formData
 
-    for (let element of this.state.files){
+    for (let element of this.state.files) {
       let name = Object.keys(element)[0] 
       formData.append(name, element[name]);
     }
@@ -46,22 +49,21 @@ export default class GermanForm extends React.Component {
     // Sending the request
 
     axios({
-      method: 'post',
+      method: 'POST',
       url: 'http://www.localhost:5000/proposal',
       data: formData,
       dataType: "multipart/form-data",
       processData: false,
       contentType: false
-    }).then(res => console.log(res))
+    })
     /* ------------ Send the request to get the created PDF ------------------ */
-    .then(() =>
-      axios({
+    .then(() => axios({
         url: "http://www.localhost:5000/proposal",
         method: "GET",
         responseType: "blob",
       })
     )
-    /* ------------ Downloading the PDF file we get back ------------------ */
+    /* -------------- Downloading the PDF file we get back ------------------- */
     .then((response) => {
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement("a");
@@ -75,8 +77,6 @@ export default class GermanForm extends React.Component {
   /* ---------------- HandleUpload for files --------------------- */
 
   handleUpload(event) {
-    // let files = (this.state.files !== undefined) ? this.state.files : [];
-    // files.push({ [event.target.name]: event.target.files[0] })
     let files = this.state.files;
     files.push({ [event.target.name]: event.target.files[0] })
     this.setState({ files })
@@ -109,11 +109,13 @@ export default class GermanForm extends React.Component {
   /* ------------------------ Render Method ------------------------ */
 
   render() {
+
+    const { t } = this.props;
+    
     return (
       <div className="App">
-        
         <div className="page-container">
-          <h1 className="page-header">Eintragung einer schweizerischen Marke</h1>
+          <h1 className="page-header">{t("page-header")}</h1>
         </div>
 
         <div className="form-container">
@@ -132,7 +134,7 @@ export default class GermanForm extends React.Component {
              otherBrand={this.state.otherBrand}/>
             <TaxesSubForm handleCheck={this.handleCheck} handleChange={this.handleChange}/>
             <ServicesSubForm handleChange={this.handleChange} handleUpload={this.handleUpload}/>
-            <BrandCategroy handleCheck={this.handleCheck}/>
+            <BrandCategroy handleCheck={this.handleCheck} />
             <ClaimSubForm handleChange={this.handleChange} />
             <Colors handleChange={this.handleChange}/>
             <Notes handleChange={this.handleChange}/>
@@ -144,7 +146,7 @@ export default class GermanForm extends React.Component {
             <input
               type="submit"
               className="submit-button"
-              value="PDF generieren"
+              value={t('generate pdf')}
             />
           </form>
         </div>
@@ -152,3 +154,7 @@ export default class GermanForm extends React.Component {
     );
   }
 }
+
+const FormComponent =  withTranslation()(ProposalForm);
+
+export default FormComponent;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Date = ({ handleChange, handleUpload }) {
+function Date ({ handleChange, handleUpload }) {
 
     const { t, i18n } = useTranslation();
 
