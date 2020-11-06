@@ -30,9 +30,10 @@
 
     "tridimentionalBrand": "Dreidimensionale Marke",
     "acousticBrand": "Akustische Marke",
-    "Marque avec revendication de couleur": "Marke mit Farbanspruch",
-    "Marque de couleur (abstraite)": "(Abstrakte) Farbmarke",
+    "colorBrand": "Marke mit Farbanspruch",
+    "abstractBrand": "(Abstrakte) Farbmarke",
     "other": "Andere",
+    "uploadBrand": "Upload-Marke",
 
     "depositTax": "Hinterlegungsgebühr",
     "additionalTax": "Klassenzuschlag",

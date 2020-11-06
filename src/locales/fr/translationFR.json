@@ -30,15 +30,16 @@
 
     "tridimentionalBrand": "Marque tridimensionnelle",
     "acousticBrand": "Marque acoustique",
-    "Marque avec revendication de couleur": "Marque avec revendication de couleur",
-    "Marque de couleur (abstraite)": "Marque de couleur (abstraite)",
+    "colorBrand": "Marque avec revendication de couleur",
+    "abstractBrand": "Marque de couleur (abstraite)",
     "other": "Autre",
+    "uploadBrand": "Télécharger votre marque",
 
     "depositTax": "Taxes de dépôt",
     "additionalTax": "Taxes de dépôt",
     "toPay": " à nous facturer.",
     "toDept": "à débiter de notre compte courant nº",
-    "fromIpi": "à débiter de notre compte courant nº",
+    "fromIpi": "auprès de l’IPI.",
 
     "products/services list": "Liste de produits et/ou services",
     "products paragraph": "Veuillez indiquer les produits ou les services au moyen de la terminologie et dans l’ordre de la classification internationale. Nous vous recommandons d’utiliser la liste «Classification internationale des produits et services» mise à disposition par l’IPI ainsi que la base de données en ligne sous https://wdl.ige.ch. La liste peut aussi être produite sur une feuille séparée. Lorsque seul le numéro de classe est indiqué, l’IPI part du principe que toutes les indications générales figurant dans l’intitulé de cette classe sont revendiquées (voir la liste des intitulés de classes sous www.ipi.ch/lps). Ceci n’est toutefois pas valable pour la classe 45, dont les intitulés de classe sont formulés de manière trop générale. Pour cette classe, l’IPI devra exiger des précisions.",

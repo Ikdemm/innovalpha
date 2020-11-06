@@ -31,9 +31,10 @@
 
     "tridimentionalBrand": "Marchio tridimensionale",
     "acousticBrand": "Marchio acustico",
-    "Marque avec revendication de couleur": "Marchio con rivendicazione di colore",
-    "Marque de couleur (abstraite)": "Marchio di colore (astratto)",
+    "colorBrand": "Marchio con rivendicazione di colore",
+    "abstractBrand": "Marchio di colore (astratto)",
     "other": "Altro",
+    "uploadBrand": "caricare il marchio",
 
     "depositTax": "Tassa di deposito",
     "additionalTax": "Soprattassa per ogni classe supplementare",
