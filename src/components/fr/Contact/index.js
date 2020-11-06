@@ -1,10 +1,15 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 
-const ContactSubForm = ({ handleChange, handleCheck, isEmailProvided }) => (
-  <div>
+function ContactSubForm({ handleChange, handleCheck, isEmailProvided }) {
+  
+  const { t, i18n } = useTranslation();
+
+  return (
+    <div>
     <div className="formheader-container">
       <div className="section-formheader-container">
-        <h3 className="section-header">Personne à contacter</h3>
+        <h3 className="section-header">{t("section3-title")}</h3>
       </div>
       <div className="collapse-button-container">
         <a>
@@ -17,7 +22,7 @@ const ContactSubForm = ({ handleChange, handleCheck, isEmailProvided }) => (
       <div className="form-row">
         {/* <!-- First Name --> */}
         <div className="text-input">
-          <label>Prénom</label>
+          <label>{t("firstName")}</label>
           <input
             type="text"
             className="form-control"
@@ -29,7 +34,7 @@ const ContactSubForm = ({ handleChange, handleCheck, isEmailProvided }) => (
 
         {/* <!-- Last Name --> */}
         <div className="text-input">
-          <label>Nom</label>
+          <label>{t("lastName")}</label>
           <input
             type="text"
             className="form-control"
@@ -41,7 +46,7 @@ const ContactSubForm = ({ handleChange, handleCheck, isEmailProvided }) => (
 
         {/* <!-- Social Reason --> */}
         <div className="text-input">
-          <label>Téléphone</label>
+          <label>{t("phone")}</label>
           <input
             type="text"
             className="form-control"
@@ -53,7 +58,7 @@ const ContactSubForm = ({ handleChange, handleCheck, isEmailProvided }) => (
 
         {/* <!-- Application number --> */}
         <div className="text-input app-number-input">
-          <label>Numéro de référence, dossier</label>
+          <label>{t("propsalNumber")}</label>
           <input
             type="text"
             className="form-control"
@@ -75,8 +80,7 @@ const ContactSubForm = ({ handleChange, handleCheck, isEmailProvided }) => (
               name="isEmailProvided"
               onChange={handleCheck}
             />
-              Dans la présente procédure, je souhaite recevoir les écrits de
-              l’IPI par voie électronique à l’adresse suivante*:
+              {t("emailLabel")}
               
             </label>
           </div>
@@ -93,15 +97,14 @@ const ContactSubForm = ({ handleChange, handleCheck, isEmailProvided }) => (
           </div>
           </div>
         <p className="input-hint">
-          * L’adresse indiquée doit être enregistrée sur une plateforme de
-          messagerie reconnue pour transmettre par voie électronique des
-          documents dans le cadre d’une procédure administrative fédérale.
-          Pour plus d’informations: www.ipi.ch/communication-electronique.
+          {t("emailHint")}
         </p>
       </div>
     </div>
   </div>
-)
+  )
+
+}
 
 
 export default ContactSubForm;
