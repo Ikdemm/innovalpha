@@ -6,7 +6,7 @@ const mv = require('mv');
 const fs = require('fs');
 
 // Data Manipulation
-const dataManipulators = require('./controllers')
+const dataManipulators = require('./helpers')
 
 // PDF Generators
 const pdfTemplate = require('./documents/french-template');
@@ -124,6 +124,13 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
 app.get('/proposal', (req, res) => {
     console.log("Sending back file ...")
     setTimeout( () => res.download(`${__dirname}/out/proposal.pdf`), 2000)
+})
+
+// Handles any requests that don't match the ones above
+const root = require('path').join(__dirname, '..', 'build')
+app.use(express.static(root));
+app.get("*", (req, res) => {
+    res.sendFile('index.html', { root });
 })
 
 app.listen(port, () => console.log(`Listening on port ${port} ...`));
