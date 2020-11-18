@@ -1,0 +1,67 @@
+{
+    "page-header": "Registrazione di un marchio svizzero",
+    "section1-title": "DEPOSITANTE",
+    "section2-title": "Rappresentante",
+    "section3-title": "Persona di contatto",
+    "section4-title": "Marchio",
+    "section5-title": "Tasse",
+    "section6-title": "Lista dei prodotti e/o dei servizi",
+    "section7-title": "Categoria di marchio",
+    "section8-title": "Rivendicazione di priorità",
+    "section9-title": "Rivendicazione di colori",
+    "section10-title": "Osservazioni",
+    "section11-title": "Allegati",
+    "section12-title": "Data e firma",
+
+    "firstName": "Nome",
+    "lastName": "Cognome",
+    "address": "Indirizzo",
+    "socialReason": "Rispettivamente ditta",
+    "postCode": "CAP",
+    "location": "Località",    
+
+    "phone": "telefono",
+    "propsalNumber": "Numero di riferimento, incarto n.",
+
+    "emailLabel": "Per quel che concerne la presente procedura, chiedo che tutte le comunicazioni dell’IPI siano trasmesse elettronicamente all’indirizzo e-mail*:",
+    "emailHint": "* L’indirizzo e-mail indicato deve essere registrato presso una piattaforma riconosciuta per la comunicazione per via elettronica di dati delle autorità federali. Maggiori informazioni: www.ipi.ch/comunicazioneelettronica.",
+
+    "brandParagraph": "Per i marchi con una forma scritta o grafica particolare deve essere depositata un’immagine in bianco e nero che va incollata o inserita nel riquadro qui accanto. Le diverse tonalità di grigio devono apparire distintamente. Per i marchi a colori (v. cif. 9 rivendicazione di colori) deve venir depositata un’immagine a colori.",
+    "brandHint": "Misura massima delle riproduzioni: 80 × 80 mm.",
+
+    "tridimentionalBrand": "Marchio tridimensionale",
+    "acousticBrand": "Marchio acustico",
+    "colorBrand": "Marchio con rivendicazione di colore",
+    "abstractBrand": "Marchio di colore (astratto)",
+    "other": "Altro",
+    "uploadBrand": "caricare il marchio",
+
+    "depositTax": "Tassa di deposito",
+    "additionalTax": "Soprattassa per ogni classe supplementare",
+    "toPay": " da fatturarci.",
+    "toDept": " da dedurre dal nostro conto corrente n.",
+    "fromIpi": " presso l’IPI.",
+
+    "products/services list": "Lista dei prodotti e/o dei servizi",
+    "products paragraph": "Per designare prodotti o servizi, si prega di utilizzare la terminologia e l’ordine cronologico della Classificazione internazionale. Vi raccomandiamo di utilizzare la lista «Classificazione internazionale dei prodotti e servizi» messa a disposizione dall’IPI come anche la base dati on line su https://wdl.ige.ch. La lista può essere inoltrata su foglio separato. Qualora venga indicato esclusivamente il numero di classe, l’IPI presuppone che la domanda concerne tutti i termini generali appartenenti alla classe in questione (si veda la lista dei termini generali su www.ipi.ch/lps-it). Ciò non vale tuttavia per la classe 45, i cui termini generali sono definiti troppo ampiamente. Per questa classe l’IPI esigerà un’ulteriore precisazione.",
+    "products hint": "Seguito su foglio separato",
+    "upload products sheet": "caricare la scheda dei prodotti",
+    
+    "brand-category paragraph": "Indicare con una crocetta la categoria che fa al caso.",
+    "individual brand": "Marchio individuale",
+    "warranty brand": "Marchio di garanzia",
+    "collective brand": "Marchio collettivo",
+
+    "according to the convention": "Secondo la Convenzione di Parigi",
+    "country": "Paese",
+    "depositDate": "Data del primo deposito",
+    "prioirity hint": "Se è rivendicata una priorità parziale, occorre specificare a quali prodotti e/o servizi si riferisce oppure presentare il relativo documento di priorità.",
+
+    "appending": "Allegati",
+    "upload file": "caricare un file",
+
+    "date": "Data",
+    "digital signature": "Firma digitale",
+
+    "generate pdf": "generare pdf"
+}

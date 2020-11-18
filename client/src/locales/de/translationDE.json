@@ -1,0 +1,66 @@
+{
+    "page-header": "EINTRAGUNG EINER SCHWEIZERISCHEN MARKE",
+    "section1-title": "MARKENHINTERLEGER/IN",
+    "section2-title": "Vertreter/in",
+    "section3-title": "Kontaktperson",
+    "section4-title": "Marke",
+    "section5-title": "Gebühren",
+    "section6-title": "Verzeichnis der Waren und/oder Dienstleistungen (WDL)",
+    "section7-title": "Markenart",
+    "section8-title": "Prioritätsanspruch",
+    "section9-title": "Farbanspruch",
+    "section10-title": "Bemerkungen",
+    "section11-title": "Beilagen",
+    "section12-title": "Datum und Unterschrift",
+
+    "firstName": "Vorname",
+    "lastName": "Name",
+    "address": "Adresse",
+    "socialReason": "Firma",
+    "postCode": "PLZ",
+    "location": "Ort",
+    "phone": "Telefon",
+    "propsalNumber": "Referenznummer, Dossier",
+
+    "emailLabel": "Ich wünsche in diesem Verfahren eine elektronische Übermittlung der IGE-Schreiben an die hier aufgeführte E-Mail-Adresse*:",
+    "emailHint": "* Die angegebene E-Mail-Adresse muss für den schweizerischen Behördenverkehr auf einer anerkannten Zustellplattform eingetragen sein. Mehr erfahren unter www.ige.ch/e-uebermittlung.",
+
+    "brandParagraph": "Bei einer Marke mit besonderer Schriftgestaltung oder besonderer grafischer Gestaltung ist eine schwarz-weisse Abbildung einzureichen (im Feld rechts einfügen oder aufkleben). Verschiedene Grautöne müssen klar ersichtlich sein. Für Marken in Farbe (Farbanspruch Ziff. 9) ist eine farbige Abbildung einzureichen.",
+    "brandHint": "Maximale Grösse der Abbildungen: 80 × 80 mm.",
+
+    "tridimentionalBrand": "Dreidimensionale Marke",
+    "acousticBrand": "Akustische Marke",
+    "colorBrand": "Marke mit Farbanspruch",
+    "abstractBrand": "(Abstrakte) Farbmarke",
+    "other": "Andere",
+    "uploadBrand": "Upload-Marke",
+
+    "depositTax": "Hinterlegungsgebühr",
+    "additionalTax": "Klassenzuschlag",
+    "toPay": " ist uns in Rechnung zu stellen.",
+    "toDept": " ist unserem Kontokorrent Nr",
+    "fromIpi": " beim IGE zu belasten.",
+
+    "products/services list": "Liste der Produkte/Dienstleistungen",
+    "products paragraph": "Für die Angaben der Waren und/oder Dienstleistungen ist die Terminologie und Reihenfolge der internationalen Klassifikation zu beachten. Wir empfehlen Ihnen, die vom IGE zur Verfügung gestellte Liste «Internationale Waren- und Dienstleistungsklassifikation» sowie die Online-Datenbank unter https://wdl.ige.ch zu benutzen. Das Verzeichnis kann auch auf einem separaten Blatt eingereicht werden. Wenn lediglich die Klassennummer angegeben wird, geht das IGE davon aus, dass sämtliche Oberbegriffe dieser Klasse beansprucht werden (vgl. Verzeichnis der Oberbegriffe unter www.ige.ch/wdl). Dies gilt jedoch nicht für die Klasse 45, deren Oberbegriffe zu weit gefasst sind. Für diese Klasse wird das IGE eine Präzisierung verlangen. ",
+    "products hint": "Fortsetzung auf separatem Blatt",
+    "upload products sheet": "Das Blatt der Produkte befestigen",
+    
+    "brand-category paragraph": "Bitte eine der nachfolgenden Markenarten ankreuzen. Andernfalls handelt es sich um eine Individualmarke.",
+    "individual brand": "Individualmarke",
+    "warranty brand": "Garantiemarke",
+    "collective brand": "Kollektivmarke",
+
+    "according to the convention": "Gemäss Pariser Verbandsübereinkunft",
+    "country": "Land",
+    "depositDate": "Datum der Ersthinterlegung",
+    "prioirity hint": "Wird eine Teilpriorität geltend gemacht, muss präzisiert werden, auf welche Waren und/oder Dienstleistungen sich die Priorität bezieht, oder es muss ein entsprechender Prioritätsbeleg vorgelegt werden.",
+
+    "appending": "Anhängen",
+    "upload file": "Datei hochladen",
+
+    "date": "Datum",
+    "digital signature": "digitale Signatur",
+
+    "generate pdf": "generierung pdf"
+}
