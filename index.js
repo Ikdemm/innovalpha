@@ -46,8 +46,6 @@ const upload = multer({storage: storage,
 
 const app = express();  
 
-const port = process.env.PORT || 5000;
-
 // -------------------- Setting up our Middlewares ---------------------- // 
 
 // ----- Using Cors middleware to enable CORS with various options ------ // 
@@ -125,10 +123,11 @@ app.get('/proposal', (req, res) => {
 })
 
 // Handles any requests that don't match the ones above
-const root = require('path').join(__dirname, '..', 'build')
+const root = require('path').join(__dirname, 'client', 'build')
 app.use(express.static(root));
 app.get("*", (req, res) => {
     res.sendFile('index.html', { root });
 })
 
+const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on port ${port} ...`));
