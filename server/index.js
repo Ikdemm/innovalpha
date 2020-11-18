@@ -118,8 +118,6 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
 
 // });
 
-// app.use(express.static(path.join(__dirname, '..', 'build')));
-
 // GET - Send generated PDF to the client
 app.get('/proposal', (req, res) => {
     console.log("Sending back file ...")
