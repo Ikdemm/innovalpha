@@ -5,6 +5,8 @@ const cors = require('cors');
 const mv = require('mv');
 const fs = require('fs');
 
+var cloudinary = require('cloudinary').v2
+
 // Data Manipulation
 const dataManipulators = require('./helpers')
 
@@ -18,22 +20,23 @@ const multer = require('multer');
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, './server/uploads/');
+    cb(null, 'uploads');
   },
   filename: function(req, file, cb) {
-    cb(null, file.originalname)
+    console.log(file)
+    cb(null, Date.now() + path.extname(file.originalname));
   }
 })
 
-// const fileFilter = (req, file, cb) => {
-//   //accept a file
-//   if (file.mimetype ===  'image/jpeg' || file.mimetype ===  'image/jpg' || file.mimetype === 'image/png') {
-//     cb(null, true)
-//   }
-//   //reject a file
-//   console.log("invalid file")
-//   cb(null, false)
-// }
+const fileFilter = (req, file, cb) => {
+  //accept a file
+  if (file.mimetype ===  'image/jpeg' || file.mimetype ===  'image/jpg' || file.mimetype === 'image/png') {
+    cb(null, true)
+  }
+  //reject a file
+  console.log("invalid file")
+  cb(null, false)
+}
 
 // ------------------ Filtering the uploaded files --------------------- //
 
@@ -80,9 +83,9 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
 
       /*----------- Storing files in the data form --------------*/
 
-      // files.map((file) => {
-      //   data[file.fieldName] = file.path;
-      // })
+      files.map((file) => {
+        data[file.fieldName] = file.path;
+      })
 
       /*---------- Preparing Data for output ---------------*/
 
@@ -98,9 +101,10 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
       // mv() method places the file inside public directory
       // mv(path.join(__dirname, `/uploads/${brand.originalname}`), path.join(__dirname, '..', 'public/brand.jpg'), (err) => {
       //   if (err) {
-      //       console.log(err)
+      //       console.log(err) 
       //       return res.status(500).send({ msg: "Error occured" });
       //   }
+
 
       console.log("creating the file ...")
     
@@ -132,8 +136,12 @@ if(process.env.NODE_ENV === 'production') {
     res.sendFile(path.join(__dirname, 'client/build/index.html'));
   })
 }
+
 //build mode
-app.get('*', (req, res) => {
+
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
+ 
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/public/index.html'));
 })
 
@@ -144,4 +152,4 @@ app.get('*', (req, res) => {
 // })
 
 const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`Listening on port ${port} ...`));
+app.listen(port, () => {console.log(`Listening on port ${port} ...`)});
