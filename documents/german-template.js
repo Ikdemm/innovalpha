@@ -5,7 +5,7 @@ module.exports = (data) => {
     <html>
         <head>
             <meta charset="utf-8">
-            <title>Proposal for ${data.applicantFirstName} ${data.applicantLastName}</title>        
+            <title>Vorschlag für ${data.applicantFirstName} ${data.applicantLastName}</title>        
         </head>
 
         <body>
@@ -67,124 +67,122 @@ module.exports = (data) => {
                     
                     <div class="content-container">
 
-                        <h1 class="title">Enregistrement d'une marque suisse</h1>
+                        <h1 class="title">Eintragung einer schweizerischen Marke</h1>
                         <p class="paragraph-text">
-                            <b>&bull;</b> La brochure «Dépôt d’une marque» contient des renseignements sur les formalités de dépôt et la manière de remplir ce formulaire
+                            <b>&bull;</b> Die Broschüre «Markenhinterlegung» gibt Auskunft über die Hinterlegungsformalitäten und das Ausfüllen dieses Formulars.
                         </p>
                         <p class="paragraph-text">
-                            <b>&bull; Mise en garde:</b> Au cours de la procédure d’enregistrement, nous n’examinons pas d’éventuelles atteintes à des marques ou
-                            raisons de commerce déjà enregistrées. C’est pourquoi nous vous conseillons vivement de faire faire une recherche professionnelle
-                            d’antériorités de marques similaires et identiques ainsi que de sociétés. Informations complémentaires sur www.ipi.ch. Nous vous
-                            recommandons en outre de demander l’appui d’un conseil en marques (www.ipi.ch/conseils-marques).
+                            <b>&bull; WICHTIG:</b>  Im Eintragungsverfahren werden mögliche Verletzungen älterer Marken und Firmenrechte nicht geprüft. Das
+                            Durchführen einer Recherche nach älteren identischen und ähnlichen Marken sowie Firmen ist deshalb unbedingt zu empfehlen. Weitere Informationen dazu finden Sie auf www.ige.ch. Zudem empfehlen wir den Beizug eines Markenberaters
+                            (www.ige.ch/ma-berater).
                         </p>
                         <p class="paragraph-text">
-                            <b>&bull; Dépôt électronique d’une marque par Internet: https://e-trademark.ige.ch</b>
+                            <b>Eine Marke kann auch via Internet (https://e-trademark.ige.ch) zur Eintragung angemeldet werden.</b>
                         </p>
                         
                         <div class="form-container">
-                            <h3 class="section-title">1  Déposant/e</h3>
-                            <p class="paragraph-text">Prénom, nom ou raison sociale, adresse, code postal, localité</p>
+                            <h3 class="section-title">1  Markenhinterleger/in</h3>
+                            <p class="paragraph-text">Vorname, Name bzw. Firma, Adresse, PLZ/Ort</p>
                             <p class="data-text">
-                            ${data.applicantFirstName},
-                            ${data.applicantLastName}, 
-                            ${data.applicantSocialReason}, 
-                            ${data.applicantAddress}, 
-                            ${data.applicantPostCode},
-                            ${data.applicantLocation}
+                                ${data.applicantFirstName},
+                                ${data.applicantLastName}, 
+                                ${data.applicantSocialReason}, 
+                                ${data.applicantAddress}, 
+                                ${data.applicantPostCode},
+                                ${data.applicantLocation}
                             </p>
                     
                     
-                            <!------------ Mandataire --------------->
-                            <h3 class="section-title">2  Mandataire</h3>
-                            <p class="paragraph-text">Prénom, nom ou raison sociale, adresse, code postal, localité</p>
+                            <!------------ Vertreter/in --------------->
+                            <h3 class="section-title">2  Vertreter/in</h3>
+                            <p class="paragraph-text">Vorname, Name bzw. Firma, Adresse, PLZ/Ort</p>
                             <p class="data-text">
-                            ${data.agentFirstName},
-                            ${data.agentLastName}, 
-                            ${data.agentSocialReason}, 
-                            ${data.agentAddress}, 
-                            ${data.agentPostCode},
-                            ${data.agentLocation}
+                                ${data.agentFirstName},
+                                ${data.agentLastName}, 
+                                ${data.agentSocialReason}, 
+                                ${data.agentAddress}, 
+                                ${data.agentPostCode},
+                                ${data.agentLocation}
                             </p>
                     
-                            <!------------ Contact --------------->
-                            <h3 class="section-title">3a  Personne à contacter</h3>
-                            <p class="paragraph-text">Prénom, nom, téléphone</p>
+                            <!------------ Kontakt --------------->
+                            <h3 class="section-title">3a  Kontaktperson</h3>
+                            <p class="paragraph-text">Vorname, Name, Telefon</p>
                             <p class="data-text">
-                            ${data.contactFirstName},
-                            ${data.contactLastName}, 
-                            ${data.contactPhone}
+                                ${data.contactFirstName},
+                                ${data.contactLastName}, 
+                                ${data.contactPhone}
                             </p>
         
-                            <h3 class="section-title">3b  Numéro de référence, dossier</h3>
+                            <h3 class="section-title">3b  Referenznummer, Dossier</h3>
                             <p class="data-text">${data.appNumber}</p>
         
-                            <h3 class="section-title">3c  Communication électronique</h3>
+                            <h3 class="section-title">3c  Elektronische Übermittlung</h3>
                             <br>
                             <label for="communication" class="paragraph-text">
-                                Dans la présente procédure, je souhaite recevoir les écrits de l’IPI par voie électronique
-                                à l’adresse suivante*:
+                                Ich wünsche in diesem Verfahren eine elektronische Übermittlung der IGE-Schreiben an die hier
+                                aufgeführte E-Mail-Adresse*:
                             </label>
                             <p class="data-text">${data.contactEmail}</p>
-                            <p class="paragraph-text">* L’adresse indiquée doit être enregistrée sur une plateforme de messagerie reconnue pour transmettre par voie électronique des documents dans le cadre d’une procédure administrative
-                                fédérale. Pour plus d’informations: www.ipi.ch/communication-electronique.
+                            <p class="paragraph-text">*  Die angegebene E-Mail-Adresse muss für den schweizerischen Behördenverkehr auf einer
+                            anerkannten Zustellplattform eingetragen sein. Mehr erfahren unter www.ige.ch/e-uebermittlung.
                             </p>
 
 
-                            <!------------ Marque --------------->
-                            <h3 class="section-title">4  Marque</h3>
+                            <!------------ Marke --------------->
+                            <h3 class="section-title">4  Marke</h3>
                             <p class="paragraph-text">
-                                S’il s’agit d’une marque présentant
-                                une police de caractère particulière
-                                ou faisant intervenir un graphisme
-                                particulier, veuillez déposer une reproduction en noir et blanc (à insérer ou coller ci-contre). Les zones
-                                grises doivent apparaître distinctement. Pour les marques en couleur(s)
-                                (voir ch. 9 couleurs revendiquées),
-                                veuillez déposer une reproduction en
-                                couleur(s). 
+                                Bei einer Marke mit besonderer
+                                Schriftgestaltung oder besonderer
+                                grafischer Gestaltung ist eine
+                                schwarz-weisse Abbildung einzureichen (im Feld rechts einfügen
+                                oder aufkleben). Verschiedene
+                                Grautöne müssen klar ersichtlich
+                                sein. Für Marken in Farbe (Farbanspruch Ziff. 9) ist eine farbige
+                                Abbildung einzureichen.
                             </p>
                             <p class="paragraph-text">
                                 <b>
-                                    Dimensions maximales de la
-                                    reproduction: 80 × 80 mm.   
+                                    Maximale Grösse der Abbildungen: 80 × 80 mm.   
                                 </b>
                             </p>
                             <p class="data-text">${data.brandType}</p>
 
-                            <!------------ Taxes --------------->
-                            <h3 class="section-title">5  Taxes</h3>
+                            <!------------ Gebühren --------------->
+                            <h3 class="section-title">5  Gebühren</h3>
 
-                            <p class="paragraph-text">Taxes de dépôt</p>
-                            <p class="data-text">${data.depositTax} à nous facturer</p>
-                            <p class="data-text">${data.depositSum} à débiter de notre compte courant n° ${data.taxDepositAccount}</p>
+                            <p class="paragraph-text">Hinterlegungsgebühr</p>
+                            <p class="data-text">${data.depositTax} ist uns in Rechnung zu stellen.</p>
+                            <p class="data-text">${data.depositSum} ist unserem Kontokorrent Nr. ${data.taxDepositAccount} beim IGE zu belasten.</p>
                             
-                            <p class="paragraph-text">Surtaxes pour classe suplémentaire</p>
-                            <p class="data-text">${data.additionalSum} à nous facturer</p>
-                            <p class="data-text">${data.additionalSumTax} à débiter de notre compte courant n° ${data.additionalTaxDepositAccount}</p>
+                            <p class="paragraph-text">Klassenzuschlag</p>
+                            <p class="data-text">${data.additionalSum} ist uns in Rechnung zu stellen.</p>
+                            <p class="data-text">${data.additionalSumTax} ist unserem Kontokorrent Nr ${data.additionalTaxDepositAccount} beim IGE zu belasten.</p>
                         
                             <!------------ Prducts/services --------------->
-                            <h3 class="section-title">6  Produits</h3>
+                            <h3 class="section-title">6  Verzeichnis der Waren und/oder Dienstleistungen (WDL)</h3>
                             <p class="paragraph-text">${data.products}</p>
                         
                             <!------------ Brand Category --------------->
-                            <h3 class="section-title">7  Catégorie de Marque</h3>
+                            <h3 class="section-title">7  Markenart</h3>
                             <p class="paragraph-text">${data.brandCategory}</p>
 
                             <!------------ Claim --------------->
-                            <h3 class="section-title">8  Revendication de priorité</h3>
-                            <p class="paragraph-text">Selon la convention de l’Union de Paris</p>
-                            <p class="paragraph-text">Pays: <span class="data-text">${data.country}</span></p>
-                            <p class="paragraph-text">Date de premier dépôt: <span class="data-text">${data.depositDate}</span></p>
+                            <h3 class="section-title">8  Prioritätsanspruch</h3>
+                            <p class="paragraph-text">Gemäss Pariser Verbandsübereinkunft</p>
+                            <p class="paragraph-text">Land: <span class="data-text">${data.country}</span></p>
+                            <p class="paragraph-text">Datum der Ersthinterlegung: <span class="data-text">${data.depositDate}</span></p>
 
                             <!------------ Colors --------------->
-                            <h3 class="section-title">9  Couleur(s) revendiquée(s)</h3>
+                            <h3 class="section-title">9  Farbanspruch</h3>
                             <p class="paragraph-text">${data.colors}</p>
 
                             <!------------ Notes --------------->
-                            <h3 class="section-title">10  Remarques</h3>
+                            <h3 class="section-title">10  Bemerkungen</h3>
                             <p class="paragraph-text">${data.notes}</p>
 
                             <!------------ Appendings --------------->
-                            <h3 class="section-title">11  Annexes</h3>
+                            <h3 class="section-title">11  Beilagen</h3>
                             <p class="paragraph-text">Annexe 1: ${data.appendingFile1}</p>
                             <p class="paragraph-text">Annexe 2: ${data.appendingFile2}</p>
                             <p class="paragraph-text">Annexe 3: ${data.appendingFile3}</p>
