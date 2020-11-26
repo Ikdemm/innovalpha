@@ -8,7 +8,9 @@ const fs = require('fs');
 const dataManipulators = require('./helpers')
 
 // PDF Generators
-const pdfTemplate = require('./documents/french-template');
+const frenchPDFTemplate = require('./documents/french-template');
+const italienPDFTemplate = require('./documents/italien-template');
+const germanPDFTemplate = require('./documents/german-template');
 
 const wkhtmltopdf = require('wkhtmltopdf');
 wkhtmltopdf.command = "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe";
@@ -90,22 +92,36 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
       data.brandType = dataManipulators.getBrandType(data)
       data.brandCategory = dataManipulators.getBrandCategory(data)
       // data = dataManipulators.getFiles(data);
-      
-      console.log("the final version of the data", data)
 
       console.log("creating the file ...")
     
-      wkhtmltopdf(pdfTemplate(data), {
-        output: `${__dirname}/out/proposal.pdf`,
-        pageSize: 'letter'
-      })
+      switch (data.lang) {
+        case 'fr':
+          wkhtmltopdf(frenchPDFTemplate(data), {
+            output: `${__dirname}/out/proposal.pdf`,
+            pageSize: 'letter'
+          })
+          break;
+
+        case 'it':
+          wkhtmltopdf(italienPDFTemplate(data), {
+            output: `${__dirname}/out/proposal.pdf`,
+            pageSize: 'letter'
+          })
+          break;
+
+        case 'de':
+          wkhtmltopdf(germanPDFTemplate(data), {
+            output: `${__dirname}/out/proposal.pdf`,
+            pageSize: 'letter'
+          })
+          break;
+      }
 
       res.status(200).send({ msg: "File Created" })
       
     })
   });
-
-// });
 
 // GET - Send generated PDF to the client
 app.get('/proposal', (req, res) => {
@@ -124,7 +140,7 @@ if(process.env.NODE_ENV === 'production') {
   })
 }
 
-//build mode
+// build mode
 
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
  
