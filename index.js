@@ -2,10 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
-const mv = require('mv');
 const fs = require('fs');
-
-var cloudinary = require('cloudinary').v2
 
 // Data Manipulation
 const dataManipulators = require('./helpers')
@@ -95,16 +92,6 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
       // data = dataManipulators.getFiles(data);
       
       console.log("the final version of the data", data)
-    
-      // const brand = req.files[0];
-
-      // mv() method places the file inside public directory
-      // mv(path.join(__dirname, `/uploads/${brand.originalname}`), path.join(__dirname, '..', 'public/brand.jpg'), (err) => {
-      //   if (err) {
-      //       console.log(err) 
-      //       return res.status(500).send({ msg: "Error occured" });
-      //   }
-
 
       console.log("creating the file ...")
     
