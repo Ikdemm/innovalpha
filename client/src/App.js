@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import i18n from "./i18n";
 import "./App.css";
 import FormComponent from "./components/FormComponent";
+import { createStore } from 'redux';
+
+let store = createStore(languageReducer)
 
 const languageReducer = function (state = 'fr', action) {
   switch (action.type) {
