@@ -7,6 +7,9 @@ export default class App extends Component {
   
   constructor(props) {
     super(props);
+    this.state = {
+      lang: 'fr'
+    }
   }
 
   changeLanguage = (ln) => {
@@ -16,15 +19,27 @@ export default class App extends Component {
     }
   }
 
+  setFrenchLanguage = () => {
+    this.setState({lang: 'fr'}, this.changeLanguage('fr'))
+  }
+
+  setGermanLanguage = () => {
+    this.setState({lang: 'de'}, this.changeLanguage('de'))
+  }
+
+  setItalienLanguage = () => {
+    this.setState({lang: 'it'}, this.changeLanguage('it'))
+  }
+
   render() {
     return (
       <div>
         <div className="lang-top-bar">
-          <a onClick={this.changeLanguage('fr')} className="lang-link">FR</a> -
-          <a onClick={this.changeLanguage('de')} className="lang-link">DE</a> -
-          <a onClick={this.changeLanguage('it')} className="lang-link">IT</a> 
+          <a onClick={this.setFrenchLanguage} className="lang-link">FR</a> -
+          <a onClick={this.setGermanLanguage} className="lang-link">DE</a> -
+          <a onClick={this.setItalienLanguage} className="lang-link">IT</a> 
         </div>
-        <FormComponent />
+        <FormComponent lang={this.state.lang}/>
       </div>
     )
   }
