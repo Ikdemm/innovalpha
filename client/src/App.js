@@ -8,7 +8,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lang: 'fr'
+      lang: ''
     }
   }
 
@@ -21,14 +21,17 @@ export default class App extends Component {
 
   setFrenchLanguage = () => {
     this.setState({lang: 'fr'}, this.changeLanguage('fr'))
+    console.log(this.state)
   }
 
   setGermanLanguage = () => {
     this.setState({lang: 'de'}, this.changeLanguage('de'))
+    console.log(this.state)
   }
 
   setItalienLanguage = () => {
     this.setState({lang: 'it'}, this.changeLanguage('it'))
+    console.log(this.state)
   }
 
   render() {

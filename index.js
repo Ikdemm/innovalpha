@@ -76,6 +76,8 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
       
       var data = JSON.parse(req.body.data);
 
+      console.log(req.body)
+
       console.log("data we get from the frontend", data)
 
       const files = req.files;
@@ -93,7 +95,7 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
       data.brandCategory = dataManipulators.getBrandCategory(data)
       // data = dataManipulators.getFiles(data);
 
-      console.log("creating the file ...")
+      console.log("creating the file ... for this language: ", req.body.lang)
     
       switch (data.lang) {
         case 'fr':

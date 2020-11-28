@@ -20,7 +20,6 @@ class ProposalForm extends React.Component {
 
   constructor(props) {
     super(props);
-    
     this.state = { files: [], lang: props.lang}
     this.handleChange = this.handleChange.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
