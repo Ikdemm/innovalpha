@@ -4,6 +4,9 @@ const path = require('path');
 const cors = require('cors');
 const fs = require('fs');
 
+import * as jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
+
 // Data Manipulation
 const dataManipulators = require('./helpers')
 
