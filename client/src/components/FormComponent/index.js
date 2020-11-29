@@ -31,6 +31,8 @@ class ProposalForm extends React.Component {
   /* ------------ Create PDFs (then Downlad) ------------------ */
 
   createAndDownloadPDF() {
+
+    this.setState({ lang: this.props.lang }, () => {
     
     let formData = new FormData();
     
@@ -73,6 +75,8 @@ class ProposalForm extends React.Component {
       document.body.appendChild(link);
       link.click();
     });
+  })
+    
   }
 
   /* ---------------- HandleUpload for files --------------------- */

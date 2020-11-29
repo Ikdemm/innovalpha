@@ -1,4 +1,4 @@
-const languageReducer = function (state = 'fr', action) {
+export const languageReducer = function (state = 'fr', action) {
     switch (action.type) {
       case 'fr':
         return state = 'fr';
@@ -10,5 +10,3 @@ const languageReducer = function (state = 'fr', action) {
         return state;
     }
 }
-
-export default languageReducer;

@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 import { Provider } from 'react-redux';
-import { Container } from './container';
+import { HomeContainer } from './container';
 import { store } from './configure-store';
 
 const App = () => (
   <Provider store={store}>
-    <Container/>
+    <HomeContainer/>
   </Provider>
 )
 

@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
-import "./App.css";
-import HomeComponent from "./components/HomeComponent";
-
+import HomeComponent from './components/HomeComponent';
+import FormComponent from './components/FormComponent';
 
 const mapStateToProps = state => {
     return {
@@ -11,10 +10,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-      setFrenchLanguage: () => dispatch({ type: 'fr' }),
-      setGermanLanguage: () => dispatch({ type: 'de' }),
-      setItalienLanguage: () => dispatch({ type: 'it' })
+      setLanguage: (ln) => dispatch({ type: `${ln}` })
     }
   };
   
-export const Container = connect(mapStateToProps, mapDispatchToProps)(HomeComponent);
+export const HomeContainer = connect(mapStateToProps, mapDispatchToProps)(HomeComponent);
+export const FormContainer = connect(mapStateToProps, mapDispatchToProps)(FormComponent);
