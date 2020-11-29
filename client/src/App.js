@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import i18n from "./i18n";
 import "./App.css";
-import FormComponent from "./components/FormComponent";
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { Container } from './container';
