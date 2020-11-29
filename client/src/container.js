@@ -1,18 +1,28 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import i18n from "./i18n";
 import "./App.css";
 import FormComponent from "./components/FormComponent";
-import { createStore } from 'redux';
+
+
+const mapStateToProps = state => {
+    return {
+      lang: state
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+      setFrenchLanguage: () => dispatch({ type: 'fr' }),
+      setGermanLanguage: () => dispatch({ type: 'de' }),
+      setItalienLanguage: () => dispatch({ type: 'it' })
+    }
+  };
+  
+export const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 
 export default class App extends Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-      lang: ''
-    }
-  }
 
   changeLanguage = (ln) => {
     return () => {
