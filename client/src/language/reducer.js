@@ -1,5 +1,7 @@
-export const languageReducer = function (state = 'fr', action) {
+export const languageReducer = function (state = 'en', action) {
     switch (action.type) {
+      case 'en':
+        return state = 'en';
       case 'fr':
         return state = 'fr';
       case 'de': 

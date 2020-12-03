@@ -18,35 +18,12 @@ export default class HomeComponent extends Component {
             console.log(`Language changed to ${ln}`)
         }
     }
-
-    // setFrenchLanguage = () => {
-    //     this.props.setFrenchLanguage(); 
-    //     return () => {
-    //         i18n.changeLanguage('fr');
-    //         console.log(`Language changed to fr`)
-    //     }
-    // }
-
-    // setGermanLanguage = () => {
-    //     this.props.setGermanLanguage();
-    //     return () => {
-    //         i18n.changeLanguage('de');
-    //         console.log(`Language changed to de`)
-    //     }
-    // }
-
-    // setItalienLanguage = () => {
-    //     this.props.setItalienLanguage();
-    //     return () => {
-    //         i18n.changeLanguage('it');
-    //         console.log(`Language changed to it`)
-    //     }
-    // }
   
     render() {
       return (
         <div>
           <div className="lang-top-bar">
+            <a onClick={this.changeLanguage('en')} className="lang-link">EN</a> -
             <a onClick={this.changeLanguage('fr')} className="lang-link">FR</a> -
             <a onClick={this.changeLanguage('de')} className="lang-link">DE</a> -
             <a onClick={this.changeLanguage('it')} className="lang-link">IT</a> 

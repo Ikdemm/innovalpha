@@ -42,7 +42,7 @@
     "fromIpi": "from the IPI.",
 
     "products/services list": "List of Products/ Services",
-    "products paragraph": "Please indicate the goods or services using the terminology and in the order of the international classification. We recommend that you use the "International Classification of Goods and Services" list made available by the IPI as well as the online database under https://wdl.ige.ch. The list can also be produced on a separate sheet. When only the class number is indicated, the IPI assumes that all general indications appearing in the title of that class are claimed (see the list of class titles at www.ipi.ch/lps). However, this does not apply to class 45, whose class headings are formulated too broadly. For this class, the IPI will need to ask for details.",
+    "products paragraph": "Please indicate the goods or services using the terminology and in the order of the international classification. We recommend that you use the 'International Classification of Goods and Services' list made available by the IPI as well as the online database under https://wdl.ige.ch. The list can also be produced on a separate sheet. When only the class number is indicated, the IPI assumes that all general indications appearing in the title of that class are claimed (see the list of class titles at www.ipi.ch/lps). However, this does not apply to class 45, whose class headings are formulated too broadly. For this class, the IPI will need to ask for details.",
     "products hint": "See separate sheet",
     "upload products sheet": "Attach the products sheet",
     
