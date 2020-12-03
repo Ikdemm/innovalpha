@@ -8,6 +8,7 @@ const fs = require('fs');
 const dataManipulators = require('./helpers')
 
 // PDF Generators
+const englishPDFTemplate = require('./documents/english-template');
 const frenchPDFTemplate = require('./documents/french-template');
 const italienPDFTemplate = require('./documents/italien-template');
 const germanPDFTemplate = require('./documents/german-template');
@@ -98,6 +99,13 @@ app.post('/proposal', upload.any('files', 6), (req, res) => {
       console.log("creating the file ... for this language: ", req.body.lang)
     
       switch (data.lang) {
+        case 'en':
+          wkhtmltopdf(englishPDFTemplate(data), {
+            output: `${__dirname}/out/proposal.pdf`,
+            pageSize: 'letter'
+          })
+          break;
+
         case 'fr':
           wkhtmltopdf(frenchPDFTemplate(data), {
             output: `${__dirname}/out/proposal.pdf`,
