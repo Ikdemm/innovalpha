@@ -201,3 +201,108 @@ textarea {
 .lang-link:after {
   color: black;
 }
+
+.home-container {
+  background-image: url("src/assets/images/background-med.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 3s; /* Firefox < 16 */
+   -ms-animation: fadein 3s; /* Internet Explorer */
+    -o-animation: fadein 3s; /* Opera < 12.1 */
+       animation: fadein 3s;
+}
+
+h1 {
+  text-align: center;
+}
+
+.header {
+  padding-top: 5em;
+  font-size: 35px;
+  font-weight: 900;
+  color: #FFD000;
+  text-transform: uppercase;
+}
+
+.header-dash {
+  border-top: 6px solid #FFD000;
+  width: 70px;
+  margin-bottom: 60px;
+  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 3s; /* Firefox < 16 */
+   -ms-animation: fadein 3s; /* Internet Explorer */
+    -o-animation: fadein 3s; /* Opera < 12.1 */
+       animation: fadein 3s;
+}
+
+.mission-header {
+  color: #fff;
+  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 3s; /* Firefox < 16 */
+   -ms-animation: fadein 3s; /* Internet Explorer */
+    -o-animation: fadein 3s; /* Opera < 12.1 */
+       animation: fadein 3s;
+}
+
+p {
+  text-align: center;
+  color: rgb(212, 212, 212);
+  font-size: 20px;
+  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 3s; /* Firefox < 16 */
+   -ms-animation: fadein 3s; /* Internet Explorer */
+    -o-animation: fadein 3s; /* Opera < 12.1 */
+       animation: fadein 3s;
+}
+
+.buttons-container {
+  padding-top: 30px;
+  margin:0px auto;
+  width: 650px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 3s; /* Firefox < 16 */
+   -ms-animation: fadein 3s; /* Internet Explorer */
+    -o-animation: fadein 3s; /* Opera < 12.1 */
+       animation: fadein 3s;
+}
+
+.devices-button {
+  height: 50px;
+  width: 300px;
+  font-weight: 500;
+  font-size: 1em;
+  color: #FFD000;
+  text-transform: uppercase;
+  border: 1px solid #FFD000;
+  background-color: transparent;
+}
+
+.devices-button:hover {
+  color: #fff;
+  background-color: #FFD000;
+}
+
+.trademark-button {
+  height: 50px;
+  width: 300px;
+  font-size: 1em;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  background-color: transparent;
+}
+
+.trademark-button:hover {
+  color: grey;
+  background-color: #fff;
+}

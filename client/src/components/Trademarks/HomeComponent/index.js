@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 // import FormComponent from '../FormComponent'
-import { FormContainer } from '../../container'
+import { FormContainer } from '../../../container'
 import { Provider } from 'react-redux';
-import { store } from '../../configure-store';  
-import i18n from "../../i18n";
+import { store } from '../../../configure-store';  
+import i18n from "../../../i18n";
 
 export default class HomeComponent extends Component {
 
