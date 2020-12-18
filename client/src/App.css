@@ -3,7 +3,7 @@
 }
 
 .page-container {
-  background-image: url("./brand.jpg");
+  background-image: url("./images/brand.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 15em;
@@ -203,17 +203,12 @@ textarea {
 }
 
 .home-container {
-  background-image: url("src/assets/images/background-med.webp");
+  background-image: url("./images/background-med.webp");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 100%;
   text-align: center;
-  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 3s; /* Firefox < 16 */
-   -ms-animation: fadein 3s; /* Internet Explorer */
-    -o-animation: fadein 3s; /* Opera < 12.1 */
-       animation: fadein 3s;
+  padding-bottom: 17.55%;
 }
 
 h1 {
@@ -232,31 +227,16 @@ h1 {
   border-top: 6px solid #FFD000;
   width: 70px;
   margin-bottom: 60px;
-  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 3s; /* Firefox < 16 */
-   -ms-animation: fadein 3s; /* Internet Explorer */
-    -o-animation: fadein 3s; /* Opera < 12.1 */
-       animation: fadein 3s;
 }
 
 .mission-header {
   color: #fff;
-  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 3s; /* Firefox < 16 */
-   -ms-animation: fadein 3s; /* Internet Explorer */
-    -o-animation: fadein 3s; /* Opera < 12.1 */
-       animation: fadein 3s;
 }
 
-p {
+.home-text {
   text-align: center;
   color: rgb(212, 212, 212);
   font-size: 20px;
-  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 3s; /* Firefox < 16 */
-   -ms-animation: fadein 3s; /* Internet Explorer */
-    -o-animation: fadein 3s; /* Opera < 12.1 */
-       animation: fadein 3s;
 }
 
 .buttons-container {
@@ -268,11 +248,6 @@ p {
   justify-content: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 3s; /* Firefox < 16 */
-   -ms-animation: fadein 3s; /* Internet Explorer */
-    -o-animation: fadein 3s; /* Opera < 12.1 */
-       animation: fadein 3s;
 }
 
 .devices-button {
@@ -284,11 +259,13 @@ p {
   text-transform: uppercase;
   border: 1px solid #FFD000;
   background-color: transparent;
+  transition: .5s;
 }
 
 .devices-button:hover {
   color: #fff;
   background-color: #FFD000;
+  transition: .5s;
 }
 
 .trademark-button {
@@ -300,9 +277,11 @@ p {
   text-transform: uppercase;
   border: 1px solid #fff;
   background-color: transparent;
+  transition: .5s;
 }
 
 .trademark-button:hover {
   color: grey;
   background-color: #fff;
+  transition: .5s;
 }

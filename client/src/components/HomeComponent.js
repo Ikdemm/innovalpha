@@ -1,6 +1,6 @@
 import React from "react";
 
-const HomeComponent = () => (
+export const HomeComponent = () => (
     <div class="home-container">
         <h1 class="header">Welcome to Innovalpha</h1>
         <hr class="header-dash"/>
@@ -21,5 +21,3 @@ const HomeComponent = () => (
     </div>
 
 )
-
-export default HomeComponent;
