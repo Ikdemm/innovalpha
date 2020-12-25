@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import HomeComponent from './components/HomeComponent';
-import FormComponent from './components/FormComponent';
+import HomeComponent from './components/Trademarks/HomeComponent';
+import FormComponent from './components/Trademarks/FormComponent';
 
 const mapStateToProps = state => {
     return {
