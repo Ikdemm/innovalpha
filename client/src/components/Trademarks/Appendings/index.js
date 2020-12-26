@@ -13,7 +13,7 @@ function Appendings ({ handleCheck, handleUpload }) {
                 </div>
                 <div className="collapse-button-container">
                     {/* <a>
-                        <h3 class="section-header collapse-button">+</h3>
+                        <h3 className="section-header collapse-button">+</h3>
                     </a> */}
                 </div>            
             </div>

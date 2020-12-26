@@ -123,7 +123,7 @@ class ProposalForm extends React.Component {
           <h1 className="page-header">{t("page-header")}</h1>
         </div>
 
-        <div className="form-container">
+        <div className="trademarks-form-container">
           <form onSubmit={this.handleSubmit}>
             <ApplicantSubForm handleChange={this.handleChange} />
             <AgentSubForm handleChange={this.handleChange} />
