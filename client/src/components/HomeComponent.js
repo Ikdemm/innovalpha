@@ -9,6 +9,7 @@ import {
 import { withRouter } from 'react-router-dom';
 
 import Trademarks from './Trademarks';
+import MedicalDevices from './MedicalDevices';
 
 const HomeComponent = withRouter(({location}) => (
       <div>
@@ -33,7 +34,9 @@ const HomeComponent = withRouter(({location}) => (
               </div>
             </div>
           </Route>
-          <Route path="/medical-devices"/>
+          <Route path="/medical-devices">
+            <MedicalDevices/>
+          </Route>
           <Route path="/trademarks">
             <Trademarks/>
           </Route>

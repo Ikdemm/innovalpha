@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 
-export default class HomeComponent extends Component {
+export default class MedicalDevices extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            countries = [],
-            categories = [],
-            subcategories = [],
-            documents = [],
-            selectedCountry = '',
-            selectedCategory = '',
-            selectedSubCategory = ''
+            countries : [],
+            categories : [],
+            subcategories : [],
+            documents : [],
+            selectedCountry : '',
+            selectedCategory : '',
+            selectedSubCategory : ''
         }
     }
 
@@ -36,7 +36,7 @@ export default class HomeComponent extends Component {
     }
 
     reloadDocuments = () => {
-        
+
     }
 
     render() {
@@ -45,10 +45,12 @@ export default class HomeComponent extends Component {
                 <div class="form-row">
                     <div class="col-md-4">
                        <label for="country">Country</label>
-                        <select>
-                            <option>
-
-                            </option>
+                        <select onChange={this.changedCountry}>
+                            {
+                                this.state.countries.map((elem, index) => {
+                                    return <option key={index} className="medical-label">{elem}</option>
+                                })
+                            }
                         </select>
                     </div>
                 </div>
