@@ -15,7 +15,7 @@ const HomeComponent = withRouter(({location}) => (
         <Switch location={location}>
           <Route exact path="/">
             <div class="home-container">
-              <h1 class="header">Welcome to Innovalpha</h1>
+              <h1 class="header-title">Welcome to Innovalpha</h1>
               <hr class="header-dash"/>
               <h1 class="mission-header">Looking to start a business in the medical sector?</h1>
               <p class="home-text">We support you with the data you need. Choose the service you want to use</p>
