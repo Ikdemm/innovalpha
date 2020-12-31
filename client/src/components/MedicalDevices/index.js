@@ -57,33 +57,34 @@ export default class MedicalDevices extends Component {
 
     render() {
         return(
-            <div className="form-container" width="100%">
+            <div>
+            <div className="medical-form-container" width="100%">
                 <div className="form-row">
 
                     <div className="col-md-4">
-                       <label htmlFor="country">Country</label>
+                       <label htmlFor="country" className="medical-label">Country</label>
                         <select name="country" onChange={this.changedCountry}>
                             {
                                 this.state.countries.map((elem, index) => {
-                                    return <option key={index} className="medical-label">{elem.country}</option>
+                                    return <option key={index}>{elem.country}</option>
                                 })
                             }
                         </select>
                     </div>
 
                     <div className="col-md-4">
-                       <label htmlFor="category">Category</label>
+                       <label htmlFor="category" className="medical-label">Category</label>
                         <select name="category" onChange={this.changedCategory}>
                             {
                                 this.state.categories.map((elem, index) => {
-                                    return <option key={index} className="medical-label">{elem.country}</option>
+                                    return <option key={index}>{elem.country}</option>
                                 })
                             }
                         </select>
                     </div>
 
                     <div className="col-md-4">
-                       <label htmlFor="subcategory">Subcategory</label>
+                       <label htmlFor="subcategory" className="medical-label">Subcategory</label>
                         <select name="subcategory" onChange={this.changedCategory}>
                             {
                                 this.state.categories.map((elem, index) => {
@@ -94,6 +95,7 @@ export default class MedicalDevices extends Component {
                     </div>
 
                 </div>
+            </div>
 
                 <div className="cards-container">
                     {this.state.documents.map((document, index) => {
