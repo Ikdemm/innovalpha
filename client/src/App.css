@@ -305,6 +305,8 @@ h1 {
 
 .medical-label {
   color: #FFD000;
+  font-weight: 500;
+  font-size: 1.1em;
 }
 
 option {
@@ -381,5 +383,12 @@ option {
 }
 
 .select-bar {
-  
+  width: 100%;
+  font-size: 1em;
+  padding: 5px;
+}
+
+.medical-option {
+  color:rgb(98, 98, 98);
+  font-size: 1em;
 }
