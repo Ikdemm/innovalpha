@@ -25,8 +25,15 @@ export default class MedicalDevices extends Component {
 
     }
 
-    changedCountry = () => {
-
+    changedCountry = (e) => {
+        console.log("event.target.value: ", e.target.value)
+        this.setState({selectedCountry: e.target.value})
+        console.log("selected country: ", this.state.selectedCountry)
+        this.state.countries.map(country => {
+            country.categories.map(category => {
+                country.country === this.state.selectedCountry && this.state.categories.push(category)   
+            })
+        })
     }
 
     changedSubCategory = () => {
@@ -38,17 +45,24 @@ export default class MedicalDevices extends Component {
         .then((data) => {
             this.setState({countries : [...data.data]});
             console.log(this.state.countries)
-            // console.log(data)
+            console.log(data)
         })
     }
 
     loadDocuments = () => {
         axios.get("/documents/plainDocuments.json")
         .then((data) => {
-            // console.log(data.data)
             this.setState({documents : [...data.data]});
             console.log(this.state.documents)
         })
+    }
+
+    loadCategories = () => {
+        this.state.countries.map(country => {
+            console.log(country.category)
+            this.state.categories.push(country.category)
+        })
+        console.log(this.state.categories)
     }
 
     reloadDocuments = () => {
@@ -61,9 +75,9 @@ export default class MedicalDevices extends Component {
             <div className="medical-form-container" width="100%">
                 <div className="form-row">
 
-                    <div className="col-md-4">
-                       <label htmlFor="country" className="medical-label">Country</label>
-                        <select name="country" onChange={this.changedCountry}>
+                    <div className="col-md-3">
+                       <label htmlFor="country" className="medical-label">Country</label><br/>
+                        <select className="select-bar" name="country" onChange={this.changedCountry}>
                             {
                                 this.state.countries.map((elem, index) => {
                                     return <option key={index}>{elem.country}</option>
@@ -72,20 +86,20 @@ export default class MedicalDevices extends Component {
                         </select>
                     </div>
 
-                    <div className="col-md-4">
-                       <label htmlFor="category" className="medical-label">Category</label>
-                        <select name="category" onChange={this.changedCategory}>
+                    <div className="col-md-3">
+                       <label htmlFor="category" className="medical-label">Category</label><br/>
+                        <select className="select-bar" name="category" onChange={this.changedCategory}>
                             {
                                 this.state.categories.map((elem, index) => {
-                                    return <option key={index}>{elem.country}</option>
+                                    return <option key={index}>{elem.name}</option>
                                 })
                             }
                         </select>
                     </div>
 
-                    <div className="col-md-4">
-                       <label htmlFor="subcategory" className="medical-label">Subcategory</label>
-                        <select name="subcategory" onChange={this.changedCategory}>
+                    <div className="col-md-3">
+                       <label htmlFor="subcategory" className="medical-label">Subcategory</label><br/>
+                        <select className="select-bar" name="subcategory" onChange={this.changedCategory}>
                             {
                                 this.state.categories.map((elem, index) => {
                                     return <option key={index} className="medical-label">{elem.country}</option>
