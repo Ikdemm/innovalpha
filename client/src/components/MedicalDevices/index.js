@@ -21,12 +21,11 @@ export default class MedicalDevices extends Component {
         this.loadDocuments();
     }
 
-    changedCategory = () => {
-
+    changedCategory = (e) => {
+        this.setState({selectedCategory: e.target.value}, this.loadSubCategories);
     }
 
     changedCountry = (e) => {
-        console.log("event.target.value: ", e.target.value)
         this.setState({selectedCountry: e.target.value}, this.loadCategories);
     }
 
@@ -46,21 +45,26 @@ export default class MedicalDevices extends Component {
         axios.get("/documents/plainDocuments.json")
         .then((data) => {
             this.setState({documents : [...data.data]});
-            console.log(this.state.documents)
         })
     }
 
     loadCategories = () => {
-        console.log("selected country: ", this.state.selectedCountry)
         var acc = []
         this.state.countries.map(country => {
             country.categories.map(category => {
-                console.log("country.country: ", country.country)
-                console.log("this.state.selectedCountry: ", this.state.selectedCountry)
                 country.country === this.state.selectedCountry && acc.push(category)   
             })
             this.setState({categories: acc})
-            console.log(this.state.categories)
+        })
+    }
+
+    loadSubCategories = () => {
+        var acc = []
+        this.state.categories.map(category => {
+            category.subcategories.map(subcategory => {
+                category.name === this.state.selectedCategory && acc.push(subcategory)
+            })
+            this.setState({subcategories: acc})
         })
     }
 
@@ -115,8 +119,8 @@ export default class MedicalDevices extends Component {
                          placeholder="Select a Subcategory" 
                         >
                             {
-                                this.state.categories.map((elem, index) => {
-                                    return <option key={index} className="medical-option">{elem.country}</option>
+                                this.state.subcategories.map((elem, index) => {
+                                    return <option key={index} className="medical-option">{elem.title}</option>
                                 })
                             }
                         </select>
