@@ -10,7 +10,7 @@ export default class MedicalDevices extends Component {
             categories : [],
             subcategories : [],
             documents : [],
-            selectedCountry : '',
+            selectedCountry : 'Europe',
             selectedCategory : '',
             selectedSubCategory : ''
         }
@@ -27,13 +27,20 @@ export default class MedicalDevices extends Component {
 
     changedCountry = (e) => {
         console.log("event.target.value: ", e.target.value)
-        this.setState({selectedCountry: e.target.value})
-        console.log("selected country: ", this.state.selectedCountry)
-        this.state.countries.map(country => {
-            country.categories.map(category => {
-                country.country === this.state.selectedCountry && this.state.categories.push(category)   
-            })
-        })
+        this.setState({selectedCountry: e.target.value}, this.loadCategories);
+        //     () => {
+        //     console.log("selected country: ", this.state.selectedCountry)
+        //     this.state.countries.map(country => {
+        //         var acc = []
+        //         country.categories.map(category => {
+        //             console.log("country.country: ", country.country)
+        //             console.log("this.state.selectedCountry: ", this.state.selectedCountry)
+        //             country.country === this.state.selectedCountry && acc.push(category)   
+        //         })
+        //         this.setState({categories: acc})
+        //         console.log(this.state.categories)
+        //     })
+        // })
     }
 
     changedSubCategory = () => {
@@ -44,8 +51,7 @@ export default class MedicalDevices extends Component {
         axios.get("/documents/countries.json")
         .then((data) => {
             this.setState({countries : [...data.data]});
-            console.log(this.state.countries)
-            console.log(data)
+            this.loadCategories();
         })
     }
 
@@ -58,11 +64,17 @@ export default class MedicalDevices extends Component {
     }
 
     loadCategories = () => {
+        console.log("selected country: ", this.state.selectedCountry)
+        var acc = []
         this.state.countries.map(country => {
-            console.log(country.category)
-            this.state.categories.push(country.category)
+            country.categories.map(category => {
+                console.log("country.country: ", country.country)
+                console.log("this.state.selectedCountry: ", this.state.selectedCountry)
+                country.country === this.state.selectedCountry && acc.push(category)   
+            })
+            this.setState({categories: acc})
+            console.log(this.state.categories)
         })
-        console.log(this.state.categories)
     }
 
     reloadDocuments = () => {
