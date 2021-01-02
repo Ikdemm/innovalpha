@@ -153,7 +153,7 @@ export default class MedicalDevices extends Component {
                     {this.state.selectedDocuments.map((document, index) => {
                         return (
                             <div key={index} className="card mb-4">
-                                <div className="card-header">{document.category} - <b>{document.subcategory}</b></div>
+                                <div className="card-header">{document.category} - <b className="card-subcategory">{document.subcategory}</b></div>
                                 <div className="card-body">
                                     <h5 className="card-title">{document.title}</h5>
                                     <p className="card-text">Files</p>
@@ -169,7 +169,7 @@ export default class MedicalDevices extends Component {
                                     {document.excel && document.excel.map((file, index) => {
                                         return (
                                             <a key={index} href={file} download>
-                                                <button className="btn btn-pdf">
+                                                <button className="btn btn-excel">
                                                 {file.title}
                                                 </button>
                                             </a>
@@ -178,7 +178,7 @@ export default class MedicalDevices extends Component {
                                     {document.zip && document.zip.map((file, index) => {
                                         return (
                                             <a key={index} href={file} download>
-                                                <button className="btn btn-pdf">
+                                                <button className="btn btn-zip">
                                                 {file.title}
                                                 </button>
                                             </a>

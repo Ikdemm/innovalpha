@@ -318,45 +318,45 @@ option {
 }
 
 .btn-pdf {
-  background-color: transparent;
-  border: 1px solid rgb(185, 40, 40);
-  color: rgb(185, 40, 40);
-  margin: 0.5em;
+  background-color: transparent !important;
+  border: 1px solid rgb(185, 40, 40) !important;
+  color: rgb(185, 40, 40) !important;
+  margin: 0.5em !important;
 }
 
 .btn-pdf:hover {
-  background-color: rgb(185, 40, 40);
-  border: 1px solid rgb(185, 40, 40);
-  color: white;
-  margin: 0.5em;
+  background-color: rgb(185, 40, 40) !important;
+  border: 1px solid rgb(185, 40, 40) !important;
+  color: white !important;
+  margin: 0.5em !important;
 }
 
 .btn-excel {
   background-color: transparent;
-  border: 1px solid rgb(17, 128, 17);
-  color: rgb(17, 128, 17);
-  margin: 0.5em;
+  border: 1px solid rgb(17, 128, 17) !important;
+  color: rgb(17, 128, 17) !important;
+  margin: 0.5em !important;
 }
 
 .btn-excel:hover {
-  background-color: rgb(17, 128, 17);
-  border: 1px solid rgb(17, 128, 17);
-  color: white;
-  margin: 0.5em;
+  background-color: rgb(17, 128, 17) !important;
+  border: 1px solid rgb(17, 128, 17) !important;
+  color: white !important;
+  margin: 0.5em !important;
 }
 
 .btn-zip {
   background-color: transparent;
-  border: 1px solid rgb(173, 173, 49);
-  color: rgb(173, 173, 49);
-  margin: 0.5em;
+  border: 1px solid rgb(173, 173, 49) !important;
+  color: rgb(173, 173, 49) !important;
+  margin: 0.5em !important;
 }
 
 .btn-zip:hover {
-  background-color: rgb(173, 173, 49);
-  border: 1px solid rgb(173, 173, 49);
-  color: white;
-  margin: 0.5em;
+  background-color: rgb(173, 173, 49) !important;
+  border: 1px solid rgb(173, 173, 49) !important;
+  color: white !important;
+  margin: 0.5em !important;
 }
 
 .card {
@@ -372,7 +372,7 @@ option {
 .card-header {
   border-bottom: solid 1px #000;
   border-top: solid 1px #000;
-  background-color: #000;
+  background-color: #000 !important;
   color: #FFD000;
   border-radius: 0%;
 }
@@ -391,4 +391,8 @@ option {
 .medical-option {
   color:rgb(98, 98, 98);
   font-size: 1em;
+}
+
+.card-subcategory {
+  color: grey;
 }
