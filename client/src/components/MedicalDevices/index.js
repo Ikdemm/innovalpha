@@ -12,7 +12,8 @@ export default class MedicalDevices extends Component {
             documents : [],
             selectedCountry : 'Europe',
             selectedCategory : '',
-            selectedSubCategory : ''
+            selectedSubCategory : '',
+            selectedDocuments: []
         }
     }
 
@@ -21,16 +22,24 @@ export default class MedicalDevices extends Component {
         this.loadDocuments();
     }
 
-    changedCategory = (e) => {
-        this.setState({selectedCategory: e.target.value}, this.loadSubCategories);
-    }
-
     changedCountry = (e) => {
-        this.setState({selectedCountry: e.target.value}, this.loadCategories);
+        this.setState({selectedCountry: e.target.value}, () => {
+            this.loadCategories();
+            this.reloadDocuments("country");   
+        });
     }
 
-    changedSubCategory = () => {
+    changedCategory = (e) => {
+        this.setState({selectedCategory: e.target.value}, () => {
+            this.loadSubCategories();
+            this.reloadDocuments("category");
+        });
+    }
 
+    changedSubCategory = (e) => {
+        this.setState({selectedSubCountry: e.target.value}, () => {
+            this.reloadDocuments("subcategory");   
+        });
     }
 
     loadCountries = () => {
@@ -44,7 +53,9 @@ export default class MedicalDevices extends Component {
     loadDocuments = () => {
         axios.get("/documents/plainDocuments.json")
         .then((data) => {
-            this.setState({documents : [...data.data]});
+            this.setState({documents : [...data.data]}, 
+                this.setState({selectedDocuments: this.state.documents})
+            );
         })
     }
 
@@ -68,8 +79,18 @@ export default class MedicalDevices extends Component {
         })
     }
 
-    reloadDocuments = () => {
-
+    reloadDocuments = (condition) => {
+        switch (condition) {
+            case 'country':
+                this.setState({selectedDocuments: this.state.documents.filter(document => document.country === this.state.selectedCountry)})
+                break;
+            case 'category':
+                this.setState({selectedDocuments: this.state.documents.filter(document => document.category === this.state.selectedCategory)})
+                break;
+            case 'subcategory':
+                this.setState({selectedDocuments: this.state.documents.filter(document => document.subCategory === this.state.selectedSubCategory)})
+                break;
+        }
     }
 
     render() {
@@ -130,7 +151,7 @@ export default class MedicalDevices extends Component {
             </div>
 
                 <div className="cards-container">
-                    {this.state.documents.map((document, index) => {
+                    {this.state.selectedDocuments.map((document, index) => {
                         return (
                             <div key={index} className="card mb-4">
                                 <div className="card-header">{document.category} - <b>{document.subcategory}</b></div>
