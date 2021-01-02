@@ -261,8 +261,8 @@ h1 {
   border: 2px solid #FFD000;
   background-color: transparent;
   transition: .5s;
-  padding-left: .7em;
-  padding-right: .7em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .devices-button:hover {
