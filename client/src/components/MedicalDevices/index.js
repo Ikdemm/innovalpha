@@ -53,9 +53,8 @@ export default class MedicalDevices extends Component {
     loadDocuments = () => {
         axios.get("/documents/plainDocuments.json")
         .then((data) => {
-            this.setState({documents : [...data.data]}, 
-                this.setState({selectedDocuments: this.state.documents})
-            );
+            this.setState({documents : [...data.data]});
+            this.setState({selectedDocuments: [...data.data]})
         })
     }
 
