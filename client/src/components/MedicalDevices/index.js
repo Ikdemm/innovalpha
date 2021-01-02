@@ -37,7 +37,7 @@ export default class MedicalDevices extends Component {
     }
 
     changedSubCategory = (e) => {
-        this.setState({selectedSubCountry: e.target.value}, () => {
+        this.setState({selectedSubCategory: e.target.value}, () => {
             this.reloadDocuments("subcategory");   
         });
     }
@@ -88,7 +88,7 @@ export default class MedicalDevices extends Component {
                 this.setState({selectedDocuments: this.state.documents.filter(document => document.category === this.state.selectedCategory)})
                 break;
             case 'subcategory':
-                this.setState({selectedDocuments: this.state.documents.filter(document => document.subCategory === this.state.selectedSubCategory)})
+                this.setState({selectedDocuments: this.state.documents.filter(document => document.subcategory === this.state.selectedSubCategory)})
                 break;
         }
     }
@@ -136,7 +136,7 @@ export default class MedicalDevices extends Component {
                         <select
                          className="select-bar"
                          name="subcategory"
-                         onChange={this.changedCategory}
+                         onChange={this.changedSubCategory}
                          placeholder="Select a Subcategory" 
                         >
                             {
